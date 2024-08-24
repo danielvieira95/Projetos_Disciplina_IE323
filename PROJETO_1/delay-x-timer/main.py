@@ -1,4 +1,4 @@
-from machine import Pin, I2C, ADC
+from machine import Pin, I2C, ADC, Timer
 from ssd1306 import SSD1306_I2C
 import framebuf
 import neopixel
@@ -14,6 +14,8 @@ MODE_TIMER = 2
 
 pressed_button_counter = 0
 button_state = 0
+led_state = 0
+loop_counter = 0
 mode_selected = 0
 
 # Configuração do display oLED
@@ -50,6 +52,9 @@ adc_mean_x = ((adc_max - adc_min)/2)
 # Define um limiar para determinar uma mudança significativa do joystick
 threshold = 1000
 
+# Configuração do timer
+temporizador = Timer()
+
 def check_button():
     global button_a, pressed_button_counter, button_state
     if (button_a.value() == 0) & (button_state == 0):
@@ -68,14 +73,30 @@ def display_update(snoopy):
     utime.sleep_us(1)
 
 def blink_on():
+    global led_state
     for i in range(25):
-        np[i] = (10, 0, 0)
+        np[i] = (5, 0, 0)
     np.write()
+    led_state = 1
 
 def blink_off():
+    global led_state
     for i in range(25):
         np[i] = (0, 0, 0)
     np.write()
+    led_state = 0
+
+def toggle_led():
+    global led_state
+    if (led_state == 0):
+        blink_on()
+    else:
+        blink_off()
+
+def callback_temporizador(timer):
+    global loop_counter
+    toggle_led()
+    loop_counter += 1
 
 def select_mode():
     # Tela de início
@@ -103,31 +124,24 @@ def select_mode():
 while True:
     select_mode()
     if (mode_selected == MODE_DELAY):
-        i = 0
-        for i in range(6):
+        blink_off()
+        loop_counter = 0
+        for loop_counter in range(10):
             check_button()
             button_state = 0
             display_update(sleeping_snoopy)
-            blink_on()
+            toggle_led()
             utime.sleep(3)
-            check_button()
-            button_state = 0
-            display_update(sleeping_snoopy)
-            blink_off()
-            utime.sleep(3)
-            i += 1
+            loop_counter += 1
         pressed_button_counter = 0
         mode_selected = NO_MODE
     elif (mode_selected == MODE_TIMER):
-        oled.fill(0)
-        oled.text("Ops...", 0, 4)
-        oled.text("Ainda nao", 0, 16)
-        oled.text("esta pronto...", 0, 28)
-        oled.text("Mas olha", 0, 40)
-        oled.text("esse Snoopy", 0, 52)
-        oled.show()
-        utime.sleep(3)
-        display_update(awaken_snoopy)
-        oled.show()
-        utime.sleep(5)
+        blink_off()
+        temporizador.init(period = 3000, mode = Timer.PERIODIC, callback = callback_temporizador)
+        loop_counter = 0
+        while(loop_counter < 10):
+            check_button()
+            display_update(awaken_snoopy)
+        temporizador.deinit()
+        pressed_button_counter = 0
         mode_selected = NO_MODE
