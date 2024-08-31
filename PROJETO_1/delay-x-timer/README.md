@@ -11,6 +11,20 @@ Os alunos irão interagir com a placa através de um software, que permite a com
 Carlos Julián Muñoz Quiroga, RA: 204200  
 Patric Moreto, RA: 223083
 
+## Recursos de hardware utilizados da BitDogLab
+
+- Botões A e B
+- Matriz de LEDs 5 x 5
+- Joystick
+- Display oLED
+
 ## Fluxogramas
 
-## Instruções de uso
+## Instruções de uso da BitDogLab
+
+- **Tela inicial:** O programa irá iniciar com uma mensagem no display oLED pedindo para o usuário selecionar um modo de operação. A escolha é feita através do joystick, caso o direcional seja movimentado para a esquerda, é iniciada a rotina de delay, enquanto a rotina de timer é selecionada movimentando para a direita. Ao fim de ambos os modos, será exibida a tela inicial novamente.
+
+- **Modo delay:** Consiste em demonstrar como a interrupção do fluxo do programa ocasionada por delays pode ser prejudicial no processamento de tarefas em paralelo, mas utilizável caso apenas uma tarefa esteja sendo executada. Isso é demonstrado através de duas funcionalidades distintas sendo executadas em paralelo: a matriz de LEDs construindo uma seta e a contagem de vezes que o botão foi pressionado.    
+A rotina sendo executada irá alternar entre o uso de delay e timer, ambos com intervalos de 3 segundos. Enquanto o delay é executado, uma figura do Snoopy dormindo aparece no display, indicando que a BitDogLab não está detectando quando o botão é pressionado. Quando alterna para o timer, a figura se torna o Snoopy acordando, indicando que agora a placa é capaz de perceber quando os botões foram pressionados. Em paralelo, a matriz de LEDs irá construir uma seta a cada intervalo de 3 segundos, mostrando que processos temporizados mais simples independem da estratégia utilizada.
+
+- **Modo timer:** Utiliza apenas timers durante todo seu processo, de modo que a figura exibida no display é do Snoopy atento, indicando que a BitDogLab está detectando todas as vezes que os botões foram pressionados. Em paralelo, é configurado um timer de 3 segundos para construir uma seta na matriz de LEDs.

@@ -118,16 +118,18 @@ def alterna_led(estado_led):
         estado_led = desliga_led(estado_led)
     return estado_led
 
+# Essa callback é utilizada no modo delay, e atualiza a flag "timer_flag" indicando que o temporizador atingiu sua contagem
+def callback_delay(timer):
+    global timer_flag
+    timer_flag = 1
+
+# Callback utilizada no modo timer, irá mudar o estado da matriz de LEDs e acrescentar 1 na contagem de iterações da rotina
 def callback_timer(timer):
     global contador_loop, estado_led
     estado_led = alterna_led(estado_led)
     contador_loop += 1
 
-def callback_delay(timer):
-    global timer_flag
-    timer_flag = 1
-
-# Apresenta a tela de início no display oLED pedindo para escolher um modo e entra em uma rotina de verifição do valor do joystick.
+# Apresenta a tela de início no display oLED pedindo para escolher um modo e entra em uma rotina de verifição do valor do joystick
 def seleciona_modo(modo_selecionado):
     # Tela de início
     oled.fill(0)
@@ -155,10 +157,14 @@ def seleciona_modo(modo_selecionado):
 
 while True:
     modo_selecionado = seleciona_modo(modo_selecionado)
-# Caso o modo de funcionamento escolhido seja o modo delay [TODO] 
+# Caso o modo de funcionamento escolhido seja o modo delay, a rotina que será executada por 5 vezes consiste em iniciar verificando se os botões foram pressionados,
+# atualizar o display com a imagem do Snoopy dormindo e o valor do contador, acender a matriz de LEDs e então vai iniciar o delay de 3 segundos.
+# Como isso interrompe o funcionamento do código, não é possível registrar que o botão foi pressionado. Após o fim do delay, a matriz de LEDs apagada,
+# é iniciado um timer de 3 segundos e o código entra em um laço de repetição que irá verificar os botões e atualizar o display, com imagem do Snoopy acordando,
+# de maneira contínua. O laço só tem fim quando o timer atinge 3 segundos e atualiza a flag do timer e a rotina finalmente é reiniciada.
     if (modo_selecionado == MODO_DELAY):
-        estado_led = desliga_led(estado_led)
-        contador_loop = 0
+        estado_led = desliga_led(estado_led) # Garante que toda vez que inicia uma rotina, a matriz de LEDs está apagada
+        contador_loop = 0 # Garante que contador de iterações da rotina inicia em estado inicial
         for contador_loop in range(5):
             contador_botao_pressionado, estado_botao_a = verifica_botao_a(botao_a, contador_botao_pressionado, estado_botao_a)
             contador_botao_pressionado, estado_botao_b = verifica_botao_b(botao_b, contador_botao_pressionado, estado_botao_b)
@@ -167,7 +173,7 @@ while True:
             atualiza_display(snoopy_dormindo, contador_botao_pressionado)
             estado_led = alterna_led(estado_led)
             utime.sleep(3)
-            temporizador.init(mode=Timer.ONE_SHOT, period=3000, callback=callback_delay)
+            temporizador.init(mode=Timer.ONE_SHOT, period=3000, callback=callback_delay) # A callback irá alterar o estado da flag do timer ao atingir o tempo
             estado_led = alterna_led(estado_led)
             while(timer_flag == 0):
                 contador_botao_pressionado, estado_botao_a = verifica_botao_a(botao_a, contador_botao_pressionado, estado_botao_a)
@@ -177,7 +183,10 @@ while True:
             temporizador.deinit()
             contador_loop += 1
         contador_botao_pressionado = 0
-        modo_selecionado = SEM_MODO
+        modo_selecionado = SEM_MODO # Após o fim da rotina do modo, o programa volta para a tela inicial de seleção
+# Caso o modo selecionado seja o timer, um temporizador periódico de 3 segundos é iniciado. Quando é atingido, ele acrescenta na contagem de iterações e altera
+# o estado da matriz de LEDs. Enquanto isso, os botões são verificados constantemente e o display com contador e o Snoopy atento é atualizado.
+# Após 10 iterações, a rotina é finalizada e retorna à tela inicial de seleção de modo.
     elif (modo_selecionado == MODO_TIMER):
         estado_led = desliga_led(estado_led)
         temporizador.init(period = 3000, mode = Timer.PERIODIC, callback = callback_timer)
