@@ -1,4 +1,4 @@
-# Jogo de Quiz de Cores
+# Jogo de Quiz de interpretação e seleção de cores
 
 Este projeto é um jogo interativo de interpretação e seleção de cores, desenvolvido com a plataforma BitDogLab V5, utilizando um microcontrolador Raspberry Pi Pico. O objetivo do jogo é reproduzir a cor mostrada na matriz de LEDs ajustando os valores RGB (vermelho, verde, azul) com um joystick.
 
@@ -12,14 +12,14 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 
 ## Componentes Necessários
 - Placa BitDogLab V5
-Ou ainda podes ter o componentes separados como:
-- Raspberry Pi Pico
-- Matriz de LEDs WS2812B (5x5)
-- Display OLED 128x64 (I2C)
-- Joystick analógico KY-023
-- 2 Botões
-- 2 Buzzers passivos
-- Resistores, jumpers e uma placa de prototipagem
+### Ou ainda podes ter o componentes separados como:
+  - Raspberry Pi Pico
+  - Matriz de LEDs WS2812B (5x5)
+  - Display OLED 128x64 (I2C)
+  - Joystick analógico KY-023
+  - 2 Botões
+  - 2 Buzzers passivos
+  - Resistores, jumpers e uma placa de prototipagem
 
 ## Como Executar
 
@@ -46,6 +46,48 @@ As conexões e configurações de hardware são da plataforma bitdoglab que temo
 - O pino in de uma matriz de LEDs 5050 RGB de 5 linhas por 5 colunas tipo WS2812B (Neopixel) está conectada ao GPIO7. 
 - Um joystick analógico tipo KY023 tem a saída VRy conectada ao GPIO26 e a saída VRx ao GPIO27. Seu botão SW está conectada ao GPIO22, o outro terminal do botão está no GND. 
 - Um display OLED 128 colunas por  x 64 linhas de 0,96 polegadas com comunicação I2C, tem seu pino SDA conectado ao GPIO14 e o pino SCL com o GPIO15, estes pinos são do canal I2C0. Esse display (normalmente configurado no endereço 0x3C).
+
+## Instruções do Jogo 
+
+### Início do Jogo:
+
+No display OLED, aparecerá a mensagem: "Bem-vindo ao Quiz de Cores! Clique no botão à esquerda para começar." Este botão é o Botão A no hardware.
+Ao clicar no Botão A, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
+
+### Como Jogar:
+
+No nível 1, os primeiros cinco LEDs da primeira linha da matriz 5050 RGB (posições 0 a 4) acenderão com uma cor aleatória. O objetivo é recriar essa cor.
+No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme você ajusta os valores de R, G e B com o joystick, a cor será exibida na matriz e o valor atual será mostrado no OLED.
+Para o nível 1, há 8 combinações possíveis de cores:
+R: 0 ou 100
+G: 0 ou 100
+B: 0 ou 100
+Para o nível 2, há 27 combinações possíveis de cores:
+R: 0, 50 ou 100
+G: 0, 50 ou 100
+B: 0, 50 ou 100
+Para o nível 3, há 125 combinações possíveis de cores:
+R: 0, 25, 50, 75 ou 100
+G: 0, 25, 50, 75 ou 100
+B: 0, 25, 50, 75 ou 100
+
+### Controles:
+
+Use o eixo Y do joystick para alternar entre R, G e B. Use o eixo X para ajustar o valor selecionado.
+Ao pressionar o botão SW do joystick, o valor ajustado será comparado com a cor exibida na matriz de LEDs.
+Se a cor estiver correta, o LED na posição 24 acenderá e o display OLED mostrará "Parabéns, cor correta". Os buzzers A e B tocarão um som de acerto.
+Se a cor estiver incorreta, o display OLED mostrará "Opa, está incorreto, tente de novo". Os buzzers A e B tocarão um som de erro. Você pode tentar novamente até 20 vezes antes do fim do jogo.
+
+### Progresso no Jogo:
+
+Após acertar, o display OLED mostrará a mensagem: "Próximo nível".
+O processo será repetido para os próximos níveis até completar todos os três.
+
+### Fim do Jogo:
+
+Quando todos os níveis forem concluídos, o display OLED mostrará o número de erros cometidos e o tempo total para completar o jogo.
+Para reiniciar, clique no botão à direita (Botão B). O display OLED exibirá: "Reiniciando o jogo".
+Boa sorte e divirta-se!
 
 ## Licença
 
