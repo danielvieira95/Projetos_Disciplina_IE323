@@ -5,7 +5,7 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 ### Autores
 
 Gelson de Barros Ferreira, RA: 212732  
-Patric Moreto, RA: 290031
+Wallif Campos, RA: 290031
 
 ## Funcionalidades
 
