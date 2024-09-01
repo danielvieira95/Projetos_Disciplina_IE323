@@ -1,0 +1,30 @@
+Documentação do Usuário - Jogo de Quiz de Cores
+Introdução
+Bem-vindo ao Jogo de Quiz de Cores! Este guia irá ajudá-lo a começar a jogar, explicando como usar o joystick, os botões e os LEDs para reproduzir as cores exibidas.
+
+Como Jogar
+Inicie o jogo: Ao conectar o Raspberry Pi Pico e ligar o sistema, o jogo começará automaticamente.
+
+Objetivo: O objetivo do jogo é ajustar os valores RGB para reproduzir a cor mostrada na matriz de LEDs.
+
+Navegação com o Joystick:
+
+Eixo X (Esquerda/Direita): Use para selecionar entre Red, Green e Blue.
+Eixo Y (Cima/Baixo): Use para aumentar ou diminuir o valor do componente selecionado.
+Confirmar Seleção:
+
+Botão de Seleção (SW no Joystick): Confirma o valor ajustado.
+Botão A: Verifica se a cor está correta.
+Botão B: Reinicia o jogo a qualquer momento.
+Feedback Visual e Sonoro:
+
+LEDs: Exibem a cor gerada aleatoriamente e confirmam a cor ajustada.
+Buzzers: Emitem sons para feedback de acertos e erros.
+Dicas para Jogar
+Observe os valores no display OLED: Ele mostra o valor atual de cada componente RGB.
+Experimente diferentes combinações: A cada nível, as cores ficam mais desafiadoras.
+Solução de Problemas
+O jogo não inicia: Verifique as conexões dos componentes e reinicie o sistema.
+O joystick não responde: Certifique-se de que está bem conectado ao Raspberry Pi Pico.
+Contato
+Se você tiver dúvidas ou encontrar problemas, entre em contato conosco através do e-mail suporte@bitdoglab.com.
