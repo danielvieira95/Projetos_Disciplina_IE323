@@ -31,7 +31,7 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 
 ## Estrutura do Projeto
 
-- `src/`: Código-fonte do projeto.
+- `raiz`: Código-fonte do projeto.
 - `diagrams/`: Diagramas de conexão de hardware.
 - `docs/`: Documentação técnica e do usuário.
 - `README.md`: Este arquivo.
@@ -39,12 +39,3 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
-
-Citations:
-[1] https://picockpit.com/raspberry-pi/pt/gaming-on-the-raspberry-pi-pico/
-[2] https://github.com/penguintutor/pico-lcd-quiz
-[3] https://www.youtube.com/watch?v=nd5Rd9SnRkc
-[4] https://www.robocore.net/placa-raspberry-pi/raspberry-pi-pico
-[5] https://www.youtube.com/watch?v=RxQg9iFc0sc
-[6] https://portalescolarmaker.com.br/makey-makey-quiz-cores/
-[7] https://www.raisa.com.br/placa-raspberry-pi-pico-com-microcontrolador-dual-core
