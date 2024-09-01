@@ -6,8 +6,9 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 
 - Matriz de LEDs RGB (5x5): Mostra a cor que o jogador deve reproduzir.
 - Display OLED: Exibe instruções e feedback durante o jogo.
-- Joystick: Permite navegar entre os valores RGB e ajustá-los.
-- Botões e Buzzers: Interagem com o jogo, fornecendo feedback sonoro para ações corretas ou incorretas.
+- Joystick: Permite navegar entre os valores RGB, ajustá-los e selecionar para comparação.
+- Buzzers: Interagem com o jogo, fornecendo feedback sonoro para ações corretas ou incorretas.
+- Botões: Interagem no jogo, para feedback do inicio Botão A e recomeço do jogo Botão B
 
 ## Componentes Necessários
 - Placa BitDogLab V5
