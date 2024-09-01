@@ -25,7 +25,7 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 
 2. Conecte os componentes: Utilize o diagrama de pinos incluído na pasta diagrams para conectar todos os componentes corretamente.
 
-3. Carregue o código: Use a IDE do Arduino ou Thonny para carregar o código jogo_quiz_cores.py no Raspberry Pi Pico.
+3. Carregue o código: Use a IDE do Arduino ou Thonny para carregar o código main.py no Raspberry Pi Pico.
 
 4. Inicie o jogo: Assim que o código estiver rodando, siga as instruções no display OLED para iniciar e jogar.
 
