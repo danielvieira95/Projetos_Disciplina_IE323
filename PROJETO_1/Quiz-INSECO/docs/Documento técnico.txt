@@ -7,7 +7,7 @@ Este documento técnico descreve a arquitetura e as decisões de design tomadas 
 Arquitetura do Sistema
 O sistema é composto por três módulos principais:
 
-Interface de Usuário: Responsável por interagir com o jogador. Inclui o display OLED e o joystick.
+Interface de Usuário: Responsável por interagir com o jogador. Inclui o display OLED, matriz de leds RGB e o joystick.
 
 Controle de Hardware: Gerencia os LEDs, buzzers e botões.
 
