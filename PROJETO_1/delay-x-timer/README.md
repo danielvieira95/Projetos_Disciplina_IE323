@@ -20,6 +20,8 @@ Patric Moreto, RA: 223083
 
 ## Fluxogramas
 
+![Fluxogramas de exemplos de implementação das estratégias de espera com as funções _delay_ e _timer_.](https://github.com/danielvieira95/Projetos_Disciplina_IE323/blob/main/PROJETO_1/delay-x-timer/Img/Fluxogramas.png)
+
 ## Instruções de uso da BitDogLab
 
 - **Tela inicial:** O programa irá iniciar com uma mensagem no display oLED pedindo para o usuário selecionar um modo de operação. A escolha é feita através do joystick, caso o direcional seja movimentado para a esquerda, é iniciada a rotina de delay, enquanto a rotina de timer é selecionada movimentando para a direita. Ao fim de ambos os modos, será exibida a tela inicial novamente.
