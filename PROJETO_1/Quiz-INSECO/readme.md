@@ -2,9 +2,10 @@
 
 Este projeto é um jogo interativo de interpretação e seleção de cores, desenvolvido com a plataforma BitDogLab V5, utilizando um microcontrolador Raspberry Pi Pico. O objetivo do jogo é tentar reproduzir a cor mostrada na matriz de LEDs ajustando os valores das variáveis RGB (vermelho, verde, azul) com um joystick.
 
-## Autores
-Gelson Ferreira RA:G212732
-Wallif Campos RA:
+### Autores
+
+Gelson de Barros Ferreira, RA: 212732  
+Patric Moreto, RA: 290031
 
 ## Funcionalidades
 
