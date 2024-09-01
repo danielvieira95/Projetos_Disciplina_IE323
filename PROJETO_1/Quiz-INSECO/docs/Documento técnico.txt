@@ -1,32 +1,42 @@
-Documento Técnico - Jogo de Quiz de Cores
+Documento Técnico - Jogo de Quiz interpretação e seleção de cores
+
 Introdução
+
 Este documento técnico descreve a arquitetura e as decisões de design tomadas durante o desenvolvimento do Jogo de Quiz de Cores. O objetivo é fornecer uma visão detalhada do funcionamento do código e dos componentes utilizados.
 
 Arquitetura do Sistema
 O sistema é composto por três módulos principais:
 
 Interface de Usuário: Responsável por interagir com o jogador. Inclui o display OLED e o joystick.
+
 Controle de Hardware: Gerencia os LEDs, buzzers e botões.
+
 Lógica do Jogo: Controla o fluxo do jogo, incluindo a geração aleatória de cores e a verificação das respostas do jogador.
 Componentes
+
 1. Display OLED
 Modelo: SSD1306, 128x64, comunicação I2C.
 Função: Exibir informações do jogo, incluindo a cor a ser reproduzida e o feedback das jogadas.
+
 2. Matriz de LEDs WS2812B (5x5)
 Função: Exibir a cor que o jogador deve reproduzir e feedback das jogadas.
 Controlador: Neopixel, gerenciado via GPIO.
+
 3. Joystick KY-023
 Função: Navegar entre os valores RGB e ajustá-los.
 Conexão: Dois eixos (X, Y) conectados a entradas ADC e um botão conectado a um pino digital.
+
 4. Buzzers Passivos
 Função: Fornecer feedback sonoro em resposta a ações corretas ou incorretas.
 Controle: PWM para controle de frequência e duração do som.
+
 Fluxo do Jogo
 Início: O jogo começa com uma introdução no display OLED.
 Geração de Cor: Uma cor aleatória é gerada e exibida na matriz de LEDs.
 Ajuste de Cor: O jogador usa o joystick para ajustar os valores RGB.
 Verificação: Quando o jogador pressiona o botão de seleção, a cor ajustada é comparada com a cor alvo.
 Feedback: Se a cor estiver correta, um LED é aceso e o jogo avança; caso contrário, o jogador recebe feedback e pode tentar novamente.
+
 Considerações Técnicas
 Desempenho: O código foi otimizado para minimizar o consumo de CPU, com uso eficiente de loops e verificações condicionais.
 Escalabilidade: O jogo foi projetado para ser facilmente ajustável, permitindo adicionar mais níveis de dificuldade ou novos elementos visuais.
