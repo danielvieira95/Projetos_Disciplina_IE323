@@ -18,44 +18,33 @@ vry = ADC(Pin(26))  # Eixo Y
 sw = Pin(22, Pin.IN, Pin.PULL_UP)  # Botão de seleção
 
 # Configurações dos botões e buzzers
-botao_a = Pin(5, Pin.IN, Pin.PULL_UP)
-botao_b = Pin(6, Pin.IN, Pin.PULL_UP)
-buzzer_a = PWM(Pin(21))
-buzzer_b = PWM(Pin(10))
+botao_a = Pin(5, Pin.IN, Pin.PULL_UP) # botão da esquerda
+botao_b = Pin(6, Pin.IN, Pin.PULL_UP) # botão da direita
+buzzer_a = PWM(Pin(21)) # buzzer da esquerda
+buzzer_b = PWM(Pin(10)) # buzzer da direita
 
 # Configurações iniciais
 colors = {"Red": 0, "Green": 0, "Blue": 0}
 color_names = ["Red", "Green", "Blue"]
-predefined_colors = [
-    {"name": "Vermelho", "r": 100, "g": 0, "b": 0},
-    {"name": "Verde", "r": 0, "g": 100, "b": 0},
-    {"name": "Azul", "r": 0, "g": 0, "b": 100},
-    {"name": "Amarelo", "r": 100, "g": 100, "b": 0},
-    {"name": "Ciano", "r": 0, "g": 100, "b": 100},
-    {"name": "Magenta", "r": 100, "g": 0, "b": 100},
-    {"name": "Laranja", "r": 100, "g": 50, "b": 0},
-    {"name": "Rosa", "r": 100, "g": 25, "b": 50},
-    {"name": "Verde Limao", "r": 50, "g": 100, "b": 0},
-    {"name": "Violeta", "r": 75, "g": 0, "b": 100},
-    {"name": "Branca", "r": 100, "g": 100, "b": 100}
-]
-selected_color = 0
-current_color = None
-start_time = 0
-errors = 0
-rounds = 0
-started_game = False
-ended_game = False
-led_try = 24
-level = 1
-level_value = 0
-win = 0
+
+attempts = 20 #numero de tentativas
+selected_color = 0 # seleçao inicia das cores RGB Red -> 0; Green -> 1; Blue -> 2
+current_color = None #variavel de armazenamento do cor atual
+start_time = 0 #variavel de armazenamento do tempo de inicio do jogo
+errors = 0 # numeros de erros
+rounds = 0 # numeros de jogadas feitas
+started_game = False # Variavel de controlo do inicio do jogo
+ended_game = False # variavel de controlo de fim do jogo
+led_attempt = 24 #posição do led da matriz de LEDS que vai começar as tentativas em ordem decrescente 
+level = 1 # nivel de jogos
+level_value = 0 # o numero de passo de troca dos valores de RGB
+win = 0 # contagem de vitorias
 
 # função do nivel do jogo:
 def random_value(option):
     if option == 1:
         # Valores específicos: 0 e 100
-        values = [100]
+        values = [0,100]
     elif option == 2:
         # Valores específicos: 0, 50 e 100
         values = [50, 100]
@@ -89,9 +78,9 @@ def update_oled(r, g, b):
     oled.text(f"Cria a cor..", 0, 0)
     oled.text(f"sorteada", 0, 10)
     oled.text(f"RGB:{color_names[selected_color]}", 0, 20)
-    oled.text(f"R:{r} ", 0, 30) if r != current_color['r'] else oled.text(f"R:{r} <", 0, 30)
-    oled.text(f"G:{g} ", 0, 40) if g != current_color['g'] else oled.text(f"G:{g} <", 0, 40)
-    oled.text(f"B:{b} ", 0, 50) if b != current_color['b'] else oled.text(f"B:{b} <", 0, 50)
+    oled.text(f"R:{r} ", 0, 30) #if r != current_color['r'] else oled.text(f"R:{r} <", 0, 30)
+    oled.text(f"G:{g} ", 0, 40) #if g != current_color['g'] else oled.text(f"G:{g} <", 0, 40)
+    oled.text(f"B:{b} ", 0, 50) #if b != current_color['b'] else oled.text(f"B:{b} <", 0, 50)
     oled.show()
 
 # Função para acender LED com cor aleatória
@@ -115,8 +104,7 @@ def start_game():
     colors["Blue"] = 0    
     global started_game, ended_game
     if started_game == False:
-        global start_time, errors, rounds
-        #start_time = time.time()
+        global errors, rounds
         oled.fill(0)
         oled.text("Atencao!", 0, 0) #oled.text("Texto a imprimir", eixo x, eixo y)
         oled.text("Jogo comecando", 0, 10)
@@ -136,12 +124,12 @@ def reset_leds():
 
 # Função para verificar a cor
 def check_color():
-    global errors, rounds,led_try,level,win
+    global errors, rounds,led_attempt,level,win
     r = colors["Red"]
     g = colors["Green"]
     b = colors["Blue"]
     if r == current_color['r'] and g == current_color['g'] and b == current_color['b']:
-        leds[led_try] = (converter_valor(r), converter_valor(g), converter_valor(b))
+        leds[led_attempt] = (converter_valor(r), converter_valor(g), converter_valor(b))
         leds.write()
         #play_sound(buzzer_a, 1000, 0.2)
         #play_sound(buzzer_b, 1000, 0.2)
@@ -152,16 +140,16 @@ def check_color():
         time.sleep(4)
         rounds += 1
         level += 1
-        win =+ 1
+        win += 1
         if rounds == 3:        
             end_game()
         else:
             next_game()      
     else:
         errors += 1
-        leds[led_try] = (converter_valor(r), converter_valor(g), converter_valor(b))
+        leds[led_attempt] = (converter_valor(r), converter_valor(g), converter_valor(b))
         leds.write()
-        led_try = led_try - 1
+        led_attempt = led_attempt - 1
         #play_sound(buzzer_a, 500, 0.2)
         #play_sound(buzzer_b, 500, 0.2)
         oled.fill(0)
@@ -169,28 +157,27 @@ def check_color():
         oled.text("Tente de novo.", 0, 10)
         oled.show()
         time.sleep(2)
-        if errors == 20:
+        if errors == attempts:
             end_game()
         
 
             
-
 def next_game():
-    global started_game, led_try
+    global started_game, led_attempt
     oled.fill(0)
     #oled.text("Parabens!", 0, 0)
-    oled.text("Proximo nivel.", 0, 10)
+    oled.text(f"Proximo nivel.", 0, 10)
     oled.show()
     time.sleep(4)
     reset_leds()
     started_game = False
-    led_try = 24
+    led_attempt = 24
     start_game()
     
 
 # Função para finalizar o jogo
 def end_game():
-    global ended_game,led_try
+    global ended_game,led_attempt
     total_time = time.time() - start_time
     oled.fill(0)
     oled.text("Fim de Jogo!", 0, 0)
@@ -206,17 +193,19 @@ def end_game():
     oled.text("a direita!", 0, 20)
     oled.show()
     ended_game = True
-    led_try = 24
-    #errors = 0
-    #rounds = 0
+    
 
 # Apresendado no inicio do jogo
-oled.fill(0)
-oled.text("Jogo vai comecar", 0, 0)
-oled.text("clique botao...", 0, 10)
-oled.text("a esquerda!", 0, 20)
-oled.show()
-time.sleep(0.1)
+def start():
+    reset_leds()
+    oled.fill(0)
+    oled.text("Bem vindo", 0, 0)
+    oled.text("Jogo vai comecar", 0, 10)
+    oled.text("clique botao...", 0, 20)
+    oled.text("a esquerda!", 0, 30)
+    oled.show()
+    time.sleep(0.1)
+start()
 
 # Loop principal
 while True:
@@ -235,8 +224,9 @@ while True:
         started_game = False
         errors = 0
         rounds = 0
+        win = 0
         level = 1
-        led_try = 24
+        led_attempt = 24
         start_game()
         
     
