@@ -49,12 +49,12 @@ As conexões e configurações de hardware são da plataforma bitdoglab que temo
 
 ## Instruções do Jogo "Quiz de Cores"
 
-# Início do Jogo:
+### Início do Jogo:
 
 No display OLED, aparecerá a mensagem: "Bem-vindo ao Quiz de Cores! Clique no botão à esquerda para começar." Este botão é o Botão A no hardware.
 Ao clicar no Botão A, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
 
-# Como Jogar:
+### Como Jogar:
 
 No nível 1, os primeiros cinco LEDs da primeira linha da matriz 5050 RGB (posições 0 a 4) acenderão com uma cor aleatória. O objetivo é recriar essa cor.
 No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme você ajusta os valores de R, G e B com o joystick, a cor será exibida na matriz e o valor atual será mostrado no OLED.
@@ -71,19 +71,19 @@ R: 0, 25, 50, 75 ou 100
 G: 0, 25, 50, 75 ou 100
 B: 0, 25, 50, 75 ou 100
 
-# Controles:
+### Controles:
 
 Use o eixo Y do joystick para alternar entre R, G e B. Use o eixo X para ajustar o valor selecionado.
 Ao pressionar o botão SW do joystick, o valor ajustado será comparado com a cor exibida na matriz de LEDs.
 Se a cor estiver correta, o LED na posição 24 acenderá e o display OLED mostrará "Parabéns, cor correta". Os buzzers A e B tocarão um som de acerto.
 Se a cor estiver incorreta, o display OLED mostrará "Opa, está incorreto, tente de novo". Os buzzers A e B tocarão um som de erro. Você pode tentar novamente até 20 vezes antes do fim do jogo.
 
-# Progresso no Jogo:
+### Progresso no Jogo:
 
 Após acertar, o display OLED mostrará a mensagem: "Próximo nível".
 O processo será repetido para os próximos níveis até completar todos os três.
 
-# Fim do Jogo:
+### Fim do Jogo:
 
 Quando todos os níveis forem concluídos, o display OLED mostrará o número de erros cometidos e o tempo total para completar o jogo.
 Para reiniciar, clique no botão à direita (Botão B). O display OLED exibirá: "Reiniciando o jogo".
