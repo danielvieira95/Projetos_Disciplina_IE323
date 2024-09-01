@@ -9,28 +9,46 @@ Inicie o jogo: Ao conectar o Raspberry Pi Pico e ligar o sistema, o jogo começa
 Objetivo: O objetivo do jogo é ajustar os valores RGB para reproduzir a cor mostrada na matriz de LEDs.
 
 Navegação com o Joystick:
-
 Eixo X (Esquerda/Direita): Use para selecionar entre Red, Green e Blue.
 Eixo Y (Cima/Baixo): Use para aumentar ou diminuir o valor do componente selecionado.
-Confirmar Seleção:
 
+Confirmar Seleção:
 Botão de Seleção (SW no Joystick): Confirma o valor ajustado e verifica se a cor está correta.
 Botão A: Inicia o jogo no principio.
 Botão B: Reinicia o jogo a qualquer momento.
-Feedback Visual e Sonoro:
 
+Feedback Visual e Sonoro:
 LEDs: Exibem a cor gerada aleatoriamente e confirmam a cor ajustada.
 Buzzers: Emitem sons para feedback de acertos e erros.
 Display oled: Mostra as instruções no decorrer do jogo
-
-
 
 Dicas para Jogar
 Observe os valores no display OLED: Ele mostra o valor atual de cada jogada na componente RGB.
 Experimente diferentes combinações: A cada nível, as cores ficam mais desafiadoras.
 
+Intruções de como instalar o jogo
+Passo 1: Instalar o Visual Studio Code(VS Code)
+Baixe e instale o VS Code do site oficial: Visual Studio Code.
+Passo 2: Instalar o Python
+Baixe e instale o Python do site oficial: Python.org. Durante a instalação, marque a opção "Add Python to PATH".
+Passo 3: Instalar a Extensão Python no VS Code
+Abra o VS Code e clique no ícone de extensões (parece um quadrado com um outro quadrado menor dentro) no lado esquerdo.
+Procure por "Python" e instale a extensão oficial que aparecer.
+Passo 4: Instalar a Extensão  MicroPython no Pico no VS Code
+Abra o VS Code e clique no ícone de extensões (parece um quadrado com um outro quadrado menor dentro) no lado esquerdo.
+Procure por "MicroPython" e instale a extensão oficial que aparecer.
+Passo 5: Escrever o Código no VS Code
+No VS Code, crie um novo pasta e dento crie um arquivo chamado main.py.
+Coloca o codigo do repositorio lá
+Passo 6: Enviar o Código para o Pico
+No VS Code, digitando o F1 vai abrir um lista de tarefas e ao clicar clica MicroPico: configure project
+Estara habilitado para enviar codigo na botão run, 
+Passo 7: Ver o Código Funcionando
+Depois de enviar o código, o Pico vai rodar o main.py automaticamente. Se tudo estiver certo, jogo vai começar.
+
 Solução de Problemas
-O jogo não inicia: Verifique as conexões dos componentes e reinicie o sistema.
-O joystick não responde: Certifique-se de que está bem conectado ao Raspberry Pi Pico.
+O jogo não inicia: Verifique as conexões dos componentes e reinicie o sistema e faça o processo de novo.
+Se não tiver a o responde: Certifique-se de que está bem conectado todos conponentes ao Raspberry Pi Pico.
+
 Contato
 Se você tiver dúvidas ou encontrar problemas, entre em contato conosco através do e-mail suporte@bitdoglab.com.
