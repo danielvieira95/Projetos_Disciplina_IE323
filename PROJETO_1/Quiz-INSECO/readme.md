@@ -12,14 +12,14 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 
 ## Componentes Necessários
 - Placa BitDogLab V5
-Ou ainda podes ter o componentes separados como:
-- Raspberry Pi Pico
-- Matriz de LEDs WS2812B (5x5)
-- Display OLED 128x64 (I2C)
-- Joystick analógico KY-023
-- 2 Botões
-- 2 Buzzers passivos
-- Resistores, jumpers e uma placa de prototipagem
+### Ou ainda podes ter o componentes separados como:
+  - Raspberry Pi Pico
+  - Matriz de LEDs WS2812B (5x5)
+  - Display OLED 128x64 (I2C)
+  - Joystick analógico KY-023
+  - 2 Botões
+  - 2 Buzzers passivos
+  - Resistores, jumpers e uma placa de prototipagem
 
 ## Como Executar
 
