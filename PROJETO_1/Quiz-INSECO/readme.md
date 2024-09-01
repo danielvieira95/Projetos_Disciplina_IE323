@@ -87,7 +87,7 @@ O processo será repetido para os próximos níveis até completar todos os trê
 
 Quando todos os níveis forem concluídos, o display OLED mostrará o número de erros cometidos e o tempo total para completar o jogo.
 Para reiniciar, clique no botão à direita (Botão B). O display OLED exibirá: "Reiniciando o jogo".
-Boa sorte e divirta-se!
+
 
 ## Licença
 
