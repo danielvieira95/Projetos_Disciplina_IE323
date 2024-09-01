@@ -59,9 +59,9 @@ Ao clicar no Botão A, o jogo inicia, e o display OLED exibirá: "Atenção, jog
 No nível 1, os primeiros cinco LEDs da primeira linha da matriz 5050 RGB (posições 0 a 4) acenderão com uma cor aleatória. O objetivo é recriar essa cor.
 No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme você ajusta os valores de R, G e B com o joystick, a cor será exibida na matriz e o valor atual será mostrado no OLED.
 - Para o nível 1, há 8 combinações possíveis de cores:
-R: 0 ou 100
-G: 0 ou 100
-B: 0 ou 100
+-- R: 0 ou 100
+-- G: 0 ou 100
+-- B: 0 ou 100
 - Para o nível 2, há 27 combinações possíveis de cores:
 R: 0, 50 ou 100
 G: 0, 50 ou 100
