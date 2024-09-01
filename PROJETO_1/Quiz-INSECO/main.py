@@ -57,11 +57,11 @@ def random_value(option):
     return random.choice(values)
 
 
-# funcao  que converte o 0 á 100 para 0 á 25
+# funcao  que converte o 0 á 100 para 0 á 50
 def converter_valor(valor):
     # Verifica se o valor está dentro do intervalo esperado
     if 0 <= valor <= 100:
-        return (valor * 25) // 100
+        return (valor * 50) // 100
     else:
         raise ValueError("O valor deve estar entre 0 e 100.")
 # Função para tocar som
@@ -131,8 +131,8 @@ def check_color():
     if r == current_color['r'] and g == current_color['g'] and b == current_color['b']:
         leds[led_attempt] = (converter_valor(r), converter_valor(g), converter_valor(b))
         leds.write()
-        #play_sound(buzzer_a, 1000, 0.2)
-        #play_sound(buzzer_b, 1000, 0.2)
+        play_sound(buzzer_a, 1000, 0.2)
+        play_sound(buzzer_b, 1000, 0.2)
         oled.fill(0)
         oled.text("Parabens!", 0, 0)
         oled.text("Cor correta.", 0, 10)
@@ -150,8 +150,8 @@ def check_color():
         leds[led_attempt] = (converter_valor(r), converter_valor(g), converter_valor(b))
         leds.write()
         led_attempt = led_attempt - 1
-        #play_sound(buzzer_a, 500, 0.2)
-        #play_sound(buzzer_b, 500, 0.2)
+        play_sound(buzzer_a, 500, 0.4)
+        play_sound(buzzer_b, 500, 0.4)
         oled.fill(0)
         oled.text("Opa!", 0, 0)
         oled.text("Tente de novo.", 0, 10)
@@ -163,7 +163,7 @@ def check_color():
 
             
 def next_game():
-    global started_game, led_attempt
+    global started_game, led_attempt, attempts
     oled.fill(0)
     #oled.text("Parabens!", 0, 0)
     oled.text(f"Proximo nivel.", 0, 10)
@@ -172,6 +172,7 @@ def next_game():
     reset_leds()
     started_game = False
     led_attempt = 24
+    attempts = 0
     start_game()
     
 
@@ -227,6 +228,7 @@ while True:
         win = 0
         level = 1
         led_attempt = 24
+        attempts = 0
         start_game()
         
     
