@@ -23,38 +23,11 @@ LEDs: Exibem a cor gerada aleatoriamente e confirmam a cor ajustada.
 Buzzers: Emitem sons para feedback de acertos e erros.
 Display oled: Mostra as instruções no decorrer do jogo
 
+
+
 Dicas para Jogar
 Observe os valores no display OLED: Ele mostra o valor atual de cada jogada na componente RGB.
 Experimente diferentes combinações: A cada nível, as cores ficam mais desafiadoras.
-
-Intruções de como instalar o jogo
-
-Passo 1: Instalar o Visual Studio Code(VS Code)
-Baixe e instale o VS Code do site oficial: Visual Studio Code.
-Passo 2: Instalar o Python
-Baixe e instale o Python do site oficial: Python.org. Durante a instalação, marque a opção "Add Python to PATH".
-Passo 3: Instalar a Extensão Python no VS Code
-Abra o VS Code e clique no ícone de extensões (parece um quadrado com um outro quadrado menor dentro) no lado esquerdo.
-Procure por "Python" e instale a extensão oficial que aparecer.
-Passo 4: Instalar a Extensão  MicroPython no Pico no VS Code
-Abra o VS Code e clique no ícone de extensões (parece um quadrado com um outro quadrado menor dentro) no lado esquerdo.
-Procure por "MicroPython" e instale a extensão oficial que aparecer.
-Passo 5: Escrever o Código no VS Code
-No VS Code, crie um novo arquivo chamado main.py.
-Coloca o codigo do repositorio lá
-Passo 6: Enviar o Código para o Pico
-No VS Code, abra o terminal integrado clicando em Terminal > New Terminal.
-No terminal, digite o seguinte comando para instalar uma ferramenta de envio de código:
-bash
-Copiar código
-pip install adafruit-ampy
-Depois, use este comando para enviar o código para o Pico:
-bash
-Copiar código
-ampy --port COMx put main.py
-Nota: Substitua COMx pelo nome da porta serial do Pico no seu computador. No Windows, geralmente será algo como COM3. No Mac/Linux, será algo como /dev/ttyACM0.
-Passo 7: Ver o Código Funcionando
-Depois de enviar o código, o Pico vai rodar o main.py automaticamente. Se tudo estiver certo, o LED embutido no Pico começará a piscar.
 
 Solução de Problemas
 O jogo não inicia: Verifique as conexões dos componentes e reinicie o sistema.
