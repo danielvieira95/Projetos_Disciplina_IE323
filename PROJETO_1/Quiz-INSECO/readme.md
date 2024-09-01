@@ -1,6 +1,6 @@
 # Jogo de Quiz de interpretação e seleção de cores
 
-Este projeto é um jogo interativo de interpretação e seleção de cores, desenvolvido com a plataforma BitDogLab V5, utilizando um microcontrolador Raspberry Pi Pico. O objetivo do jogo é reproduzir a cor mostrada na matriz de LEDs ajustando os valores RGB (vermelho, verde, azul) com um joystick.
+Este projeto é um jogo interativo de interpretação e seleção de cores, desenvolvido com a plataforma BitDogLab V5, utilizando um microcontrolador Raspberry Pi Pico. O objetivo do jogo é tentar reproduzir a cor mostrada na matriz de LEDs ajustando os valores das variáveis RGB (vermelho, verde, azul) com um joystick.
 
 ## Funcionalidades
 
@@ -12,7 +12,8 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 
 ## Componentes Necessários
 - Placa BitDogLab V5
-### Ou ainda podes ter o componentes separados como:
+  
+### Ou ainda pode ter componentes separados como:
   - Raspberry Pi Pico
   - Matriz de LEDs WS2812B (5x5)
   - Display OLED 128x64 (I2C)
@@ -38,13 +39,13 @@ Este projeto é um jogo interativo de interpretação e seleção de cores, dese
 - `README.md`: Este arquivo.
   
 ## Diagramas de conexão de hardware
-As conexões e configurações de hardware são da plataforma bitdoglab que temos aqui:
+As conexões e configurações de hardware são as da plataforma bitdoglab que temos aqui:
 - Um botão, identificado como Botão A, está conectado no GPIO5 da Raspberry Pi Pico. O outro terminal do botão está conectado ao GND da placa. 
 - Outro botão, identificado como Botão B, está conectado no GPIO6 da Raspberry pi pico. O outro terminal do botão também está conectado ao GND da placa.
 - Um buzzer passivo, identificado como Buzzer A, está conectado - através de um transistor - no GPIO21 da Raspberry pi pico.
-- Outro buzzer passivo, identificado como Buzzer B, está conectado no GPIO10 da Raspberry pi pico.
+- Buzzer passivo, identificado como Buzzer B, está conectado no GPIO10 da Raspberry pi pico.
 - O pino in de uma matriz de LEDs 5050 RGB de 5 linhas por 5 colunas tipo WS2812B (Neopixel) está conectada ao GPIO7. 
-- Um joystick analógico tipo KY023 tem a saída VRy conectada ao GPIO26 e a saída VRx ao GPIO27. Seu botão SW está conectada ao GPIO22, o outro terminal do botão está no GND. 
+- Um Joystick analógico tipo KY023 tem a saída VRy conectada ao GPIO26 e a saída VRx ao GPIO27. Seu botão SW está conectada ao GPIO22, o outro terminal do botão está no GND. 
 - Um display OLED 128 colunas por  x 64 linhas de 0,96 polegadas com comunicação I2C, tem seu pino SDA conectado ao GPIO14 e o pino SCL com o GPIO15, estes pinos são do canal I2C0. Esse display (normalmente configurado no endereço 0x3C).
 
 ## Instruções do Jogo 
@@ -56,7 +57,7 @@ Ao clicar no Botão A, o jogo inicia, e o display OLED exibirá: "Atenção, jog
 
 ### Como Jogar:
 
-No nível 1, os primeiros cinco LEDs da primeira linha da matriz 5050 RGB (posições 0 a 4) acenderão com uma cor aleatória. O objetivo é recriar essa cor.
+No nível 1, os primeiros cinco LEDs da primeira linha da matriz 5050 RGB (posições 0 a 4) acenderão com uma cor aleatória. O objetivo é recriar essa cor ajustando manualemnte as variáveis R G B.
 No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme você ajusta os valores de R, G e B com o joystick, a cor será exibida na matriz e o valor atual será mostrado no OLED.
 - Para o nível 1, há 8 combinações possíveis de cores:
 * R: 0 ou 100
