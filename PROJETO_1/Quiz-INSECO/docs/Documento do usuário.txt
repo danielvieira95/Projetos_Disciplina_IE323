@@ -1,4 +1,4 @@
-Documentação do Usuário - Jogo de Quiz de Cores
+Documentação do Usuário - Jogo de Quiz interpretação e seleção de cores
 
 Introdução
 Bem-vindo ao Jogo de Quiz de Cores! Este guia irá ajudá-lo a começar a jogar, explicando como usar o joystick, os botões e os LEDs para reproduzir as cores exibidas.
