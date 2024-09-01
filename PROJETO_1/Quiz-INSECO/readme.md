@@ -1,6 +1,6 @@
 # Jogo de Quiz de Cores
 
-Este projeto é um jogo interativo de interpretação e seleção de cores, desenvolvido para a plataforma BitDogLab V5, utilizando um microcontrolador Raspberry Pi Pico. O objetivo do jogo é reproduzir a cor mostrada na matriz de LEDs ajustando os valores RGB (vermelho, verde, azul) com um joystick.
+Este projeto é um jogo interativo de interpretação e seleção de cores, desenvolvido com a plataforma BitDogLab V5, utilizando um microcontrolador Raspberry Pi Pico. O objetivo do jogo é reproduzir a cor mostrada na matriz de LEDs ajustando os valores RGB (vermelho, verde, azul) com um joystick.
 
 ## Funcionalidades
 
@@ -38,14 +38,14 @@ Ou ainda podes ter o componentes separados como:
 - `README.md`: Este arquivo.
   
 ## Diagramas de conexão de hardware
-Usando Conexões e Configurações de Hardware existente na plataforma bitdoglab são este conexão que temos:
-Um botão, identificado como Botão A, está conectado no GPIO5 da Raspberry Pi Pico. O outro terminal do botão está conectado ao GND da placa. 
-Outro botão, identificado como Botão B, está conectado no GPIO6 da Raspberry pi pico. O outro terminal do botão também está conectado ao GND da placa.
-Um buzzer passivo, identificado como Buzzer A, está conectado - através de um transistor - no GPIO21 da Raspberry pi pico.
-Outro buzzer passivo, identificado como Buzzer B, está conectado no GPIO10 da Raspberry pi pico.
-O pino in de uma matriz de LEDs 5050 RGB de 5 linhas por 5 colunas tipo WS2812B (Neopixel) está conectada ao GPIO7. 
-Um joystick analógico tipo KY023 tem a saída VRy conectada ao GPIO26 e a saída VRx ao GPIO27. Seu botão SW está conectada ao GPIO22, o outro terminal do botão está no GND. 
-Um display OLED 128 colunas por  x 64 linhas de 0,96 polegadas com comunicação I2C, tem seu pino SDA conectado ao GPIO14 e o pino SCL com o GPIO15, estes pinos são do canal I2C0. Esse display (normalmente configurado no endereço 0x3C).
+As conexões e configurações de hardware são da plataforma bitdoglab que temos aqui:
+- Um botão, identificado como Botão A, está conectado no GPIO5 da Raspberry Pi Pico. O outro terminal do botão está conectado ao GND da placa. 
+- Outro botão, identificado como Botão B, está conectado no GPIO6 da Raspberry pi pico. O outro terminal do botão também está conectado ao GND da placa.
+- Um buzzer passivo, identificado como Buzzer A, está conectado - através de um transistor - no GPIO21 da Raspberry pi pico.
+- Outro buzzer passivo, identificado como Buzzer B, está conectado no GPIO10 da Raspberry pi pico.
+- O pino in de uma matriz de LEDs 5050 RGB de 5 linhas por 5 colunas tipo WS2812B (Neopixel) está conectada ao GPIO7. 
+- Um joystick analógico tipo KY023 tem a saída VRy conectada ao GPIO26 e a saída VRx ao GPIO27. Seu botão SW está conectada ao GPIO22, o outro terminal do botão está no GND. 
+- Um display OLED 128 colunas por  x 64 linhas de 0,96 polegadas com comunicação I2C, tem seu pino SDA conectado ao GPIO14 e o pino SCL com o GPIO15, estes pinos são do canal I2C0. Esse display (normalmente configurado no endereço 0x3C).
 
 ## Licença
 
