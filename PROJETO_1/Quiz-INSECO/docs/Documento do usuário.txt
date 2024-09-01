@@ -9,13 +9,13 @@ Inicie o jogo: Ao conectar o Raspberry Pi Pico e ligar o sistema, o jogo começa
 Objetivo: O objetivo do jogo é ajustar os valores RGB para reproduzir a cor mostrada na matriz de LEDs.
 
 Navegação com o Joystick:
-Eixo X (Esquerda/Direita): Use para selecionar entre Red, Green e Blue.
-Eixo Y (Cima/Baixo): Use para aumentar ou diminuir o valor do componente selecionado.
+Eixo Y (Cima/Baixo): Use para selecionar entre Red, Green e Blue.
+Eixo X (Esquerda/Direita): Use para aumentar ou diminuir o valor do componente selecionado.
 
 Confirmar Seleção:
-Botão de Seleção (SW no Joystick): Confirma o valor ajustado e verifica se a cor está correta.
-Botão A: Inicia o jogo no principio.
-Botão B: Reinicia o jogo a qualquer momento.
+Botão de Seleção (botão do meio no Joystick): Confirma o valor ajustado e verifica se a cor está correta.
+Botão da esquerda: Inicia o jogo no principio.
+Botão da direita: Reinicia o jogo a qualquer momento.
 
 Feedback Visual e Sonoro:
 LEDs: Exibem a cor gerada aleatoriamente e confirmam a cor ajustada.
@@ -40,14 +40,14 @@ Procure por "MicroPython" e instale a extensão oficial que aparecer.
 Passo 5: Escrever o Código no VS Code
 No VS Code, crie um novo pasta e dento crie um arquivo chamado main.py.
 Coloca o codigo do repositorio lá
-Passo 6: Enviar o Código para o Pico
+Passo 6: Enviar o Código para o plataforma Bitdoglab
 No VS Code, digitando o F1 vai abrir um lista de tarefas e ao clicar clica MicroPico: configure project
 Estara habilitado para enviar codigo na botão run, 
 Passo 7: Ver o Código Funcionando
 Depois de enviar o código, o Pico vai rodar o main.py automaticamente. Se tudo estiver certo, jogo vai começar.
 
 Solução de Problemas
-O jogo não inicia: Verifique as conexões dos componentes e reinicie o sistema e faça o processo de novo.
+O jogo não inicia: Verifique as conexões dos componentes e reinicie o sistema e faça o processo de novamente.
 Se não tiver a o responde: Certifique-se de que está bem conectado todos conponentes ao Raspberry Pi Pico.
 
 Contato
