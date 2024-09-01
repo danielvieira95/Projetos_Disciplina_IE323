@@ -94,6 +94,139 @@ O processo será repetido para os próximos níveis até completar todos os trê
 Quando todos os níveis forem concluídos, o display OLED mostrará o número de erros cometidos e o tempo total para completar o jogo.
 Para reiniciar, clique no botão à direita (Botão B). O display OLED exibirá: "Reiniciando o jogo".
 
+### Folha de Respostas e curiosidade. 
+
+Como no nivel 3 há 5 possíveis valores para cada componente (R, G, B), o número total de combinações será: 5x5x5 = 125 Cores. Sendo elas: 
+
+(0, 0, 0) - Preto
+(0, 0, 25) - Azul Muito Escuro
+(0, 0, 50) - Azul Escuro
+(0, 0, 75) - Azul Marinho
+(0, 0, 100) - Azul
+(0, 25, 0) - Verde Muito Escuro
+(0, 25, 25) - Turquesa Escuro
+(0, 25, 50) - Ciano Escuro
+(0, 25, 75) - Ciano Médio
+(0, 25, 100) - Ciano
+(0, 50, 0) - Verde Escuro
+(0, 50, 25) - Turquesa Médio
+(0, 50, 50) - Turquesa Claro
+(0, 50, 75) - Ciano Claro
+(0, 50, 100) - Ciano Vivo
+(0, 75, 0) - Verde Médio Escuro
+(0, 75, 25) - Verde Mar
+(0, 75, 50) - Turquesa Vivo
+(0, 75, 75) - Verde Água
+(0, 75, 100) - Ciano Brilhante
+(0, 100, 0) - Verde
+(0, 100, 25) - Verde Limão Escuro
+(0, 100, 50) - Verde Limão Médio
+(0, 100, 75) - Verde Limão Claro
+(0, 100, 100) - Ciano Puro
+(25, 0, 0) - Vermelho Muito Escuro
+(25, 0, 25) - Magenta Escuro
+(25, 0, 50) - Roxo Escuro
+(25, 0, 75) - Roxo Médio
+(25, 0, 100) - Roxo
+(25, 25, 0) - Oliva Escura
+(25, 25, 25) - Cinza Escuro
+(25, 25, 50) - Cinza Azulado Escuro
+(25, 25, 75) - Cinza Azulado Médio
+(25, 25, 100) - Cinza Azulado Claro
+(25, 50, 0) - Verde Oliva
+(25, 50, 25) - Verde Musgo Escuro
+(25, 50, 50) - Verde Musgo
+(25, 50, 75) - Turquesa Pastel
+(25, 50, 100) - Ciano Pastel
+(25, 75, 0) - Verde Escuro Médio
+(25, 75, 25) - Verde Escuro
+(25, 75, 50) - Verde Musgo Claro
+(25, 75, 75) - Verde Água Médio
+(25, 75, 100) - Turquesa Brilhante
+(25, 100, 0) - Verde Limão Escuro
+(25, 100, 25) - Verde Limão
+(25, 100, 50) - Verde Neon
+(25, 100, 75) - Verde Neon Claro
+(25, 100, 100) - Turquesa Neon
+(50, 0, 0) - Vermelho Escuro
+(50, 0, 25) - Magenta Médio
+(50, 0, 50) - Magenta Escuro
+(50, 0, 75) - Magenta
+(50, 0, 100) - Rosa Escuro
+(50, 25, 0) - Laranja Escuro
+(50, 25, 25) - Marrom
+(50, 25, 50) - Roxo Claro
+(50, 25, 75) - Rosa Médio Escuro
+(50, 25, 100) - Rosa Médio
+(50, 50, 0) - Amarelo Escuro
+(50, 50, 25) - Marrom Claro
+(50, 50, 50) - Cinza Médio
+(50, 50, 75) - Cinza Azul
+(50, 50, 100) - Azul Claro
+(50, 75, 0) - Verde Limão Médio
+(50, 75, 25) - Verde Neon Médio
+(50, 75, 50) - Verde Claro
+(50, 75, 75) - Verde Água Claro
+(50, 75, 100) - Turquesa Claro
+(50, 100, 0) - Verde Vivo
+(50, 100, 25) - Verde Brilhante
+(50, 100, 50) - Verde Claro Brilhante
+(50, 100, 75) - Verde Limão Brilhante
+(50, 100, 100) - Turquesa Vivo
+(75, 0, 0) - Vermelho Médio
+(75, 0, 25) - Vermelho Rosado Escuro
+(75, 0, 50) - Rosa Escuro
+(75, 0, 75) - Magenta Claro
+(75, 0, 100) - Magenta Brilhante
+(75, 25, 0) - Marrom Vermelho
+(75, 25, 25) - Marrom Claro Escuro
+(75, 25, 50) - Roxo Médio
+(75, 25, 75) - Roxo Claro
+(75, 25, 100) - Rosa Claro Escuro
+(75, 50, 0) - Laranja Médio
+(75, 50, 25) - Laranja Rosado
+(75, 50, 50) - Rosa Médio
+(75, 50, 75) - Rosa
+(75, 50, 100) - Rosa Claro
+(75, 75, 0) - Amarelo
+(75, 75, 25) - Amarelo Claro Escuro
+(75, 75, 50) - Verde Oliva Claro
+(75, 75, 75) - Cinza Claro
+(75, 75, 100) - Azul Pastel
+(75, 100, 0) - Verde Limão Vivo
+(75, 100, 25) - Verde Limão Brilhante
+(75, 100, 50) - Verde Neon Claro
+(75, 100, 75) - Verde Neon Brilhante
+(75, 100, 100) - Turquesa Brilhante
+(100, 0, 0) - Vermelho
+(100, 0, 25) - Vermelho Rosado
+(100, 0, 50) - Rosa
+(100, 0, 75) - Rosa Claro
+(100, 0, 100) - Magenta Claro
+(100, 25, 0) - Laranja
+(100, 25, 25) - Laranja Claro Escuro
+(100, 25, 50) - Rosa Médio
+(100, 25, 75) - Rosa Claro Médio
+(100, 25, 100) - Rosa Claro Brilhante
+(100, 50, 0) - Laranja Brilhante
+(100, 50, 25) - Laranja Pastel
+(100, 50, 50) - Rosa Pastel
+(100, 50, 75) - Rosa Brilhante
+(100, 50, 100) - Magenta
+(100, 75, 0) - Amarelo Claro
+(100, 75, 25) - Amarelo Limão
+(100, 75, 50) - Verde Claro Pastel
+(100, 75, 75) - Verde Limão Claro
+(100, 75, 100) - Turquesa Suave
+(100, 100, 0) - Amarelo Brilhante
+(100, 100, 25) - Verde Limão Brilhante
+(100, 100, 50) - Verde Brilhante
+(100, 100, 75) - Verde Limão Claro Brilhante
+(100, 100, 100) - Branco
+
+Esses nomes são descrições gerais das cores possíveis.
+
+
 
 ## Licença
 
