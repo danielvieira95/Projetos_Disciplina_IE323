@@ -150,7 +150,6 @@ def callback_delay(timer):
 # Callback utilizada no modo timer, irá mudar o estado da matriz de LEDs e acrescentar 1 na contagem de iterações da rotina
 def callback_timer(timer):
     global contador_loop, estado_led
-    # estado_led = alterna_led(estado_led)
     anima_seta()
     contador_loop += 1
 
@@ -201,8 +200,7 @@ while True:
             atualiza_display(snoopy_dormindo, contador_botao_pressionado)
             anima_seta()            
             utime.sleep(3)
-            temporizador.init(mode=Timer.ONE_SHOT, period=1500, callback=callback_delay) # A callback irá alterar o estado da flag do timer ao atingir o tempo
-            # estado_led = alterna_led(estado_led)            
+            temporizador.init(mode=Timer.ONE_SHOT, period=3000, callback=callback_delay) # A callback irá alterar o estado da flag do timer ao atingir o tempo
             while(timer_flag == 0):
                 contador_botao_pressionado, estado_botao_a = verifica_botao_a(botao_a, contador_botao_pressionado, estado_botao_a)
                 contador_botao_pressionado, estado_botao_b = verifica_botao_b(botao_b, contador_botao_pressionado, estado_botao_b)
