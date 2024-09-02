@@ -39,7 +39,7 @@ Wallif Campos alves de Souza, RA: 290031
 
 ## Estrutura do Projeto
 
-- `raiz`: Código-fonte do projeto.
+- `raiz`: main.py Código-fonte do projeto.
 - `docs/`: Documentação técnica, documentação do usuário e um folha da combinação de cores
 - `README.md`: Este arquivo.
   
@@ -58,12 +58,12 @@ As conexões e configurações de hardware são as da plataforma bitdoglab que t
 ### Início do Jogo:
 
 No display OLED, aparecerá a mensagem: "Bem-vindo ao Quiz de Cores! Clique no botão à esquerda para começar." Este botão é o Botão A no hardware.
-Ao clicar no Botão A, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
+Ao clicar da esquerda, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
 
 ### Como Jogar:
 
 No nível 1, os primeiros cinco LEDs da primeira linha da matriz 5050 RGB (posições 0 a 4) acenderão com uma cor aleatória. O objetivo é recriar essa cor ajustando manualemnte as variáveis R G B.
-No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme você ajusta os valores de R, G e B com o joystick, a cor será exibida na matriz e o valor atual será mostrado no OLED.
+No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme você ajusta os valores de R, G e B com o joystick, ao verificar com botão do meio joystick a cor será exibida na matriz e o valor atual será mostrado no OLED.
 - Para o nível 1, há 8 combinações possíveis de cores:
 * R: 0 ou 100
 * G: 0 ou 100
@@ -82,7 +82,7 @@ No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme v
 Use o eixo Y do joystick para alternar entre R, G e B. Use o eixo X para ajustar o valor selecionado.
 Ao pressionar o botão SW do joystick, o valor ajustado será comparado com a cor exibida na matriz de LEDs.
 Se a cor estiver correta, o LED na posição 24 acenderá e o display OLED mostrará "Parabéns, cor correta". Os buzzers A e B tocarão um som de acerto.
-Se a cor estiver incorreta, o display OLED mostrará "Opa, está incorreto, tente de novo". Os buzzers A e B tocarão um som de erro. Você pode tentar novamente até 20 vezes antes do fim do jogo.
+Se a cor estiver incorreta, o display OLED mostrará "Opa, está incorreto, tente de novo". Os buzzers A e B tocarão um som de erro. Você pode tentar novamente até 20 vezes antes do fim do jogo decrescendo os leds na matriz de led RGB.
 
 ### Progresso no Jogo:
 
