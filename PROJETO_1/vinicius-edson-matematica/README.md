@@ -26,8 +26,8 @@ Para mais informações, é possível acessar o relatório do projeto disponibil
 1. Instale a IDE Thonny a partir de [https://thonny.org/](https://thonny.org/).
 2. Conecte a placa BitDogLab ao computador através de um cabo micro-USB.
 3. Siga as instruções em [Introdução prática a BitDogLab](https://escola-4-ponto-zero.notion.site/Cap-tulo-02-Usando-o-IDE-Thonny-para-desenvolvimento-d5dce52947244cd6a64da4ba77831c7a) para certificar-se que a BitDogLab está sendo reconhecida no Thonny.
-4. Baixe os códigos `projeto01.py` e pergunta_resposta.py neste repositório.
-5. No Thonny, acesse `Arquivo > Abrir` e localize os arquivos `projeto01.py` e pergunta_resposta(por exemplo, na pasta Downloads).
+4. Baixe os códigos `main.py` e pergunta_resposta.py neste repositório.
+5. No Thonny, acesse `Arquivo > Abrir` e localize os arquivos `main.py` e pergunta_resposta.py(por exemplo, na pasta Downloads).
 6. Pressione o botão "play" (triângulo verde) para executar o programa na BitDogLab temporariamente.
 7. Se a execução estiver correta e você quiser salvar o código na BitDogLab para executá-lo posteriormente, então:
 8. se você desejar preservar o programa atual de sua BitDogLab, antes de prosseguir, salve o arquivo main.py existente em uma pasta de seu computador.
