@@ -58,7 +58,7 @@ As conexões e configurações de hardware são as da plataforma bitdoglab que t
 ### Início do Jogo:
 
 No display OLED, aparecerá a mensagem: "Bem-vindo ao Quiz de Cores! Clique no botão à esquerda para começar." Este botão é o Botão A no hardware.
-Ao clicar da esquerda, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
+Ao clicar botão da esquerda, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
 
 ### Como Jogar:
 
