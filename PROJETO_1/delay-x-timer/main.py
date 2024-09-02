@@ -94,6 +94,31 @@ def atualiza_display(snoopy, contador_botao_pressionado):
         oled.blit(fbuf_snoopy, 22, 18) # Imagem vai aparecer em x = 22 e y = 18
     oled.show()
 
+
+
+countador_ciclos = 0
+# Função que anima a seta na matriz de leds.
+def anima_seta():
+    global led_state, countador_ciclos   
+    
+    if (countador_ciclos<5):
+            
+        countador_ciclos += 1  
+        
+        desliga_leds()
+        
+        if countador_ciclos==1: leds_on=[2]
+        elif countador_ciclos==2: leds_on=[1, 2, 3, 7]
+        elif countador_ciclos==3: leds_on=[0, 1, 2, 3, 4, 6, 7, 8, 12]
+        elif countador_ciclos==4: leds_on=[1, 2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 17]
+        elif countador_ciclos==5: leds_on = [1, 2, 3, 6, 7, 8, 10, 11, 12, 13, 14, 16, 17, 18, 22]    
+        for i in range(25):
+            if(i in leds_on):
+                matriz_leds[i] = (5, 0, 0)
+        matriz_leds.write()
+    
+
+
 # Função irá ligar todos os LEDs da matriz e atualizar a variável que indica o estado do led para 1 (matriz acesa)
 def liga_led(estado_led):
     for i in range(25):
@@ -103,12 +128,11 @@ def liga_led(estado_led):
     return estado_led
 
 # Função irá desligar todos os LEDs da matriz e atualizar a variável que indica o estado do led para 0 (matriz apagada)
-def desliga_led(estado_led):
+def desliga_leds():
     for i in range(25):
         matriz_leds[i] = (0, 0, 0)
     matriz_leds.write()
-    estado_led = 0
-    return estado_led
+    
 
 # Verifica o atual estado da matriz de LEDs e inverte esse estado
 def alterna_led(estado_led):
@@ -126,11 +150,14 @@ def callback_delay(timer):
 # Callback utilizada no modo timer, irá mudar o estado da matriz de LEDs e acrescentar 1 na contagem de iterações da rotina
 def callback_timer(timer):
     global contador_loop, estado_led
-    estado_led = alterna_led(estado_led)
+    # estado_led = alterna_led(estado_led)
+    anima_seta()
     contador_loop += 1
 
 # Apresenta a tela de início no display oLED pedindo para escolher um modo e entra em uma rotina de verifição do valor do joystick
 def seleciona_modo(modo_selecionado):
+    global countador_ciclos
+    
     # Tela de início
     oled.fill(0)
     oled.text("Escolha um modo:", 0, 10)
@@ -153,6 +180,8 @@ def seleciona_modo(modo_selecionado):
             oled.text("Modo timer", 0, 30)
             oled.show()
             utime.sleep(3)
+        desliga_leds()  # Garante que toda vez que inicia uma rotina, a matriz de LEDs está apagada 
+        countador_ciclos = 0
     return modo_selecionado
 
 while True:
@@ -162,8 +191,7 @@ while True:
 # Como isso interrompe o funcionamento do código, não é possível registrar que o botão foi pressionado. Após o fim do delay, a matriz de LEDs apagada,
 # é iniciado um timer de 3 segundos e o código entra em um laço de repetição que irá verificar os botões e atualizar o display, com imagem do Snoopy acordando,
 # de maneira contínua. O laço só tem fim quando o timer atinge 3 segundos e atualiza a flag do timer e a rotina finalmente é reiniciada.
-    if (modo_selecionado == MODO_DELAY):
-        estado_led = desliga_led(estado_led) # Garante que toda vez que inicia uma rotina, a matriz de LEDs está apagada
+    if (modo_selecionado == MODO_DELAY):          
         contador_loop = 0 # Garante que contador de iterações da rotina inicia em estado inicial
         for contador_loop in range(5):
             contador_botao_pressionado, estado_botao_a = verifica_botao_a(botao_a, contador_botao_pressionado, estado_botao_a)
@@ -171,10 +199,10 @@ while True:
             estado_botao_a = 0
             estado_botao_b = 0
             atualiza_display(snoopy_dormindo, contador_botao_pressionado)
-            estado_led = alterna_led(estado_led)
+            anima_seta()            
             utime.sleep(3)
-            temporizador.init(mode=Timer.ONE_SHOT, period=3000, callback=callback_delay) # A callback irá alterar o estado da flag do timer ao atingir o tempo
-            estado_led = alterna_led(estado_led)
+            temporizador.init(mode=Timer.ONE_SHOT, period=1500, callback=callback_delay) # A callback irá alterar o estado da flag do timer ao atingir o tempo
+            # estado_led = alterna_led(estado_led)            
             while(timer_flag == 0):
                 contador_botao_pressionado, estado_botao_a = verifica_botao_a(botao_a, contador_botao_pressionado, estado_botao_a)
                 contador_botao_pressionado, estado_botao_b = verifica_botao_b(botao_b, contador_botao_pressionado, estado_botao_b)
@@ -187,11 +215,10 @@ while True:
 # Caso o modo selecionado seja o timer, um temporizador periódico de 3 segundos é iniciado. Quando é atingido, ele acrescenta na contagem de iterações e altera
 # o estado da matriz de LEDs. Enquanto isso, os botões são verificados constantemente e o display com contador e o Snoopy atento é atualizado.
 # Após 10 iterações, a rotina é finalizada e retorna à tela inicial de seleção de modo.
-    elif (modo_selecionado == MODO_TIMER):
-        estado_led = desliga_led(estado_led)
+    elif (modo_selecionado == MODO_TIMER):        
         temporizador.init(period = 3000, mode = Timer.PERIODIC, callback = callback_timer)
         contador_loop = 0
-        while(contador_loop < 10):
+        while(contador_loop < 6):
             contador_botao_pressionado, estado_botao_a = verifica_botao_a(botao_a, contador_botao_pressionado, estado_botao_a)
             contador_botao_pressionado, estado_botao_b = verifica_botao_b(botao_b, contador_botao_pressionado, estado_botao_b)
             atualiza_display(snoopy_atento, contador_botao_pressionado)
