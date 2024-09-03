@@ -31,6 +31,6 @@ Para mais informações, é possível acessar o relatório do projeto disponibil
 6. Pressione o botão "play" (triângulo verde) para executar o programa na BitDogLab temporariamente.
 7. Se a execução estiver correta e você quiser salvar o código na BitDogLab para executá-lo posteriormente, então:
 8. se você desejar preservar o programa atual de sua BitDogLab, antes de prosseguir, salve o arquivo main.py existente em uma pasta de seu computador.
-9. Agora, com a guia que contém `projeto01.py` ativa no Thonny vá em `Arquivo > Salvar como`.
+9. Agora, com a guia que contém `main.py` ativa no Thonny vá em `Arquivo > Salvar como`.
 10. Quando a caixa de seleção aparecer com "Raspberry Pi e Computador", selecione Raspberry Pi, clique sobre `main.py` para sobrescrever.
 11. Pronto, você pode desconectar a BitDogLab e o programa pode ser executado (ou reiniciado) apertando o botão próximo à bateria.
