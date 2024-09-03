@@ -61,7 +61,7 @@ def random_value(option):
 def converter_valor(valor):
     # Verifica se o valor está dentro do intervalo esperado
     if 0 <= valor <= 100:
-        return (valor * 50) // 100
+        return (valor * 10) // 100
     else:
         raise ValueError("O valor deve estar entre 0 e 100.")
 # Função para tocar som
@@ -82,7 +82,6 @@ def update_oled(r, g, b):
     oled.text(f"G:{g} ", 0, 40) #if g != current_color['g'] else oled.text(f"G:{g} <", 0, 40)
     oled.text(f"B:{b} ", 0, 50) #if b != current_color['b'] else oled.text(f"B:{b} <", 0, 50)
     oled.show()
-
 # Função para acender LED com cor aleatória
 #Ajustar o código para não repetir a mesma cor num mesmo jogo
 def light_random_led():
@@ -152,29 +151,43 @@ def check_color():
         led_attempt = led_attempt - 1
         play_sound(buzzer_a, 500, 0.4)
         play_sound(buzzer_b, 500, 0.4)
-        oled.fill(0)
-        oled.text("Opa!", 0, 0)
-        oled.text("Tente de novo.", 0, 10)
-        oled.show()
-        time.sleep(2)
         if errors == attempts:
-            end_game()
+            game_over()
+        else:
+            oled.fill(0)
+            oled.text("Opa!", 0, 0)
+            oled.text("Tente de novo.", 0, 10)
+            oled.show()
+            time.sleep(1)
+        
         
 
-            
+# função para proximo nivel             
 def next_game():
-    global started_game, led_attempt, attempts
+    global started_game, led_attempt, errors
     oled.fill(0)
     #oled.text("Parabens!", 0, 0)
     oled.text(f"Proximo nivel.", 0, 10)
+    oled.show()
+    time.sleep(3)
+    reset_leds()
+    started_game = False
+    led_attempt = 24
+    errors = 0
+    start_game()
+
+# função para game over 
+def game_over():
+    global started_game, led_attempt, attempts
+    oled.fill(0)
+    #oled.text("Parabens!", 0, 0)
+    oled.text(f"Game over.", 0, 10)
     oled.show()
     time.sleep(4)
     reset_leds()
     started_game = False
     led_attempt = 24
-    attempts = 0
-    start_game()
-    
+    end_game()
 
 # Função para finalizar o jogo
 def end_game():
@@ -228,7 +241,6 @@ while True:
         win = 0
         level = 1
         led_attempt = 24
-        attempts = 0
         start_game()
         
     
