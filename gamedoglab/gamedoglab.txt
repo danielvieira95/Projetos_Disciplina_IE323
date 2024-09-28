@@ -1,0 +1,3 @@
+Documento: https://docs.google.com/document/d/1nTL23bfIwjvDTMeosS9UEN86lJFEk8bMUZQBC24lREY/edit?usp=sharing
+Slides: https://docs.google.com/presentation/d/11hZor2IwUVo9biylQuwhPUUMOP3TXE6K9wgnMzjPDDU/edit?usp=sharing
+GitHub: https://github.com/danielvieira95/Projetos_Disciplina_IE323/tree/main/PROJETO_1/GameDogLab

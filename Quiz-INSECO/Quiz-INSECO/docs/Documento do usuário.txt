@@ -1,0 +1,54 @@
+Documentação do Usuário - Jogo de Quiz interpretação e seleção de cores
+
+Introdução
+Bem-vindo ao Jogo de Quiz de Cores! Este guia irá ajudá-lo a começar a jogar, explicando como usar o joystick, os botões e os LEDs para reproduzir as cores exibidas.
+
+Como Jogar
+Inicie o jogo: Ao conectar o Raspberry Pi Pico e ligar o sistema, o jogo começará automaticamente.
+
+Objetivo: O objetivo do jogo é ajustar os valores RGB para reproduzir a cor mostrada na matriz de LEDs.
+
+Navegação com o Joystick:
+Eixo Y (Cima/Baixo): Use para selecionar entre Red, Green e Blue.
+Eixo X (Esquerda/Direita): Use para incrementar ou decrementar os valores do componente selecionado.
+
+Confirmar Seleção:
+Botão de Seleção (botão do meio no Joystick): Confirma o valor ajustado e verifica se a cor está correta.
+Botão da esquerda (A): Inicia o jogo no principio.
+Botão da direita (B): Reinicia o jogo a qualquer momento.
+
+Feedback Visual e Sonoro:
+LEDs: Exibem a cor gerada aleatoriamente e confirmam a cor ajustada.
+Buzzers: Emitem sons para feedback de acertos e erros.
+Display oled: Mostra as instruções no decorrer do jogo
+
+Dicas para Jogar
+Observe os valores no display OLED: Ele mostra o valor atual de cada jogada na componente RGB.
+Experimente diferentes combinações: A cada nível, as cores ficam mais desafiadoras.
+
+Intruções de como instalar o jogo
+Passo 1: Instalar o Visual Studio Code (VS Code)
+Baixe e instale o VS Code a partir do site oficial: Visual Studio Code.
+Passo 2: Instale o Python no VS Code
+Baixe e instale o Python do site oficial: Python.org. Durante a instalação, marque a opção "Add Python to PATH".
+Passo 3: Instalar a Extensão Python no VS Code
+Abra o VS Code e clique no ícone de extensões (parece um quadrado com um outro quadrado menor dentro) no lado esquerdo.
+Procure por "Python" e instale a extensão oficial que aparecer.
+Passo 4: Instalar a Extensão  MicroPython no Pico no VS Code
+Abra o VS Code e clique no ícone de extensões (parece um quadrado com um outro quadrado menor dentro) no lado esquerdo.
+Procure por "MicroPython" e instale a extensão oficial que aparecer.
+Passo 5: Copiar o Código pretendido no VS Code e salvá-lo na placa BitDogLab.
+No VS Code, crie uma nova pasta e dento crie um arquivo chamado main.py. (Caso não haja)
+Copie o codigo do repositorio pretendido lá, e salva. Caso já tenha um código salvo, apenas substitua. 
+Passo 6: Enviar o Código para o plataforma Bitdoglab
+No VS Code, digitando o F1 vai abrir um lista de tarefas e ao clicar clica MicroPico: configure project
+Estara habilitado para enviar codigo no botão run, 
+Passo 7: Ver o Código Funcionando
+Depois de enviar o código, o Pico vai rodar o main.py automaticamente. Se tudo estiver certo, jogo vai começar.
+
+Solução de Problemas
+O jogo não inicia: Verifique as conexões dos componentes e reinicie o sistema e faça os processos novamente.
+Se não tiver respondendo: Certifique-se de que todos os componentes estão bem conectado ao Raspberry Pi Pico.
+
+Contato
+Se você tiver dúvidas ou encontrar problemas, entre em contato conosco através do e-mail suporte@bitdoglab.com.
