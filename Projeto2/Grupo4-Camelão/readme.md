@@ -54,16 +54,16 @@ Wallif Campos Alves de Souza, RA: 290031
 
 ##  Instruções de como instalar o jogo
 Passo 1: Instalar a IDE Thonny 
-Baixe e instale o IDE Thonny a partir do site oficial.
+Baixe e instale o IDE Thonny a partir do site oficial. 
 
 Passo 2: Configurar IDE thonny com o MicroPython ( Raspberry PI Pico)
 Abra o IDE Thonny e clique no ícone de aonde tem configure interpreter (localizado no lado direito abaixo).
 Seleciona MicroPython ( Raspberry PI Pico)
 Seleciona a porta do microcontrolador
 Copie o código do repositório pretendido e salva com na opção que vai aparecer  Raspberry com nome main.py e faça o mesmo no código da biblioteca, mas como nome de TCS34725.py. Caso já tenha um código salvo, apenas substitua. 
-Passo 6: Enviar o Código para o plataforma Bitdoglab
-No IDE Thonny, digitando o F5 para enviar e correr com programa no bitloglab ou clica no botão run.
-Passo 7: Ver o Código Funcionando
+Passo 3: Enviar o Código para o plataforma Bitdoglab
+No IDE Thonny, digitando o F5 para enviar e correr com programa no bitloglab ou clica no botão run. 
+Passo 4: Ver o Código Funcionando, 
 Após enviar o código, o Pico vai rodar o main.py automaticamente. Se tudo estiver certo, programa vai começar.
 
 
