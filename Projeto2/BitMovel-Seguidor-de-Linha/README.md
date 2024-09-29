@@ -14,12 +14,12 @@ O objetivo do projeto 2 da disciplina é usar a placa BitDogLab conectada a disp
 
 O BitMóvel Seguidor de Linha é um robô diferencial com 2 rodas motrizes e uma esfera de apoio na frente, formando um tripé ou triciclo. O robô usa sensores reflexivos infravermelhos TCRT5000 para detectar uma linha escura no chão. O chassis e suporte dos sensores é fabricado por impressão 3D em PLA. Além da função seguidor de linha, os botões A e B são programados para comandar o robô para ativo ou desativado, respectivamente. O robô inicia no modo desativado, então quando o botão A é pressionado o robô está em modo de movimento ativo para frente seguindo a linha embaixo do chassis. Quando o botão B é pressionado o robô fica parado até que se pressione o botão A novamente.
 Este projeto usa:
-1 Placa BitDogLab
-2 motores (código motor)
-1 Driver ponte H (código modelo)
-4 sensores TCRT5000
-1 Chassis impresso conforme arquivo (filename.stl)
-1 Suporte de sensores conforme arquivo (filename.stl)
+- 1 Placa BitDogLab
+- 2 motores DC 3-6V com Caixa de Redução e Eixo Duplo + Roda 68mm
+- 1 Driver ponte H modelo HW-166
+- 4 sensores TCRT5000
+- 1 Chassis impresso conforme arquivo (filename.stl)
+- 1 Suporte de sensores conforme arquivo (filename.stl)
 <br><br>
 O fluxograma abaixo ilustra o funcionamento do programa:
 
