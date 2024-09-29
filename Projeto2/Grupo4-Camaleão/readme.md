@@ -41,7 +41,7 @@ Wallif Campos Alves de Souza, RA: 290031
 ## Estrutura do Projeto
 
 - `raiz`: main.py Código-fonte do projeto.
-- `raiz`: Documentação técnica
+- `raiz`: Manual do usuário
 - `raiz`: folha de cores RGB primarias
 - `README.md`: Este arquivo.
   
