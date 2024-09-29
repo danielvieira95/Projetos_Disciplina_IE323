@@ -27,7 +27,7 @@ O fluxograma abaixo ilustra o funcionamento do programa:
 <img src="./fluxograma.png" alt="Description of the image" width="500"/>
 </div>
 
-Para mais informações, é possível acessar o relatório do projeto disponibilizado no [link](https://docs.google.com/document/d/1t0RudSiQLCfQGe18FgQLw0GA5CTjqmQ4/edit?usp=sharing&ouid=113991507111012118869&rtpof=true&sd=true). 
+Para mais informações, é possível acessar o relatório do projeto disponibilizado no [link](https://docs.google.com/document/d/1Ikr_fQ6nfiymL5znAn5tAetg0D3t27z1).
 
 ## Como instalar?
 
