@@ -1,5 +1,6 @@
 # Batalha Naval BitDogLab
 ![imagem](batalhaNaval.png)
+
 O projeto consiste de um material de ensino para desenvolvimento de jogos usando a BitDogLab, Wi-Fi e a interface BitDogLib. Esse material consiste da própia placa BitDogLab, uma biblioteca MicroPython para abstrair conceitos complexos de desenvolvimento (BitDogLib) e um tutorial, o qual ensina o básico da construção da placa, como programar e uma atividade, na qual ensina programar um jogo. O objetivo desse projeto é que ao final do material de ensino o aluno aprimore sua lógica de programação, além de despertar o interesse na área da computação.
 
 O tutorial não foi desenvolvido ainda.
