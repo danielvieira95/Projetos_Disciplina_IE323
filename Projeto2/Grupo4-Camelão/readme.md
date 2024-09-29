@@ -72,18 +72,29 @@ Após enviar o código, o Pico vai rodar o main.py automaticamente. Se tudo esti
 
 ## Explicação do Código
 Importação das Bibliotecas : O código utiliza bibliotecas como machine para controle do hardware, neopixel para controlar a matriz de LEDs, tcs34725 para o sensor de núcleo e ssd1306 para o display OLED.
+
 Configuração do OLED e Sensor de Cor : O OLED está configurado no canal I2C1, enquanto o sensor de cor utiliza o canal I2C0. O sensor de cor é inicializado com tempo de integração e ganho definido.
+
 Funções Principais :
+
 ler_sensor_cor: Lê os valores RGB e a clareza (intensidade de luz) capturados pelo sensor.
-captura_cor(r, g, b, c): Processa e identifica a cor
-ajustar_matriz_leds: Ajusta a matriz de LEDs para reproduzir a cor bloqueada.
+
+captura_cor(r, g, b, c): Processa e identifica a cor.
+
+ajustar_matriz_leds: Ajusta a matriz de LEDs para reproduzir a cor detectada.
+
 exibir_cor_oled: Exibe os valores RGB no display OLED.
+
 loop_principal: Loop contínuo que realiza a leitura dos valores, normaliza os dados e os exibe tanto na matriz de LEDs quanto no OLED.
+
 Dicionario de cores predefinidas do RGB primários : para garantir que a cor exibida seja precisa, os valores RGB são ajustadas com base na clareza capturada pelo sensor (analisando os valores de R, G e B pelo valor de C).
+
 Loop Infinito : O programa funciona em um loop infinito, capturando e exibindo as cores continuamente.
 
 ## Referência Bibliográfica
+
 https://www.youtube.com/watch?v=GF4DfSiGFNE
+
 https://www.afixgraf.com.br/blog/o-que-significa-rgb/
 
 
