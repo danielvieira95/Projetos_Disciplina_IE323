@@ -159,7 +159,7 @@ def mover_esquerda():
     direcao_motor_direito_2.value(0)
     PWM_direito.duty_u16(int(duty/2))
 
-# Função que para ambosos motores. Primeiro são setadas velocidades igual a zero e nenhum sentido de giro, para então desativar a ponte H 
+# Função que para ambos os motores. Primeiro são setadas velocidades igual a zero e nenhum sentido de giro, para então desativar a ponte H 
 def parar_motores():
     direcao_motor_esquerdo_1.value(0)
     direcao_motor_esquerdo_2.value(0)
@@ -173,7 +173,7 @@ def parar_motores():
 leds_rodas("parar")
 parar_motores()
 
-# Loop para receber os comandos da UART (que são os comandos transmitidos pelo celucar) e controlar os motores
+# Loop para receber os comandos da UART (que são os comandos transmitidos pelo celular) e controlar os motores
 while True:
     if uart.any() > 0:                   # Caso tenha algum dado na UART, pode ler o comando que chegou
         comando = uart.readline().decode('utf-8').strip() # Decodifica o comando que chegou
