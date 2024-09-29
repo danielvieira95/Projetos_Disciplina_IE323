@@ -35,15 +35,14 @@ Wallif Campos Alves de Souza, RA: 290031
 
 2. Usa a conexão apropriada dos componentes segundo diagrama de conexão hardware.
 
-3. Carregue o código: Use a IDE do VScode para carregar o código main.py no Raspberry Pi Pico.
+3. Segue as instruções de como instalar o jogo.
 
-4. Inicie o jogo: Assim que o código estiver rodando, siga as instruções no display OLED para iniciar e jogar.
 
 ## Estrutura do Projeto
 
 - `raiz`: main.py Código-fonte do projeto.
 - `raiz`: Documentação técnica
-- `raiz`: folha da combinação de cores
+- `raiz`: folha de cores RGB primarias
 - `README.md`: Este arquivo.
   
 ## Diagramas de conexão de hardware
