@@ -36,7 +36,9 @@ Patric Moreto, RA: 223083
 
 ## Instruções de uso do aplicativo + robô
 
-- **Instalação do aplicativo:**
+- **Instalação do aplicativo:** o aplicativo feito no MIT App Inventor é para celulares Android. Sua instalação é simples, basta ler o QR Code abaixo e o usuário será direcionado para o download do arquivo em formato APK. Normalmente, após o download for concluído, aparecerá a opção de abrir o arquivo com a opção do instalador do celular. Caso não, procure pelo arquivo *bluetooth_car.apk* em sua pasta de Downloads, clique nele e escolha o instalador.
+
+![QRCode_Android](./Img/QRCode_Android.png)
 
 - **Aplicativo:**
 
