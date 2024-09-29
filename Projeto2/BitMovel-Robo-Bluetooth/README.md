@@ -28,11 +28,11 @@ Patric Moreto, RA: 223083
 
 ### Software na BitDogLab
 
-![Fluxograma do software na BitDogLab](./Img/)
+![Fluxograma do software na BitDogLab](./Img/Fluxograma_BitDogLab.png)
 
 ### Aplicativo de celular
 
-![Fluxograma do software no aplicativo de celular](./Img/)
+![Fluxograma do software no aplicativo de celular](./Img/Fluxograma_AppInventor.png)
 
 ## Instruções de uso do aplicativo + robô
 
