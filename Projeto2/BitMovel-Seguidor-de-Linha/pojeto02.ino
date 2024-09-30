@@ -23,7 +23,6 @@ int I = 0, P = 0, D = 0, PID = 0; // Parcelas integrativas, proporcional e deriv
 int velesq = 0, veldir = 0; // Atualização de velocidade dos motores
 int erro = 0, erro_anterior = 0; // erro de controle
 
-const int tempoativo = 2000;  // Tempo ativo em milissegundos
 int sensor[4] = {0,0,0,0}; // Definição de lista para sensores
 
 void setup() {
