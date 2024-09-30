@@ -30,7 +30,7 @@ Este projeto usa:
 O fluxograma abaixo ilustra o funcionamento do programa:
 
 <div align="center">
-<img src="./fluxograma.pdf" alt="Description of the image" width="500"/>
+<img src="./fluxograma.png" alt="Description of the image" width="500"/>
 </div>
 
 Para mais informações, é possível acessar o relatório do projeto disponibilizado no [link](https://docs.google.com/document/d/1Ikr_fQ6nfiymL5znAn5tAetg0D3t27z1).
