@@ -17,28 +17,30 @@ Este projeto usa:
 - 1 Placa BitDogLab
 - 2 motores DC 3-6V com Caixa de Redução e Eixo Duplo + Roda 68mm
 - 1 Driver ponte H modelo HW-166
+- 1 bateria 2s1p 7,6V 550mAh
 - 4 sensores TCRT5000
-- 1 Chassis impresso conforme arquivo (filename.stl)
-- 1 Suporte de sensores conforme arquivo (filename.stl)
+- 1 Chassis impresso conforme arquivo (desenhos_mecanicos_3d/chassis_com_detalhes.STL)
+- 1 Suporte de sensores conforme arquivo (desenhos_mecanicos_3d/suporte_sensores_avulsos.STL)
+- 1 esfera para apoio
+- 10 jumpers macho-fêmea
+- 4 jumpers fêmea-fêmea
+- fita isolante
+- fita dupla-face
 <br><br>
 O fluxograma abaixo ilustra o funcionamento do programa:
 
 <div align="center">
-<img src="./fluxograma.png" alt="Description of the image" width="500"/>
+<img src="./fluxograma.pdf" alt="Description of the image" width="500"/>
 </div>
 
 Para mais informações, é possível acessar o relatório do projeto disponibilizado no [link](https://docs.google.com/document/d/1Ikr_fQ6nfiymL5znAn5tAetg0D3t27z1).
 
 ## Como instalar?
 
-1. Instale a IDE Thonny a partir de [https://thonny.org/](https://thonny.org/).
+1. Instale a IDE Arduino.
 2. Conecte a placa BitDogLab ao computador através de um cabo micro-USB.
-3. Siga as instruções em [Introdução prática a BitDogLab](https://escola-4-ponto-zero.notion.site/Cap-tulo-02-Usando-o-IDE-Thonny-para-desenvolvimento-d5dce52947244cd6a64da4ba77831c7a) para certificar-se que a BitDogLab está sendo reconhecida no Thonny.
-4. Baixe os códigos `main.py` e `pergunta_resposta.py` neste repositório.
-5. No Thonny, acesse `Arquivo > Abrir` e localize os arquivos `main.py` e `pergunta_resposta.py` (por exemplo, na pasta Downloads).
-6. Pressione o botão "play" (triângulo verde) para executar o programa na BitDogLab temporariamente.
-7. Se a execução estiver correta e você quiser salvar o código na BitDogLab para executá-lo posteriormente, então:
-   - se você desejar preservar o programa atual de sua BitDogLab, antes de prosseguir, salve o arquivo main.py existente em uma pasta de seu computador;
-   - agora, com a guia que contém `main.py` ativa no Thonny vá em `Arquivo > Salvar como`;
-   - quando a caixa de seleção aparecer com "Raspberry Pi e Computador", selecione Raspberry Pi, clique sobre `main.py` para sobrescrever.
-8. Pronto, você pode desconectar a BitDogLab e o programa pode ser executado (ou reiniciado) apertando o botão próximo à bateria.
+3. Baixe os códigos `projeto02.ino` neste repositório.
+4. Na IDE Arduino, acesse `Arquivo > Abrir` e localize o arquivo `projeto02.ino` (por exemplo, na pasta Downloads).
+5. Pressione o botão "play" (triângulo verde) para executar o programa na BitDogLab temporariamente.
+6. Se a execução estiver correta e você quiser salvar o código na BitDogLab para executá-lo posteriormente, então salve-o na BitDogLab.
+7. Pronto, você pode desconectar a BitDogLab e o programa pode ser executado (ou reiniciado) apertando o botão próximo à bateria.
