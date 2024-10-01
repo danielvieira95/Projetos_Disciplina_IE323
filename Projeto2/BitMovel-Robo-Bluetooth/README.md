@@ -16,6 +16,7 @@ Patric Moreto, RA: 223083
 **On-board:**
 - Buzzer
 - Matriz de LEDs 5 x 5
+- Periférico para comunicação UART/I2C (canal 0)
 
 **Off-board:**
 - Celular
