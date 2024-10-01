@@ -32,15 +32,29 @@ O fluxograma abaixo ilustra o funcionamento do programa:
 <div align="center">
 <img src="./fluxograma.png" alt="Description of the image" width="500"/>
 </div>
-
+  
+Além do robô físico, foi desenvolvido um robô virtual no simulador de robótica CoppeliaSim.  
+  
 Para mais informações, é possível acessar o relatório do projeto disponibilizado no [link](https://docs.google.com/document/d/1Ikr_fQ6nfiymL5znAn5tAetg0D3t27z1).
 
-## Como instalar?
+## Como instalar e operar o robô físico?
 
 1. Instale a IDE Arduino.
 2. Conecte a placa BitDogLab ao computador através de um cabo micro-USB.
-3. Baixe os códigos `projeto02.ino` neste repositório.
-4. Na IDE Arduino, acesse `Arquivo > Abrir` e localize o arquivo `projeto02.ino` (por exemplo, na pasta Downloads).
-5. Pressione o botão "play" (triângulo verde) para executar o programa na BitDogLab temporariamente.
-6. Se a execução estiver correta e você quiser salvar o código na BitDogLab para executá-lo posteriormente, então salve-o na BitDogLab.
-7. Pronto, você pode desconectar a BitDogLab e o programa pode ser executado (ou reiniciado) apertando o botão próximo à bateria.
+3. Para utilizar a Raspberry Pi Pico, é necessário instalar instale o gerenciador de porta Raspberry Pi Pico RP2040 
+4. Baixe os códigos `projeto02.ino` neste repositório.
+5. Na IDE Arduino, acesse `Arquivo > Abrir` e localize o arquivo `projeto02.ino` (por exemplo, na pasta Downloads).
+6. Pressione o botão de verificar o código para certificar-se que não há erro, caso esteja tudo certo:
+7. Pressione o botão "carregar" (setinha) para carregar o código para a placa, esta operação salva e executa o código em uma única etapa.
+8. Pronto, você pode desconectar a BitDogLab e o programa pode ser executado (ou reiniciado) apertando o botão próximo à bateria.
+
+## Como criar o robô virtual no simulador?
+1. Instale o CoppeliaSim através do [link](https://www.coppeliarobotics.com/)
+2. Siga os vídeos tutoriais 1 a 6 (total 40min) nos links do youtube abaixo:
+   1. Parte 1/6 [link](https://youtu.be/lg1HlHTUYXg)
+   2. Parte 2/6 [link](https://youtu.be/nZWR1QXElUE)
+   3. Parte 3/6 [link](https://youtu.be/mu0NJf-Q52E)
+   4. Parte 4/6 [link](https://youtu.be/frFhMvI1_uE)
+   5. Parte 5/6 [link](https://youtu.be/FozVGTvBlqc)
+   6. Parte 6/6 [link](https://youtu.be/4l1JGo2Js-c)
+
