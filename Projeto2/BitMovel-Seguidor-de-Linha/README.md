@@ -49,12 +49,12 @@ Para mais informações, é possível acessar o relatório do projeto disponibil
 8. Pronto, você pode desconectar a BitDogLab e o programa pode ser executado (ou reiniciado) apertando o botão próximo à bateria.
 
 ## Como criar o robô virtual no simulador?
-1. Instale o CoppeliaSim através do [link](https://www.coppeliarobotics.com/)
+1. Instale o CoppeliaSim através do [coppeliarobotics.com](https://www.coppeliarobotics.com/)
 2. Siga os vídeos tutoriais 1 a 6 (total 40min) nos links do youtube abaixo:
-   1. Parte 1/6 [link](https://youtu.be/lg1HlHTUYXg)
-   2. Parte 2/6 [link](https://youtu.be/nZWR1QXElUE)
-   3. Parte 3/6 [link](https://youtu.be/mu0NJf-Q52E)
-   4. Parte 4/6 [link](https://youtu.be/frFhMvI1_uE)
-   5. Parte 5/6 [link](https://youtu.be/FozVGTvBlqc)
-   6. Parte 6/6 [link](https://youtu.be/4l1JGo2Js-c)
+   1. Parte 1/6 [youtu.be/lg1HlHTUYXg](https://youtu.be/lg1HlHTUYXg)
+   2. Parte 2/6 [youtu.be/nZWR1QXElUE](https://youtu.be/nZWR1QXElUE)
+   3. Parte 3/6 [youtu.be/mu0NJf-Q52E](https://youtu.be/mu0NJf-Q52E)
+   4. Parte 4/6 [youtu.be/frFhMvI1_uE](https://youtu.be/frFhMvI1_uE)
+   5. Parte 5/6 [youtu.be/FozVGTvBlqc](https://youtu.be/FozVGTvBlqc)
+   6. Parte 6/6 [youtu.be/4l1JGo2Js-c](https://youtu.be/4l1JGo2Js-c)
 
