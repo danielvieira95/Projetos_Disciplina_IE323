@@ -1,0 +1,6 @@
+"Reference","Value","Datasheet","Footprint","Qty","DNP"
+"D1","LED ","~","LED_THT:LED_D3.0mm","1",""
+"D2","LED","~","LED_THT:LED_D3.0mm","1",""
+"J1,J2,J3,J4,J5","Conn_01x04","~","Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical","5",""
+"R1","165R","~","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal","1",""
+"R2","250R","~","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal","1",""
