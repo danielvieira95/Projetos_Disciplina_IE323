@@ -34,10 +34,12 @@ for i in range(25):
     matriz_leds[i] = (0, 0, 0)
 matriz_leds.write()
 
-# Configura o pino XX para emitir pulso pelo sensor ultrassônico HC-SR04 e o pino YY para receber o pulso
+# Configura o pino 2 para emitir pulso pelo sensor ultrassônico HC-SR04 e o pino 3 para receber o pulso
 envia_pulso_ultrassom = Pin(2, Pin.OUT) # trigger
 recebe_pulso_ultrassom = Pin(3, Pin.IN) # echo
 
+# Define a duração do pulso do ultrassom (em microssegundos), a velocidade do som utilizada para cálculo da distância (em metros por segundo) e uma variavel
+# que indica quando há um objeto próximo sendo detectado pelo sensor ultrassônico
 DURACAO_PULSO_US = 10
 VELOCIDADE_SOM = 343
 objeto_proximo = 0
@@ -179,29 +181,29 @@ def parar_motores():
 
 # Função que verifica a distância que o sensor ultrassônico está de obstáculos
 def verifica_distancia():
-    envia_pulso_ultrassom.low()
+    envia_pulso_ultrassom.low()         # Garante que o pino que envia pulso está em 0 (baixa), para que não esteja ocorrendo um pulso
     utime.sleep_us(5)
-    envia_pulso_ultrassom.high()
-    utime.sleep_us(DURACAO_PULSO_US)
-    envia_pulso_ultrassom.low()
-    tempo_inicial = utime.ticks_us()
-    tempo_sinal_baixo = tempo_inicial
+    envia_pulso_ultrassom.high()        # Inicia o pulso colocando o pino em 1 (alta)
+    utime.sleep_us(DURACAO_PULSO_US)    # O pino permanece em alta pelo tempo pré-determinado pela macro DURACAO_PULSO_US
+    envia_pulso_ultrassom.low()         # Encerra o pulso
+    tempo_inicial = utime.ticks_us()    # Registra o tempo inicial para fazer comparações posteriormente
+    tempo_sinal_baixo = tempo_inicial   # Inicializa a variável que vai registrar o tempo em que o pulso detectado é inicializado
 
-    while recebe_pulso_ultrassom.value() == 0:
+    while recebe_pulso_ultrassom.value() == 0: # Enquanto o pulso não é detectado, salva o tempo atual
         tempo_sinal_baixo = utime.ticks_us()
-        if (tempo_sinal_baixo > (tempo_inicial + 23324)):
+        if (tempo_sinal_baixo > (tempo_inicial + 23324)): # Caso o pulso passe desse valor de tempo (23324 microssegundos) além do inicial, está além do limite do sensor e, portanto pode ser ignorado
             break
 
     tempo_inicial = utime.ticks_us()
-    tempo_sinal_alto = tempo_inicial
+    tempo_sinal_alto = tempo_inicial    # Inicializa a variável que vai registrar o tempo em que o pulso detectado é finalizado
 
-    while recebe_pulso_ultrassom.value() == 1:
+    while recebe_pulso_ultrassom.value() == 1: # Enquanto o pulso é detectado, salva o tempo atual
         tempo_sinal_alto = utime.ticks_us()
         if (tempo_sinal_alto > (tempo_inicial + 23324)):
             break
 
-    diferenca_tempo = tempo_sinal_alto - tempo_sinal_baixo
-    distancia_cm = (diferenca_tempo * VELOCIDADE_SOM) / (2 * 10000)
+    duracao_pulso = tempo_sinal_alto - tempo_sinal_baixo # Calcula a duração do pulso fazendo o tempo que o pulso termina menos o tempo que o pulso inicia
+    distancia_cm = (duracao_pulso * VELOCIDADE_SOM) / (2 * 10000) # Equação da distância é duração vezes velocidade do som divido por 2 (pois o pulso vai e volta, percorrendo o dobro da distância). A divisão por 10000 arruma as unidades utilizadas
     print("distancia [cm]:", distancia_cm)
     return(distancia_cm)
 
@@ -211,12 +213,12 @@ parar_motores()
 
 # Loop para receber os comandos da UART (que são os comandos transmitidos pelo celucar) e controlar os motores
 while True:
-    if uart.any() > 0:                   # Caso tenha algum dado na UART, pode ler o comando que chegou
-        comando = uart.readline().decode('utf-8').strip() # Decodifica o comando que chegou
+    if uart.any() > 0:                                     # Caso tenha algum dado na UART, pode ler o comando que chegou
+        comando = uart.readline().decode('utf-8').strip()  # Decodifica o comando que chegou
         
         print(comando)
 
-        if ("a" in comando) and (objeto_proximo == 0):
+        if ("a" in comando) and (objeto_proximo == 0):     # Caso não haja objeto próximo, pode se mover para frente
             leds_rodas("avancar")
             mover_avancar()
         elif ("z" in comando) and (objeto_proximo == 0):
@@ -248,6 +250,7 @@ while True:
         elif "B" in comando:             # Desliga a buzina, indicando que o botão foi solto
             alto_falante.duty_u16(0)
 
+    # Verifica se há algum obstáculo próximo. Caso tenha, a variável que indica proximidade é setada (colocada como verdadeira), e isso impede movimentação frontal
     distancia = verifica_distancia()
     if ((distancia < 20) and (objeto_proximo == 0)):
         objeto_proximo = 1
