@@ -16,7 +16,7 @@
 #include "soc/rtc_cntl_reg.h"  // Biblioteca para desabilitar detector de queda de tensão, caso dê problemas (brownout problems)
 #include "esp_http_server.h"
 
-// Replace with your network credentials
+// Substitua pelo nome desejado para o access point
 const char* ssid     = "BitMovel-WiFi";
 
 #define PART_BOUNDARY "123456789000000000000987654321"
@@ -67,7 +67,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
   while(true){
     fb = esp_camera_fb_get();
     if (!fb) {
-      Serial.println("Camera capture failed");
+      Serial.println("Captura da câmera falhou");
       res = ESP_FAIL;
     } else {
       if(fb->width > 400){
@@ -76,7 +76,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
           esp_camera_fb_return(fb);
           fb = NULL;
           if(!jpeg_converted){
-            Serial.println("JPEG compression failed");
+            Serial.println("Compressão JPEG falhou");
             res = ESP_FAIL;
           }
         } else {
@@ -167,7 +167,7 @@ void setup() {
   // Inicializa a câmera OV2640
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
-    Serial.printf("Camera init failed with error 0x%x", err);
+    Serial.printf("Inicialização da câmera falhou com erro 0x%x", err);
     return;
   }
   // Cria um ponto de acesso utilizando o identificador definido
