@@ -46,6 +46,7 @@ Caso deseja-se realizar as ligações da ESP32-CAM com o conversor USB / TTL sem
 | GND       | GND       |
 | U0T       | RX (RXC)  |
 | U0R       | TX (TXD)  |
+
 <br/><br/>
 
 ![Placa de circuito impresso](./Img/esp32cam-usbttl.png)
