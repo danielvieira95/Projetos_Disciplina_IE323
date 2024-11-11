@@ -6,7 +6,7 @@ O trabalho, como projeto educacional, busca apresentar para estudantes uma ideia
 
 Os alunos irão interagir com o robô através de um **aplicativo de celular** que controla a movimentação do agente robótico por meio do movimento do aparelho. Para isso, é utilizado o **acelerômetro**, um sensor interno que serve como fonte de dados da movimentação que está sendo realizada. Ao identificar a direção de deslocamento através da análise desses dados, é enviado um comando à BitDogLab via **Bluetooth**, que será interpretado e executado pela placa. Ainda, o aplicativo apresenta, em tempo real, imagens que estão sendo enviadas por **wi-fi** para um servidor web por uma câmera disposta no agente robótico. Caso o robô esteja muito próximo de um obstáculo, o sensor ultrassônico irá detectar e impedir a possível colisão.
 
-TODO: sensor de temperatura
+TODO: sensor de temperatura e servos motor
 
 ### Autores
 
@@ -30,6 +30,25 @@ Patric Moreto, RA: 223083
 - Módulo conversor USB / TTL
 - Sensor ultrassônico HC-SR04
 - Sensor de temperatura AHT10
+- Placa de circuito impresso
+
+## Placa de circuito impresso
+
+Foi criada uma PCI que possibilita o carregamento de programas na ESP32-CAM sem a necessidade de remover o módulo do BitMóvel, sendo apenas necessário inserir um jumper e realimentar a placa. O projeto da placa foi feito no Kicad está disponível na pasta PCI, sendo possível visualizar sua prévia abaixo.
+
+![Placa de circuito impresso](./Img/PCI.png)
+
+Caso deseja-se realizar as ligações da ESP32-CAM com o conversor USB / TTL sem utilizar a PCI, as ligações e o esquemático a seguir devem ser seguidos.
+
+| ESP32-CAM | USB / TTL |
+|-----------|-----------|
+| 5V        | 5V        |
+| GND       | GND       |
+| U0T       | RX (RXC)  |
+| U0R       | TX (TXD)  |
+<br/><br/>
+
+![Placa de circuito impresso](./Img/esp32cam-usbttl.png)
 
 ## Fluxogramas
 
