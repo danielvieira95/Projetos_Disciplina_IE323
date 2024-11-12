@@ -1,5 +1,120 @@
-from machine import Pin, PWM, UART
+from machine import Pin, PWM, UART, SoftI2C
 import neopixel, utime
+
+
+# Classe para o sensor AHT10
+class AHT10:
+    def __init__(self, i2c):
+        self.i2c = i2c
+        self.address = 0x38  # Endereço padrão do AHT10
+        
+        # Inicializar o sensor
+        try:
+            self.i2c.writeto(self.address, bytes([0xE1, 0x08, 0x00]))
+            utime.sleep_ms(10)
+        except Exception as e:
+            print("Erro ao inicializar AHT10:", e)
+
+    def medir(self):
+        try:
+            # Comando de medição
+            self.i2c.writeto(self.address, bytes([0xAC, 0x33, 0x00]))
+            utime.sleep_ms(80)
+            
+            # Ler 6 bytes de dados
+            dados = self.i2c.readfrom(self.address, 6)
+            
+            # Extrair umidade e temperatura
+            umidade = ((dados[1] << 16) | (dados[2] << 8) | dados[3]) >> 4
+            temperatura = ((dados[3] & 0x0F) << 16 | (dados[4] << 8) | dados[5])
+            
+            # Conversão para valores reais
+            umidade_real = umidade * 100.0 / 0x100000
+            temperatura_real = temperatura * 200.0 / 0x100000 - 50
+            
+            return temperatura_real, umidade_real
+        
+        except Exception as e:
+            print("Erro ao ler AHT10:", e)
+            return None, None
+
+
+#Classe para implementação do driver PCA9685 para controle dos servo motores
+class PCA9685:
+    def __init__(self, i2c, address=0x40):
+        self.i2c = i2c
+        self.address = address
+        self.MODO1 = 0x00
+        self.PRESCALE = 0xFE
+        self.LED0_ON_L = 0x06
+        
+        # Inicialização padrão
+        self.reset()
+        self.set_pwm_freq(50)  # Frequência para servomotores
+
+    def reset(self):
+        self.i2c.writeto_mem(self.address, self.MODO1, bytes([0x00]))
+
+    def set_pwm_freq(self, freq_hz):
+        prescale = int((25000000 / (4096 * freq_hz)) - 1)
+        old_mode = self.i2c.readfrom_mem(self.address, self.MODO1, 1)[0]
+        new_mode = (old_mode & 0x7F) | 0x10
+        
+        self.i2c.writeto_mem(self.address, self.MODO1, bytes([new_mode]))
+        self.i2c.writeto_mem(self.address, self.PRESCALE, bytes([prescale]))
+        self.i2c.writeto_mem(self.address, self.MODO1, bytes([old_mode]))
+        
+        utime.sleep_ms(5)
+        self.i2c.writeto_mem(self.address, self.MODO1, bytes([old_mode | 0xA0]))
+
+    def set_pwm(self, channel, on, off):
+        base_reg = self.LED0_ON_L + 4 * channel
+        
+        self.i2c.writeto_mem(self.address, base_reg, bytes([on & 0xFF]))
+        self.i2c.writeto_mem(self.address, base_reg + 1, bytes([on >> 8]))
+        self.i2c.writeto_mem(self.address, base_reg + 2, bytes([off & 0xFF]))
+        self.i2c.writeto_mem(self.address, base_reg + 3, bytes([off >> 8]))
+
+class ServoController:
+    def __init__(self, i2c):
+        self.pca = PCA9685(i2c)
+        
+        # Configurações de pulso para servomotores
+        self.SERVO_MIN = 150   # Pulso mínimo (0 graus)
+        self.SERVO_MAX = 600   # Pulso máximo (180 graus)
+        self.SERVO_CENTER = 375  # Pulso central (90 graus)
+
+    def map_angle_to_pulse(self, angle):
+        """
+        Mapeia ângulo para valor de pulso
+        0° -> SERVO_MIN
+        90° -> SERVO_CENTER
+        180° -> SERVO_MAX
+        """
+        # Limitar ângulo entre 0 e 180
+        angle = max(0, min(180, angle))
+        
+        # Interpolação linear
+        pulse = int(self.SERVO_MIN + 
+                    (self.SERVO_MAX - self.SERVO_MIN) * 
+                    angle / 180)
+        return pulse
+
+    def mover_servo(self, canal, angulo):
+        """
+        Move o servo para um ângulo específico
+        
+        :param canal: Canal do PCA9685 (0-15)
+        :param angulo: Ângulo de 0 a 180 graus
+        """
+        pulse = self.map_angle_to_pulse(angulo)
+        self.pca.set_pwm(canal, 0, pulse)
+        
+
+# Configuração I2C
+i2c = SoftI2C(scl=Pin(3), sda=Pin(2), freq=400000)
+
+
 
 # Configuração da matriz de LEDs
 matriz_leds = neopixel.NeoPixel(Pin(7), 25)
@@ -34,9 +149,10 @@ for i in range(25):
     matriz_leds[i] = (0, 0, 0)
 matriz_leds.write()
 
-# Configura o pino 2 para emitir pulso pelo sensor ultrassônico HC-SR04 e o pino 3 para receber o pulso
-envia_pulso_ultrassom = Pin(2, Pin.OUT) # trigger
-recebe_pulso_ultrassom = Pin(3, Pin.IN) # echo
+# Configura o pino 17 para emitir pulso pelo sensor ultrassônico HC-SR04 e o pino 28 para receber o pulso
+envia_pulso_ultrassom = Pin(17, Pin.OUT) # trigger
+recebe_pulso_ultrassom = Pin(28, Pin.IN) # echo
+
 
 # Define a duração do pulso do ultrassom (em microssegundos), a velocidade do som utilizada para cálculo da distância (em metros por segundo) e uma variavel
 # que indica quando há um objeto próximo sendo detectado pelo sensor ultrassônico
@@ -181,46 +297,91 @@ def parar_motores():
 
 # Função que verifica a distância que o sensor ultrassônico está de obstáculos
 def verifica_distancia():
-    envia_pulso_ultrassom.low()         # Garante que o pino que envia pulso está em 0 (baixa), para que não esteja ocorrendo um pulso
+        
+    envia_pulso_ultrassom.low()
     utime.sleep_us(5)
-    envia_pulso_ultrassom.high()        # Inicia o pulso colocando o pino em 1 (alta)
-    utime.sleep_us(DURACAO_PULSO_US)    # O pino permanece em alta pelo tempo pré-determinado pela macro DURACAO_PULSO_US
-    envia_pulso_ultrassom.low()         # Encerra o pulso
-    tempo_inicial = utime.ticks_us()    # Registra o tempo inicial para fazer comparações posteriormente
-    tempo_sinal_baixo = tempo_inicial   # Inicializa a variável que vai registrar o tempo em que o pulso detectado é inicializado
-
-    while recebe_pulso_ultrassom.value() == 0: # Enquanto o pulso não é detectado, salva o tempo atual
-        tempo_sinal_baixo = utime.ticks_us()
-        if (tempo_sinal_baixo > (tempo_inicial + 23324)): # Caso o pulso passe desse valor de tempo (23324 microssegundos) além do inicial, está além do limite do sensor e, portanto pode ser ignorado
-            break
-
+    envia_pulso_ultrassom.high()
+    utime.sleep_us(DURACAO_PULSO_US)
+    envia_pulso_ultrassom.low()
+    
     tempo_inicial = utime.ticks_us()
-    tempo_sinal_alto = tempo_inicial    # Inicializa a variável que vai registrar o tempo em que o pulso detectado é finalizado
+    tempo_sinal_baixo = tempo_inicial
 
-    while recebe_pulso_ultrassom.value() == 1: # Enquanto o pulso é detectado, salva o tempo atual
+    while recebe_pulso_ultrassom.value() == 0:
+        tempo_sinal_baixo = utime.ticks_us()
+        if (tempo_sinal_baixo - tempo_inicial > 23324):            
+            return None
+
+    tempo_inicial_eco = utime.ticks_us()
+    tempo_sinal_alto = tempo_inicial_eco
+
+    while recebe_pulso_ultrassom.value() == 1:
         tempo_sinal_alto = utime.ticks_us()
-        if (tempo_sinal_alto > (tempo_inicial + 23324)):
-            break
+        if (tempo_sinal_alto - tempo_inicial_eco > 23324):            
+            return None
 
-    duracao_pulso = tempo_sinal_alto - tempo_sinal_baixo # Calcula a duração do pulso fazendo o tempo que o pulso termina menos o tempo que o pulso inicia
-    distancia_cm = (duracao_pulso * VELOCIDADE_SOM) / (2 * 10000) # Equação da distância é duração vezes velocidade do som divido por 2 (pois o pulso vai e volta, percorrendo o dobro da distância). A divisão por 10000 arruma as unidades utilizadas
-    print("distancia [cm]:", distancia_cm)
-    return(distancia_cm)
+    duracao_pulso = tempo_sinal_alto - tempo_sinal_baixo
+    distancia_cm = (duracao_pulso * VELOCIDADE_SOM) / (2 * 10000)
+    
+            
+    return distancia_cm
+    
 
 # Inicia com os motores parados
 leds_rodas("parar")
 parar_motores()
+
+
+# Cria um objeto para o sensor AHT10
+sensor_aht10 = AHT10(i2c)
+
+# Cria controlador de servos
+servo_controller = ServoController(i2c)
+
+angulo_h=60
+angulo_v=150
+
+# Função para controlar servomotores
+def controlar_servomotores(comando):
+    
+    global angulo_h, angulo_v
+    min_angulo_h=0
+    max_angulo_h=120
+    min_angulo_v=90
+    max_angulo_v=180
+    
+    if servo_controller is None:
+        return
+    
+    # Servo 1 no canal 0
+    if "s1+" in comando:
+        angulo_h=min(angulo_h+1, max_angulo_h) #incremente ángulo horizontal limitado por max_angulo_h
+        servo_controller.mover_servo(14, angulo_h) 
+    elif "s1-" in comando:
+        angulo_h=max(angulo_h-1, min_angulo_h)  #decrementa ángulo horizontal limitado por min_angulo_h
+        servo_controller.mover_servo(14, angulo_h)   
+    elif "s1c" in comando:
+        servo_controller.centralizar_servo(14) # Centro
+    
+    # Servo 2 no canal 1
+    if "s2+" in comando:
+        angulo_v=min(angulo_v+1, max_angulo_v) #incremente ángulo vertical limitado por max_angulo_v
+        servo_controller.mover_servo(15, angulo_v)  
+    elif "s2-" in comando:
+        angulo_v=max(angulo_v-1, min_angulo_v) #decrementa ángulo vertical limitado por min_angulo_v
+        servo_controller.mover_servo(15, angulo_v)    
+    elif "s2c" in comando:
+        servo_controller.centralizar_servo(15) 
 
 # Loop para receber os comandos da UART (que são os comandos transmitidos pelo celucar) e controlar os motores
 while True:
     if uart.any() > 0:                                     # Caso tenha algum dado na UART, pode ler o comando que chegou
         comando = uart.readline().decode('utf-8').strip()  # Decodifica o comando que chegou
         
-        print(comando)
-
         if ("a" in comando) and (objeto_proximo == 0):     # Caso não haja objeto próximo, pode se mover para frente
             leds_rodas("avancar")
             mover_avancar()
+            comando="s2+"
         elif ("z" in comando) and (objeto_proximo == 0):
             leds_rodas("avancar_AD")
             mover_avancar_AD()
@@ -230,6 +391,7 @@ while True:
         elif "r" in comando:
             leds_rodas("retroceder")
             mover_retroceder()
+            comando="s2-"
         elif "x" in comando:
             leds_rodas("retroceder_RD")
             mover_retroceder_RD()
@@ -239,9 +401,11 @@ while True:
         elif "d" in comando:
             leds_rodas("direita")
             mover_direita()
+            comando="s1+"
         elif "e" in comando:
             leds_rodas("esquerda")
             mover_esquerda()
+            comando="s1-"
         elif "p" in comando:
             leds_rodas("parar")
             parar_motores()
@@ -249,10 +413,30 @@ while True:
             alto_falante.duty_u16(800)
         elif "B" in comando:             # Desliga a buzina, indicando que o botão foi solto
             alto_falante.duty_u16(0)
+            
+            
+        controlar_servomotores(comando)
 
     # Verifica se há algum obstáculo próximo. Caso tenha, a variável que indica proximidade é setada (colocada como verdadeira), e isso impede movimentação frontal
     distancia = verifica_distancia()
-    if ((distancia < 20) and (objeto_proximo == 0)):
-        objeto_proximo = 1
-    elif ((distancia > 20) and (objeto_proximo == 1)):
-        objeto_proximo = 0
+    if not distancia == None:
+        if ((distancia < 20) and (objeto_proximo == 0)):
+            objeto_proximo = 1
+            parar_motores()
+        elif ((distancia > 20) and (objeto_proximo == 1)):
+            objeto_proximo = 0
+            
+                
+        # Leitura de temperatura e umidade
+        temperatura, umidade = sensor_aht10.medir()
+        if temperatura is not None and umidade is not None:
+            # Imprime distância, temperatura [°C] e unidade relativa [%]
+            print(f"{distancia:>6.2f} cm | Temp: {temperatura:>5.1f} C | Umidade: {umidade:>5.1f} %")
+        else:
+            print("Erro ao ler sensor AHT10")
+            # Imprime distância
+            print(f"{distancia:>6.2f} cm")
+            
+       
+                
+                        
