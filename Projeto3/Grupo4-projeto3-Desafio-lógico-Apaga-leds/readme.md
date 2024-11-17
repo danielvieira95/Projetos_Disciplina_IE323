@@ -71,9 +71,9 @@ Este código main.py esta usando as seguintes bibliotecas externa em Python: ST7
 
 - `raiz`: main.py Código-fonte do projeto.
 - `raiz`: ST7735.py, sysfont.py e ssd1306.py que são biblioteca necessária para o projeto.
-	-- ssd1306.py auxilia no display oled
-	-- ST7735.py auxilia no display LCD TFT 128*RGB160
-	-- sysfont.py auxilia nas fontes de letras para display LCD TFT
+	* ssd1306.py auxilia no display oled
+	* ST7735.py auxilia no display LCD TFT 128*RGB160
+	* sysfont.py auxilia nas fontes de letras para display LCD TFT
 - `docs/`: Documentação técnica, documentação do usuário
 - `README.md`: Este arquivo.
 
