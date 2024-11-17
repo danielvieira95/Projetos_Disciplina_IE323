@@ -33,7 +33,7 @@ Wallif Campos alves de Souza, RA: 290031
 
 Estou usando as seguintes bibliotecas externa em Python: ST7735  e sysfont
 Me guiando neste esquema de ligações, mas ficar atento com a pinagem da bitdoglab de acordo com a versão de cada placa.
-
+![Esquema de ligação](https://github.com/user-attachments/assets/12d94c46-1bfd-4142-b416-6c75f2d2dbad)
 
 No meu caso é versão 5 que igual este esquema.
 
