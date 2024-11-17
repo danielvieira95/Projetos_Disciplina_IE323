@@ -55,7 +55,27 @@ GND       |   GND
 
 Na ligação BL pode ser GP10 ou GP8.
 
-Este código main.py esta usando as seguintes bibliotecas externa em Python: ST7735  e sysfont
+## Estrutura do Projeto
+
+- `raiz`: main.py Código-fonte do projeto.
+- `raiz`: ST7735.py, sysfont.py e ssd1306.py que são biblioteca necessária para o projeto.
+	* ssd1306.py auxilia no display oled
+	* ST7735.py auxilia no display LCD TFT 128*RGB160
+	* sysfont.py auxilia nas fontes de letras para display LCD TFT
+- `docs/`: Documentação técnica, documentação do usuário
+- `README.md`: Este arquivo.
+
+
+Links de referência das bibliotecas:
+* [sysfont](https://github.com/GuyCarver/MicroPython/blob/master/lib/sysfont.py)
+* [ST7735](https://github.com/boochow/MicroPython-ST7735/issues/9
+)
+* [ST7735](https://github.com/boochow/MicroPython-ST7735/tree/master)
+*[BitDogLab](https://github.com/BitDogLab/BitDogLab/commit/db2704d02596209923995fc20823b8b6147ad800
+)
+
+
+
 
 ## Como Executar
 
@@ -66,14 +86,4 @@ Este código main.py esta usando as seguintes bibliotecas externa em Python: ST7
 3. Carregue o código: Use a IDE do VScode para carregar o código main.py no Raspberry Pi Pico.
 
 4. Inicie o jogo: Assim que o código estiver rodando, siga as instruções no display OLED para iniciar e jogar.
-
-## Estrutura do Projeto
-
-- `raiz`: main.py Código-fonte do projeto.
-- `raiz`: ST7735.py, sysfont.py e ssd1306.py que são biblioteca necessária para o projeto.
-	* ssd1306.py auxilia no display oled
-	* ST7735.py auxilia no display LCD TFT 128*RGB160
-	* sysfont.py auxilia nas fontes de letras para display LCD TFT
-- `docs/`: Documentação técnica, documentação do usuário
-- `README.md`: Este arquivo.
 
