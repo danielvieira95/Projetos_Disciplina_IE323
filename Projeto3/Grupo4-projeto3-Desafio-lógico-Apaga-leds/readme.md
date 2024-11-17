@@ -40,7 +40,7 @@ No meu caso é PCB da BitDogLab é da versão 5 que igual este conector
 
 ![copnector IDC macho da BitDogLab V5](https://github.com/user-attachments/assets/8f7299b2-dda5-4b00-ba58-591bc7e0cb60)
 
-ligação que eu usei
+Ligação  entre o display LCD TFT 128XRGB160 com BitDogLab foi esta:
 
 
 LCD TFT 128x160 | Bitdoglab
