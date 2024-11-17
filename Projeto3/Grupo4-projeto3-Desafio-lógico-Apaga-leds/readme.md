@@ -30,8 +30,19 @@ Wallif Campos alves de Souza, RA: 290031
   - 2 Buzzers passivos
   - Resistores, jumpers e uma placa de prototipagem
 
+## Diagramas de conexão de hardware
+As conexões e configurações de hardware são as da plataforma bitdoglab que temos aqui:
+- Um botão, identificado como Botão A, está conectado no GPIO5 da Raspberry Pi Pico. O outro terminal do botão está conectado ao GND da placa. 
+- Outro botão, identificado como Botão B, está conectado no GPIO6 da Raspberry pi pico. O outro terminal do botão também está conectado ao GND da placa.
+- Um buzzer passivo, identificado como Buzzer A, está conectado - através de um transistor - no GPIO21 da Raspberry pi pico.
+- Buzzer passivo, identificado como Buzzer B, está conectado no GPIO10 da Raspberry pi pico.
+- O pino in de uma matriz de LEDs 5050 RGB de 5 linhas por 5 colunas tipo WS2812B (Neopixel) está conectada ao GPIO7. 
+- Um Joystick analógico tipo KY023 tem a saída VRy conectada ao GPIO26 e a saída VRx ao GPIO27. Seu botão SW está conectada ao GPIO22, o outro terminal do botão está no GND. 
+- Um display OLED 128 colunas por  x 64 linhas de 0,96 polegadas com comunicação I2C, tem seu pino SDA conectado ao GPIO14 e o pino SCL com o GPIO15, estes pinos são do canal I2C0. Esse display (normalmente configurado no endereço 0x3C).
 
-Me guiando neste esquema de ligações, mas ficar atento com a pinagem da bitdoglab de acordo com a versão de cada placa.
+Tem a conexão com elemento externo a placa da BitDogLab que segue-se explicação em baixo.
+
+Guiando neste esquema de ligações, mas ficar atento com a pinagem da bitdoglab de acordo com a versão de cada placa.
 
 ![Esquema de ligação](https://github.com/user-attachments/assets/12d94c46-1bfd-4142-b416-6c75f2d2dbad)
 
@@ -67,12 +78,10 @@ Na ligação BL pode ser GP10 ou GP8.
 
 
 Links de referência das bibliotecas:
-* [sysfont](https://github.com/GuyCarver/MicroPython/blob/master/lib/sysfont.py)
-* [ST7735](https://github.com/boochow/MicroPython-ST7735/issues/9
-)
-* [ST7735](https://github.com/boochow/MicroPython-ST7735/tree/master)
-* [BitDogLab](https://github.com/BitDogLab/BitDogLab/commit/db2704d02596209923995fc20823b8b6147ad800
-)
+* [ST7735](https://github.com/boochow/MicroPython-ST7735/tree/master) biblioteca ST7735.py com alguns exemplos
+* [sysfont](https://github.com/GuyCarver/MicroPython/blob/master/lib/sysfont.py) biblioteca das sysfont
+* [ST7735](https://github.com/boochow/MicroPython-ST7735/issues/9) link que complementa uma duvida sobre usar este biblioteca ST7735.
+* [BitDogLab](https://github.com/BitDogLab/BitDogLab/commit/db2704d02596209923995fc20823b8b6147ad800) Este link fonte da imagem dos esquema das ligações
 
 
 
@@ -83,7 +92,7 @@ Links de referência das bibliotecas:
 
 2. Usa a conexão apropriada dos componentes segundo diagrama de conexão hardware.
 
-3. Carregue o código: Use a IDE do VScode para carregar o código main.py no Raspberry Pi Pico.
+3. Carregue o código: Use a IDE do Thommy  para carregar o código main.py e bibliotecas necessárias no Raspberry Pi Pico.
 
-4. Inicie o jogo: Assim que o código estiver rodando, siga as instruções no display OLED para iniciar e jogar.
+4. Inicie o jogo: Assim que o código estiver rodando, siga as instruções no display OLED e LCD TFT 128*RGB*160 para iniciar e jogar.
 
