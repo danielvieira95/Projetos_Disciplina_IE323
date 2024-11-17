@@ -71,8 +71,7 @@ Links de referência das bibliotecas:
 * [ST7735](https://github.com/boochow/MicroPython-ST7735/issues/9
 )
 * [ST7735](https://github.com/boochow/MicroPython-ST7735/tree/master)
-
-*[BitDogLab](https://github.com/BitDogLab/BitDogLab/commit/db2704d02596209923995fc20823b8b6147ad800
+* [BitDogLab](https://github.com/BitDogLab/BitDogLab/commit/db2704d02596209923995fc20823b8b6147ad800
 )
 
 
