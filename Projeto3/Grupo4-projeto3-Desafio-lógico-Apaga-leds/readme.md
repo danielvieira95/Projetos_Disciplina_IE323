@@ -30,6 +30,19 @@ Wallif Campos alves de Souza, RA: 290031
   - 2 Buzzers passivos
   - Resistores, jumpers e uma placa de prototipagem
 
+
+Estou usando as seguintes bibliotecas externa em Python: ST7735  e sysfont
+Me guiando neste esquema de ligações, mas ficar atento com a pinagem da bitdoglab de acordo com a versão de cada placa.
+
+	![Esquema de ligações](https://github.com/danielvieira95/Projetos_Disciplina_IE323/blob/main/Projeto3/Grupo4-projeto3-Desafio-l%C3%B3gico-Apaga-leds/img/img1.png)
+
+
+No meu caso é versão 5 que igual este esquema.
+
+
+ligação que eu usei
+
+
 LCD TFT 128x160 | Bitdoglab
 --------- | ------
 BL        | GP10/GP08
