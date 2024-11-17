@@ -31,7 +31,6 @@ Wallif Campos alves de Souza, RA: 290031
   - Resistores, jumpers e uma placa de prototipagem
 
 
-
 Me guiando neste esquema de ligações, mas ficar atento com a pinagem da bitdoglab de acordo com a versão de cada placa.
 
 ![Esquema de ligação](https://github.com/user-attachments/assets/12d94c46-1bfd-4142-b416-6c75f2d2dbad)
@@ -45,7 +44,7 @@ Ligação  entre o display LCD TFT 128XRGB160 com BitDogLab foi esta:
 
 LCD TFT 128x160 | Bitdoglab
 --------- | ------
-BL        | GP10/GP08
+BL        | GP10/GP8
 CS        | GP17
 DC        | GP16
 RST       | GP20
@@ -53,4 +52,6 @@ SDA       | GP19
 SCL       | GP18
 VCC       |  3V3
 GND       |   GND
+
+Na ligação BL pode ser GP10 ou GP8.
 
