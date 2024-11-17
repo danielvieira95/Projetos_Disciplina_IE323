@@ -1,6 +1,6 @@
 # Desafio lógico - Apague os LEDs
 
-Este projeto tem como seu objetivo, desenvolver um jogo interativo que estimule a memória e o raciocínio lógico dos jogadores. O desafio do jogo é apagar todos os LEDs de uma matriz 5x5, onde a cada clique em um LED, ele e seus LEDs adjacentes alternam entre aceso e apagado. O jogador precisa encontrar a sequência correta de cliques para que todos os LEDs fiquem apagados simultaneamente.
+Este projeto tem como seu objetivo, desenvolver um jogo interativo que estimule a memória e o raciocínio lógico dos jogadores. O desafio do jogo é apagar todos os LEDs de uma matriz 5x5, onde a cada clique em um LED, ele e seus LEDs adjacentes alternam entre aceso e apagado. O jogador precisa encontrar a sequência correta de cliques para que todos os LEDs fiquem apagados simultaneamente ou seja o jogador planeje uma sequência de ações estratégicas para atingir um estado final específico, onde todos os LEDs da matriz 5x5 estejam apagados.
 
 ### Autores
 
@@ -84,8 +84,6 @@ Links de referência das bibliotecas:
 * [BitDogLab](https://github.com/BitDogLab/BitDogLab/commit/db2704d02596209923995fc20823b8b6147ad800) Este link fonte da imagem dos esquema das ligações
 
 
-
-
 ## Como Executar
 
 1. Instale as dependências: Certifique-se de que todas as bibliotecas necessárias estão instaladas no Raspberry Pi Pico
@@ -95,4 +93,51 @@ Links de referência das bibliotecas:
 3. Carregue o código: Use a IDE do Thommy  para carregar o código main.py e bibliotecas necessárias no Raspberry Pi Pico.
 
 4. Inicie o jogo: Assim que o código estiver rodando, siga as instruções no display OLED e LCD TFT 128*RGB*160 para iniciar e jogar.
+
+## Instruções do Jogo 
+
+### Início do Jogo:
+
+No display OLED, aparecerá a mensagem: "Bem-vindo ao Quiz de Cores! Clique no botão à esquerda para começar." Este botão é o Botão A no hardware.
+Ao clicar botão da esquerda, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
+
+### Como Jogar:
+
+No nível 1, os primeiros cinco LEDs da primeira linha da matriz 5050 RGB (posições 0 a 4) acenderão com uma cor aleatória. O objetivo é recriar essa cor ajustando manualemnte as variáveis R G B.
+No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme você ajusta os valores de R, G e B com o joystick, ao verificar com botão do meio joystick a cor será exibida na matriz e o valor atual será mostrado no OLED.
+- Para o nível 1, há 8 combinações possíveis de cores:
+* R: 0 ou 100
+* G: 0 ou 100
+* B: 0 ou 100
+- Para o nível 2, há 27 combinações possíveis de cores:
+* R: 0, 50 ou 100
+* G: 0, 50 ou 100
+* B: 0, 50 ou 100
+- Para o nível 3, há 125 combinações possíveis de cores:
+* R: 0, 25, 50, 75 ou 100
+* G: 0, 25, 50, 75 ou 100
+* B: 0, 25, 50, 75 ou 100
+
+### Controles:
+
+Use o eixo Y do joystick para alternar entre R, G e B. Use o eixo X para ajustar o valor selecionado.
+Ao pressionar o botão SW do joystick, o valor ajustado será comparado com a cor exibida na matriz de LEDs.
+Se a cor estiver correta, o LED na posição 24 acenderá e o display OLED mostrará "Parabéns, cor correta". Os buzzers A e B tocarão um som de acerto.
+Se a cor estiver incorreta, o display OLED mostrará "Opa, está incorreto, tente de novo". Os buzzers A e B tocarão um som de erro. Você pode tentar novamente até 20 vezes antes do fim do jogo decrescendo os leds na matriz de led RGB.
+
+### Progresso no Jogo:
+
+Após acertar, o display OLED mostrará a mensagem: "Próximo nível".
+O processo será repetido para os próximos níveis até completar todos os três.
+
+### Fim do Jogo:
+
+Quando todos os níveis forem concluídos, o display OLED mostrará o número de erros cometidos e o tempo total para completar o jogo.
+Para reiniciar, clique no botão à direita (Botão B). O display OLED exibirá: "Reiniciando o jogo".
+
+
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
 
