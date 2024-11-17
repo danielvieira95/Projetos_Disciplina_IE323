@@ -31,12 +31,14 @@ Wallif Campos alves de Souza, RA: 290031
   - Resistores, jumpers e uma placa de prototipagem
 
 
-Estou usando as seguintes bibliotecas externa em Python: ST7735  e sysfont
+
 Me guiando neste esquema de ligações, mas ficar atento com a pinagem da bitdoglab de acordo com a versão de cada placa.
+
 ![Esquema de ligação](https://github.com/user-attachments/assets/12d94c46-1bfd-4142-b416-6c75f2d2dbad)
 
-No meu caso é versão 5 que igual este esquema.
+No meu caso é PCB da BitDogLab é da versão 5 que igual este conector
 
+![copnector IDC macho da BitDogLab V5](https://github.com/user-attachments/assets/8f7299b2-dda5-4b00-ba58-591bc7e0cb60)
 
 ligação que eu usei
 
