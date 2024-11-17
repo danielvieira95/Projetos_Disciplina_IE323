@@ -55,3 +55,25 @@ GND       |   GND
 
 Na ligação BL pode ser GP10 ou GP8.
 
+Este código main.py esta usando as seguintes bibliotecas externa em Python: ST7735  e sysfont
+
+## Como Executar
+
+1. Instale as dependências: Certifique-se de que todas as bibliotecas necessárias estão instaladas no Raspberry Pi Pico
+
+2. Usa a conexão apropriada dos componentes segundo diagrama de conexão hardware.
+
+3. Carregue o código: Use a IDE do VScode para carregar o código main.py no Raspberry Pi Pico.
+
+4. Inicie o jogo: Assim que o código estiver rodando, siga as instruções no display OLED para iniciar e jogar.
+
+## Estrutura do Projeto
+
+- `raiz`: main.py Código-fonte do projeto.
+- `raiz`: ST7735.py, sysfont.py e ssd1306.py que são biblioteca necessária para o projeto.
+	-- ssd1306.py auxilia no display oled
+	-- ST7735.py auxilia no display LCD TFT 128*RGB160
+	-- sysfont.py auxilia nas fontes de letras para display LCD TFT
+- `docs/`: Documentação técnica, documentação do usuário
+- `README.md`: Este arquivo.
+
