@@ -109,12 +109,10 @@ class ServoController:
         """
         pulse = self.map_angle_to_pulse(angulo)
         self.pca.set_pwm(canal, 0, pulse)
-        
+
 
 # Configuração I2C
 i2c = SoftI2C(scl=Pin(3), sda=Pin(2), freq=400000)
-
-
 
 # Configuração da matriz de LEDs
 matriz_leds = neopixel.NeoPixel(Pin(7), 25)
@@ -325,12 +323,11 @@ def verifica_distancia():
     
             
     return distancia_cm
-    
+
 
 # Inicia com os motores parados
 leds_rodas("parar")
 parar_motores()
-
 
 # Cria um objeto para o sensor AHT10
 sensor_aht10 = AHT10(i2c)
@@ -354,26 +351,26 @@ def controlar_servomotores(comando):
         return
     
     # Servo 1 no canal 0
-    if "s1+" in comando:
+    if "u" in comando:
         angulo_h=min(angulo_h+1, max_angulo_h) #incremente ángulo horizontal limitado por max_angulo_h
         servo_controller.mover_servo(14, angulo_h) 
-    elif "s1-" in comando:
+    elif "U" in comando:
         angulo_h=max(angulo_h-1, min_angulo_h)  #decrementa ángulo horizontal limitado por min_angulo_h
         servo_controller.mover_servo(14, angulo_h)   
     elif "s1c" in comando:
         servo_controller.centralizar_servo(14) # Centro
     
     # Servo 2 no canal 1
-    if "s2+" in comando:
+    if "V" in comando:
         angulo_v=min(angulo_v+1, max_angulo_v) #incremente ángulo vertical limitado por max_angulo_v
         servo_controller.mover_servo(15, angulo_v)  
-    elif "s2-" in comando:
+    elif "v" in comando:
         angulo_v=max(angulo_v-1, min_angulo_v) #decrementa ángulo vertical limitado por min_angulo_v
         servo_controller.mover_servo(15, angulo_v)    
     elif "s2c" in comando:
         servo_controller.centralizar_servo(15) 
 
-# Loop para receber os comandos da UART (que são os comandos transmitidos pelo celucar) e controlar os motores
+# Loop para receber os comandos da UART (que são os comandos transmitidos pelo celular) e controlar os motores
 while True:
     if uart.any() > 0:                                     # Caso tenha algum dado na UART, pode ler o comando que chegou
         comando = uart.readline().decode('utf-8').strip()  # Decodifica o comando que chegou
@@ -401,11 +398,9 @@ while True:
         elif "d" in comando:
             leds_rodas("direita")
             mover_direita()
-            comando="s1+"
         elif "e" in comando:
             leds_rodas("esquerda")
             mover_esquerda()
-            comando="s1-"
         elif "p" in comando:
             leds_rodas("parar")
             parar_motores()
@@ -413,9 +408,8 @@ while True:
             alto_falante.duty_u16(800)
         elif "B" in comando:             # Desliga a buzina, indicando que o botão foi solto
             alto_falante.duty_u16(0)
-            
-            
-        controlar_servomotores(comando)
+        else:
+            controlar_servomotores(comando)
 
     # Verifica se há algum obstáculo próximo. Caso tenha, a variável que indica proximidade é setada (colocada como verdadeira), e isso impede movimentação frontal
     distancia = verifica_distancia()
@@ -425,8 +419,7 @@ while True:
             parar_motores()
         elif ((distancia > 20) and (objeto_proximo == 1)):
             objeto_proximo = 0
-            
-                
+
         # Leitura de temperatura e umidade
         temperatura, umidade = sensor_aht10.medir()
         if temperatura is not None and umidade is not None:
@@ -436,7 +429,3 @@ while True:
             print("Erro ao ler sensor AHT10")
             # Imprime distância
             print(f"{distancia:>6.2f} cm")
-            
-       
-                
-                        
