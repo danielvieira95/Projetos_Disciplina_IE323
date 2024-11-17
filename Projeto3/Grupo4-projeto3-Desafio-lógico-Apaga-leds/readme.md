@@ -99,31 +99,20 @@ Links de referência das bibliotecas:
 ### Início do Jogo:
 
 No display OLED, aparecerá a mensagem: "Bem-vindo ao Quiz de Cores! Clique no botão à esquerda para começar." Este botão é o Botão A no hardware.
+
 Ao clicar botão da esquerda, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
 
 ### Como Jogar:
 
-No nível 1, os primeiros cinco LEDs da primeira linha da matriz 5050 RGB (posições 0 a 4) acenderão com uma cor aleatória. O objetivo é recriar essa cor ajustando manualemnte as variáveis R G B.
-No display OLED, você verá a pergunta: "Crie a cor sorteada (RGB)". Conforme você ajusta os valores de R, G e B com o joystick, ao verificar com botão do meio joystick a cor será exibida na matriz e o valor atual será mostrado no OLED.
-- Para o nível 1, há 8 combinações possíveis de cores:
-* R: 0 ou 100
-* G: 0 ou 100
-* B: 0 ou 100
-- Para o nível 2, há 27 combinações possíveis de cores:
-* R: 0, 50 ou 100
-* G: 0, 50 ou 100
-* B: 0, 50 ou 100
-- Para o nível 3, há 125 combinações possíveis de cores:
-* R: 0, 25, 50, 75 ou 100
-* G: 0, 25, 50, 75 ou 100
-* B: 0, 25, 50, 75 ou 100
+A mecânica central do jogo envolve uma matriz de LEDs 5x5, onde cada LED representa uma posição que o jogador pode selecionar e alterar o estado entre "aceso" e "apagado" A principio vem um esta do. Usando o joystick, o jogador move um cursor de led vermelho sobre a matriz para escolher o LED a ser ativado. Ao clicar, o LED selecionado e os LEDs adjacentes (nas direções de cima, baixo, esquerda e direita) alternam entre os estados aceso e apagado.
+Esse funcionamento cria um desafio, pois cada clique não afeta apenas o LED escolhido, mas também seus vizinhos, o que exige que o jogador planeje cuidadosamente os cliques para atingir o objetivo. A meta é encontrar uma sequência que leve todos os LEDs ao estado "apagado". Esse processo de tentativa e erro incentiva o jogador a identificar padrões e a desenvolver uma estratégia eficaz, promovendo habilidades de resolução de problemas e raciocínio lógico.
+
 
 ### Controles:
 
-Use o eixo Y do joystick para alternar entre R, G e B. Use o eixo X para ajustar o valor selecionado.
-Ao pressionar o botão SW do joystick, o valor ajustado será comparado com a cor exibida na matriz de LEDs.
-Se a cor estiver correta, o LED na posição 24 acenderá e o display OLED mostrará "Parabéns, cor correta". Os buzzers A e B tocarão um som de acerto.
-Se a cor estiver incorreta, o display OLED mostrará "Opa, está incorreto, tente de novo". Os buzzers A e B tocarão um som de erro. Você pode tentar novamente até 20 vezes antes do fim do jogo decrescendo os leds na matriz de led RGB.
+Use o eixo Y do joystick para movimentar o cursor para cima e para baixo. Use o eixo X para movimentar o cursor da direta e para esquerda.
+Ao pressionar o botão SW de meio do joystick, o estado do led aone cursor esta muda estado e do adjacente também alterna o estado.
+
 
 ### Progresso no Jogo:
 
