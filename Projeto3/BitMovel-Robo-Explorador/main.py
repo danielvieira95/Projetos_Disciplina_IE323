@@ -420,14 +420,17 @@ while True:
         elif ((distancia > 20) and (objeto_proximo == 1)):
             objeto_proximo = 0
 
-        # Leitura de temperatura e umidade
+        # Leitura de temperatura e umidade e escrita na UART para transmissão bluetooth
         temperatura, umidade = sensor_aht10.medir()
         if temperatura is not None and umidade is not None:
             # Imprime distância, temperatura [°C] e umidade relativa [%]
             print(f"{distancia:>6.2f} cm | Temp: {temperatura:>5.1f} C | Umidade: {umidade:>5.1f} %")
+            # Transforma inteiros em bytes para transmissão via UART
+            bytes_temperatura = temperatura.to_bytes(2, 'big')
+            bytes_umidade = umidade.to_bytes(2, 'big')
             # Envia temperatura e umidade relativa pelo HC-05
-            uart.write(temperatura)
-            uart.write(umidade)
+            uart.write(bytes_temperatura)
+            uart.write(bytes_umidade)
         else:
             print("Erro ao ler sensor AHT10")
             # Imprime distância
