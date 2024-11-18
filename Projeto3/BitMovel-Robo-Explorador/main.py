@@ -423,8 +423,11 @@ while True:
         # Leitura de temperatura e umidade
         temperatura, umidade = sensor_aht10.medir()
         if temperatura is not None and umidade is not None:
-            # Imprime distância, temperatura [°C] e unidade relativa [%]
+            # Imprime distância, temperatura [°C] e umidade relativa [%]
             print(f"{distancia:>6.2f} cm | Temp: {temperatura:>5.1f} C | Umidade: {umidade:>5.1f} %")
+            # Envia temperatura e umidade relativa pelo HC-05
+            uart.write(temperatura)
+            uart.write(umidade)
         else:
             print("Erro ao ler sensor AHT10")
             # Imprime distância
