@@ -31,7 +31,7 @@ Wallif Campos alves de Souza, RA: 290031
   - Resistores, jumpers e uma placa de prototipagem
 
 ## Diagramas de conexão de hardware
-As conexões e configurações de hardware são as da plataforma bitdoglab que temos aqui:
+As conexões e configurações de hardware são das plataforma bitdoglab que temos aqui:
 - Um botão, identificado como Botão A, está conectado no GPIO5 da Raspberry Pi Pico. O outro terminal do botão está conectado ao GND da placa. 
 - Outro botão, identificado como Botão B, está conectado no GPIO6 da Raspberry pi pico. O outro terminal do botão também está conectado ao GND da placa.
 - Um buzzer passivo, identificado como Buzzer A, está conectado - através de um transistor - no GPIO21 da Raspberry pi pico.
