@@ -98,10 +98,23 @@ Links de referência das bibliotecas:
 
 ### Início do Jogo:
 
-No display OLED, aparecerá a mensagem: "Bem-vindo O jogo começou Faza jogada.
-No display LCD TFT, aparecerá a mensegem: "Bem vindo O objetivo do jogo é apagar todos os LEDs! Use o Joystick para mover o seletor. Ao pressionar o Joystick, os LEDs ao lado do LED escolhido mudam de estado: apagados acendem e os acessos apagam. Botão A: Solicitar ajuda após 5 jogadas Botão B: Reiniciar o jogo"
+No display OLED, aparecerá a mensagem: 
+Bem-vindo 
 
-Ao clicar botão da esquerda, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
+O jogo começou 
+
+Faz a jogada.
+
+No display LCD TFT, aparecerá a mensegem: 
+Bem vindo 
+
+O objetivo do jogo é apagar todos os LEDs! 
+
+Use o Joystick para mover o seletor. Ao pressionar o Joystick, os LEDs ao lado do LED escolhido mudam de estado: apagados acendem e os acessos apagam. 
+
+Botão A: Solicitar ajuda após 5 jogadas 
+
+Botão B: Reiniciar o jogo"
 
 ### Como Jogar:
 
