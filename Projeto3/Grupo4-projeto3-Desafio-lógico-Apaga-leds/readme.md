@@ -118,8 +118,9 @@ Botão B: Reiniciar o jogo"
 
 ### Como Jogar:
 
-A mecânica central do jogo envolve uma matriz de LEDs 5x5, onde cada LED representa uma posição que o jogador pode selecionar e alterar o estado entre "aceso" e "apagado" A principio vem um esta do. Usando o joystick, o jogador move um cursor de led vermelho sobre a matriz para escolher o LED a ser ativado. Ao clicar, o LED selecionado e os LEDs adjacentes (nas direções de cima, baixo, esquerda e direita) alternam entre os estados aceso e apagado.
-Esse funcionamento cria um desafio, pois cada clique não afeta apenas o LED escolhido, mas também seus vizinhos, o que exige que o jogador planeje cuidadosamente os cliques para atingir o objetivo. A meta é encontrar uma sequência que leve todos os LEDs ao estado "apagado". Esse processo de tentativa e erro incentiva o jogador a identificar padrões e a desenvolver uma estratégia eficaz, promovendo habilidades de resolução de problemas e raciocínio lógico.
+
+A mecânica central do jogo envolve uma matriz de LEDs 5x5, onde cada LED representa uma posição que o jogador pode selecionar e alterar o estado entre "aceso" e "apagado" A principio vem um padrão de leds amarelo acesso. Usando o joystick, o jogador move um cursor de led vermelho sobre a matriz para escolher o LED a ser ativado. Ao clicar, o LED selecionado e os LEDs adjacentes (nas direções de cima, baixo, esquerda e direita) alternam entre os estados aceso e apagado.
+Esse funcionamento cria um desafio, pois cada clique não afeta apenas o LED escolhido, mas também seus vizinhos, o que exige que o jogador planeje cuidadosamente os cliques para atingir o objetivo. A meta é encontrar uma sequência que leve todos os LEDs ao estado "apagado".
 
 
 ### Controles:
@@ -131,9 +132,19 @@ Botão A depois de cinco jogadas em cada nivel fica disponivel para pressionar, 
 
 
 ### Progresso no Jogo:
+- A cada jogada vem numero de jodadas feitas naquele nivel no display OLED.
+- Após levar todos leds amarelo no estado de apagado, o display OLED mostrará a mensagem: 
+Vitória na mosca. 
 
-Após acertar, o display OLED mostrará a mensagem: "Próximo nível".
-O processo será repetido para os próximos níveis até completar todos os três.
+Proximo Nivel 2.
+
+Faz a jogada
+
+- O processo será repetido para os próximos níveis até completar todos os dez niveis.
+
+- Caso voce faz 20 jogadas em cada nivel e não levas os todos leds amarelo ao estado de apagados o display Oled mostrará a mensagem seguinte:
+Perdeu Que pena
+Clica no botão direita b para reiniciar jogo  
 
 ### Fim do Jogo:
 
