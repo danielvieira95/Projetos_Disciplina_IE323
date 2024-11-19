@@ -4,9 +4,7 @@ Esse repositório contém o Projeto 3 do Grupo 5 da matéria de IE323 - Tópicos
 
 O trabalho, como projeto educacional, busca apresentar para estudantes uma ideia para criação de robôs através da união conceitos como comunicação sem fio, utilizando Bluetooth e Wi-Fi, sinais modulados por largura de pulso (PWM) para controle de motores, lógica para movimentação de robôs, uso de sensores para exploração e percepção do ambiente, como câmera, sensor de temperatura e sensor ultrassônico, movimentação e criação de um aplicativo de celular. O projeto é uma sugestão de atividade didática, contendo exposição teórica em slides e também um exemplo prático utilizando a placa [BitDogLab](https://github.com/BitDogLab/BitDogLab/tree/main) e periféricos listados a seguir.
 
-Os alunos irão interagir com o robô através de um **aplicativo de celular** que controla a movimentação do agente robótico por meio do movimento do aparelho. Para isso, é utilizado o **acelerômetro**, um sensor interno que serve como fonte de dados da movimentação que está sendo realizada. Ao identificar a direção de deslocamento através da análise desses dados, é enviado um comando à BitDogLab via **Bluetooth**, que será interpretado e executado pela placa. Ainda, o aplicativo apresenta, em tempo real, imagens que estão sendo enviadas por **wi-fi** para um servidor web por uma câmera disposta no agente robótico. Caso o robô esteja muito próximo de um obstáculo, o sensor ultrassônico irá detectar e impedir a possível colisão.
-
-TODO: sensor de temperatura e servos motor
+Os alunos irão interagir com o robô através de um **aplicativo de celular** que controla a movimentação do agente robótico por meio do movimento do aparelho. Para isso, é utilizado o **acelerômetro**, um sensor interno que serve como fonte de dados da movimentação que está sendo realizada. Ao identificar a direção de deslocamento através da análise desses dados, é enviado um comando à BitDogLab via **Bluetooth**, que será interpretado e executado pela placa. Ainda, o aplicativo apresenta, em tempo real, imagens que estão sendo enviadas por **wi-fi** para um servidor web por uma câmera disposta no agente robótico, sendo possível movimentar a câmera por meio de um joystick disposto no aplicativo de celular, que controla dois servo motores presentes no robô que servem como base para a câmera. Caso o robô esteja muito próximo de um obstáculo, o sensor ultrassônico irá detectar e impedir a possível colisão.
 
 ### Autores
 
@@ -32,6 +30,7 @@ Patric Moreto, RA: 223083
 - Sensor de temperatura AHT10
 - Placa de circuito impresso
 - Servo motores
+- Placa expansora
 
 ## Placa de circuito impresso
 
@@ -71,7 +70,7 @@ Caso deseja-se realizar as ligações da ESP32-CAM com o conversor USB / TTL sem
 <img src = "./Img/QRCode_Android.png" height = "300">
 <br/><br/>
 
-- **Aplicativo:** Abra o aplicativo recém instalado, procurando por *BitMóvel Explorador*. O aplicativo funciona apenas com o celular na horizontal. O símbolo Bluetooth em cinza no canto superior esquerdo indica que ainda não foi feita a conexão com o módulo Bluetooth instalado no veículo, mais detalhes serão explicados no tópico seguinte. O símbolo de uma buzina no canto superior direito é um botão, que fará o robô emitir um som enquanto estiver pressionado. O símbolo de um termômetro no canto inferior esquerdo é um botão que irá abrir uma nova tela contendo uma versão simplificada do [Projeto 3 de efeito estufa](). Os retângulos em branco indicam quais os possíveis movimentos a serem enviados ao robô, enquanto o retângulo em azul indica qual é a direção que está sendo enviada nesse momento. Caso todos os retângulos estejam em branco, está sendo executado o comando de ficar parado.    
+- **Aplicativo:** Abra o aplicativo recém instalado, procurando por *BitMóvel Explorador*. O aplicativo funciona apenas com o celular na horizontal. O símbolo Bluetooth em cinza no canto superior esquerdo indica que ainda não foi feita a conexão com o módulo Bluetooth instalado no veículo, mais detalhes serão explicados no tópico seguinte. O símbolo de uma buzina no canto superior direito é um botão, que fará o robô emitir um som enquanto estiver pressionado. O símbolo de um termômetro no canto inferior esquerdo é um botão que irá abrir uma nova tela contendo uma versão simplificada do [Projeto 3 de efeito estufa](). Há um joystick azul no canto inferior direito que serve para controlar os servo motores da posição da câmera. Os retângulos em branco indicam quais os possíveis movimentos a serem enviados ao robô, enquanto o retângulo em azul indica qual é a direção que está sendo enviada nesse momento. Caso todos os retângulos estejam em branco, está sendo executado o comando de ficar parado.    
 Existem 5 movimentos padrões, que são avançar, virar para a esquerda, virar para a direita, retroceder e ficar parado, além das combinações avançar para esquerda, avançar para a direita, retroceder para a esquerda e retroceder para a direita.    
 No centro da tela, caso o celular esteja conectado no wi-fi do robô, são exibidas as imagens capturadas pela câmera da ESP32-CAM. É possível dar zoom na imagem fazendo o movimento de pinça com os dedos.
 
@@ -87,3 +86,7 @@ Ao acessar a tela de medições climáticas, será requisitada nova conexão Blu
 ## Projeto do aplicativo feito no MIT App Inventor
 
 O arquivo *bluetooth_explorador.aia* disponibilizado nesse repositório contém o projeto do aplicativo de celular desenvolvido. É possível fazer o download desse projeto e importar para o MIT App Inventor, sendo possível realizar edições.
+
+## TODO
+
+Atualizar instruções sobre sensor de temperatura, fluxograma da BitDogLab e do aplicativo de celular, arquivos .aia, QR Code, revisar recursos off-board, adicionar arquivo .apk.
