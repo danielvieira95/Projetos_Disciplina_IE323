@@ -352,20 +352,20 @@ def controlar_servomotores(comando):
     
     # Servo 1 no canal 0
     if "u" in comando:
-        angulo_h=min(angulo_h+1, max_angulo_h) #incremente ángulo horizontal limitado por max_angulo_h
+        angulo_h=min(angulo_h+2, max_angulo_h) #incremente ángulo horizontal limitado por max_angulo_h
         servo_controller.mover_servo(14, angulo_h) 
     elif "U" in comando:
-        angulo_h=max(angulo_h-1, min_angulo_h)  #decrementa ángulo horizontal limitado por min_angulo_h
+        angulo_h=max(angulo_h-2, min_angulo_h)  #decrementa ángulo horizontal limitado por min_angulo_h
         servo_controller.mover_servo(14, angulo_h)   
     elif "s1c" in comando:
         servo_controller.centralizar_servo(14) # Centro
     
     # Servo 2 no canal 1
     if "V" in comando:
-        angulo_v=min(angulo_v+1, max_angulo_v) #incremente ángulo vertical limitado por max_angulo_v
+        angulo_v=min(angulo_v+2, max_angulo_v) #incremente ángulo vertical limitado por max_angulo_v
         servo_controller.mover_servo(15, angulo_v)  
     elif "v" in comando:
-        angulo_v=max(angulo_v-1, min_angulo_v) #decrementa ángulo vertical limitado por min_angulo_v
+        angulo_v=max(angulo_v-2, min_angulo_v) #decrementa ángulo vertical limitado por min_angulo_v
         servo_controller.mover_servo(15, angulo_v)    
     elif "s2c" in comando:
         servo_controller.centralizar_servo(15) 
@@ -375,6 +375,16 @@ while True:
     if uart.any() > 0:                                     # Caso tenha algum dado na UART, pode ler o comando que chegou
         comando = uart.readline().decode('utf-8').strip()  # Decodifica o comando que chegou
         
+        print(comando)
+
+        if ("v" in comando) or ("V" in comando) or ("U" in comando) or ("u" in comando):
+            controlar_servomotores(comando)
+
+        if "b" in comando:               # Liga a buzina, indicando que o botão foi apertado
+            alto_falante.duty_u16(800)
+        elif "B" in comando:             # Desliga a buzina, indicando que o botão foi solto
+            alto_falante.duty_u16(0)
+
         if ("a" in comando) and (objeto_proximo == 0):     # Caso não haja objeto próximo, pode se mover para frente
             leds_rodas("avancar")
             mover_avancar()
@@ -404,12 +414,6 @@ while True:
         elif "p" in comando:
             leds_rodas("parar")
             parar_motores()
-        elif "b" in comando:             # Liga a buzina, indicando que o botão foi apertado
-            alto_falante.duty_u16(800)
-        elif "B" in comando:             # Desliga a buzina, indicando que o botão foi solto
-            alto_falante.duty_u16(0)
-        else:
-            controlar_servomotores(comando)
 
     # Verifica se há algum obstáculo próximo. Caso tenha, a variável que indica proximidade é setada (colocada como verdadeira), e isso impede movimentação frontal
     distancia = verifica_distancia()
@@ -420,17 +424,14 @@ while True:
         elif ((distancia > 20) and (objeto_proximo == 1)):
             objeto_proximo = 0
 
-        # Leitura de temperatura e umidade e escrita na UART para transmissão bluetooth
+        # Leitura de temperatura e umidade
         temperatura, umidade = sensor_aht10.medir()
         if temperatura is not None and umidade is not None:
             # Imprime distância, temperatura [°C] e umidade relativa [%]
-            print(f"{distancia:>6.2f} cm | Temp: {temperatura:>5.1f} C | Umidade: {umidade:>5.1f} %")
-            # Transforma inteiros em bytes para transmissão via UART
-            bytes_temperatura = temperatura.to_bytes(2, 'big')
-            bytes_umidade = umidade.to_bytes(2, 'big')
+            print(f"{distancia:>6.2f} cm | Temp: {temperatura:>5.1f} C | Umidade: {umidade:>5.1f} %") 
             # Envia temperatura e umidade relativa pelo HC-05
-            uart.write(bytes_temperatura)
-            uart.write(bytes_umidade)
+            uart.write(f"{temperatura:>5.1f}")
+            uart.write(f"{umidade:>5.1f}")
         else:
             print("Erro ao ler sensor AHT10")
             # Imprime distância
