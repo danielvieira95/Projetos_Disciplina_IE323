@@ -42,11 +42,11 @@ As conexões e configurações de hardware é da plataforma bitdoglab e que são
 
 Tem a conexão com elemento externo a placa da BitDogLab que segue-se explicação em baixo.
 
-Guiando neste esquema de ligações, mas ficar atento com a pinagem da bitdoglab de acordo com a versão de cada placa.
+Se guiando neste esquema de ligações, mas ficar atento com a pinagem da bitdoglab de acordo com a versão de cada placa.
 
 ![Esquema de ligação](https://github.com/user-attachments/assets/12d94c46-1bfd-4142-b416-6c75f2d2dbad)
 
-No meu caso é PCB da BitDogLab é da versão 5 que igual este conector
+Neste caso é PCB da BitDogLab é da versão 5 que igual este conector
 
 ![copnector IDC macho da BitDogLab V5](https://github.com/user-attachments/assets/8f7299b2-dda5-4b00-ba58-591bc7e0cb60)
 
@@ -64,7 +64,7 @@ SCL       | GP18
 VCC       |  3V3
 GND       |   GND
 
-Na ligação BL pode ser GP10 ou GP8.
+Na ligação BL pode ser GP10 ou GP8. é so ficar atento no código.
 
 ## Estrutura do Projeto
 
@@ -98,7 +98,8 @@ Links de referência das bibliotecas:
 
 ### Início do Jogo:
 
-No display OLED, aparecerá a mensagem: "Bem-vindo ao Quiz de Cores! Clique no botão à esquerda para começar." Este botão é o Botão A no hardware.
+No display OLED, aparecerá a mensagem: "Bem-vindo O jogo começou Faza jogada.
+No display LCD TFT, aparecerá a mensegem: "Bem vindo O objetivo do jogo é apagar todos os LEDs! Use o Joystick para mover o seletor. Ao pressionar o Joystick, os LEDs ao lado do LED escolhido mudam de estado: apagados acendem e os acessos apagam. Botão A: Solicitar ajuda após 5 jogadas Botão B: Reiniciar o jogo"
 
 Ao clicar botão da esquerda, o jogo inicia, e o display OLED exibirá: "Atenção, jogo começando." Em seguida, a mensagem "Nível: 1" será mostrada.
 
@@ -112,6 +113,8 @@ Esse funcionamento cria um desafio, pois cada clique não afeta apenas o LED esc
 
 Use o eixo Y do joystick para movimentar o cursor para cima e para baixo. Use o eixo X para movimentar o cursor da direta e para esquerda.
 Ao pressionar o botão SW de meio do joystick, o estado do led aone cursor esta muda estado e do adjacente também alterna o estado.
+Ao Pressionar o botão B, o jogo reinicia na naquele nivel ou no final do jogo reinicia por completo jogo.
+Botão A depois de cinco jogadas em cada nivel fica disponivel para pressionar, mostra folha de resposta daquele nivel. 
 
 
 ### Progresso no Jogo:
