@@ -12,9 +12,8 @@ Wallif Campos alves de Souza, RA: 290031
 - Matriz de LEDs WS2812B 5x5: Para exibir o estado dos LEDs no jogo.
 - Joystick KY023: Para capturar a entrada do jogador e identificar o LED a ser ativado.
 - Display OLED 128x64 com I2C: Para mostrar instruções e status do jogo.
-- Display LCD TFT 128x160 : Para mostrar a resolução do nível atual e detalhes e instruções inicias. 
+- Display LCD TFT 128x160 :Para mostrar a instruções inicias, resolução do nível atual e detalhes do jogo. 
 - Botões: Para permitir funcionalidades adicionais, como reset e navegação no jogo.
-- Buzzers: Para fornecer feedback sonoro ao jogador durante a interação.
 
 ## Componentes Necessários
 - Placa BitDogLab V5
@@ -27,7 +26,6 @@ Wallif Campos alves de Souza, RA: 290031
   - Joystick analógico KY-023
   - Display LCD TFT 1.8" 128*RGB*160
   - 2 Botões
-  - 2 Buzzers passivos
   - Resistores, jumpers e uma placa de prototipagem
 
 ## Diagramas de conexão de hardware
@@ -52,7 +50,6 @@ Neste caso é PCB da BitDogLab é da versão 5 que igual este conector
 
 Ligação  entre o display LCD TFT 128XRGB160 com BitDogLab foi esta:
 
-
 LCD TFT 128x160 | Bitdoglab
 --------- | ------
 BL        | GP10/GP8
@@ -73,7 +70,7 @@ Na ligação BL pode ser GP10 ou GP8. é so ficar atento no código.
 	* ssd1306.py auxilia no display oled
 	* ST7735.py auxilia no display LCD TFT 128*RGB160
 	* sysfont.py auxilia nas fontes de letras para display LCD TFT
-- `docs/`: Documentação técnica, documentação do usuário
+- `docs/`: Documentação técnica.pdf, documentação do usuário.ppf
 - `README.md`: Este arquivo.
 
 
@@ -126,7 +123,7 @@ Esse funcionamento cria um desafio, pois cada clique não afeta apenas o LED esc
 ### Controles:
 
 Use o eixo Y do joystick para movimentar o cursor para cima e para baixo. Use o eixo X para movimentar o cursor da direta e para esquerda.
-Ao pressionar o botão SW de meio do joystick, o estado do led aone cursor esta muda estado e do adjacente também alterna o estado.
+Ao pressionar o botão SW de meio do joystick, o estado do led aonde cursor esta muda estado e os leds adjacente também alterna o estado.
 Ao Pressionar o botão B, o jogo reinicia na naquele nivel ou no final do jogo reinicia por completo jogo.
 Botão A depois de cinco jogadas em cada nivel fica disponivel para pressionar, mostra folha de resposta daquele nivel. 
 
@@ -142,13 +139,13 @@ Faz a jogada
 
 - O processo será repetido para os próximos níveis até completar todos os dez niveis.
 
-- Caso voce faz 20 jogadas em cada nivel e não levas os todos leds amarelo ao estado de apagados o display Oled mostrará a mensagem seguinte:
+- Caso voce faz 20 jogadas em cada nivel e todos os LEDs amarelo da matriz 5x5  naõ ficam no estado de apagados o display Oled mostrará a mensagem seguinte:
 Perdeu Que pena
 Clica no botão direita b para reiniciar jogo  
 
 ### Fim do Jogo:
 
-Quando todos os níveis forem concluídos, o display OLED mostrará o número de erros cometidos e o tempo total para completar o jogo.
+Quando todos os níveis forem concluídos, o display OLED mostrará o número de jogados na totalidade do jogo.
 Para reiniciar, clique no botão à direita (Botão B). O display OLED exibirá: "Reiniciando o jogo".
 
 
