@@ -1,10 +1,10 @@
 # Robô explorador
 
-Esse repositório contém o Projeto 3 do Grupo 5 da matéria de IE323 - Tópicos em Eletrônica.
+Esse repositório contém o Projeto 3 do Grupo 5 da matéria de IE323 - Tópicos em Eletrônica, da Faculdade de Engenharia Elétrica e de Computação da Universidade Estadual de Campinas.
 
-O trabalho, como projeto educacional, busca apresentar para estudantes uma ideia para criação de robôs através da união conceitos como comunicação sem fio, utilizando Bluetooth e Wi-Fi, sinais modulados por largura de pulso (PWM) para controle de motores, lógica para movimentação de robôs, uso de sensores para exploração e percepção do ambiente, como câmera, sensor de temperatura e sensor ultrassônico, movimentação e criação de um aplicativo de celular. O projeto é uma sugestão de atividade didática, contendo exposição teórica em slides e também um exemplo prático utilizando a placa [BitDogLab](https://github.com/BitDogLab/BitDogLab/tree/main) e periféricos listados a seguir.
+O trabalho, como projeto educacional, busca apresentar para estudantes uma ideia para criação de robôs através da união conceitos como comunicação sem fio, utilizando Bluetooth e Wi-Fi, sinais modulados por largura de pulso (PWM) para controle de motores, lógica para movimentação de robôs, uso de sensores para exploração e percepção do ambiente, como câmera, sensor de temperatura e sensor ultrassônico, movimentação e criação de um aplicativo de celular. O projeto é um compilado de sugestões de atividades didáticas, contendo exposição teórica em slides e também exemplos práticos utilizando a placa [BitDogLab](https://github.com/BitDogLab/BitDogLab/tree/main) e periféricos listados a seguir.
 
-Os alunos irão interagir com o robô através de um **aplicativo de celular** que controla a movimentação do agente robótico por meio do movimento do aparelho. Para isso, é utilizado o **acelerômetro**, um sensor interno que serve como fonte de dados da movimentação que está sendo realizada. Ao identificar a direção de deslocamento através da análise desses dados, é enviado um comando à BitDogLab via **Bluetooth**, que será interpretado e executado pela placa. Ainda, o aplicativo apresenta, em tempo real, imagens que estão sendo enviadas por **wi-fi** para um servidor web por uma câmera disposta no agente robótico, sendo possível movimentar a câmera por meio de um joystick disposto no aplicativo de celular, que controla dois servo motores presentes no robô que servem como base para a câmera. Caso o robô esteja muito próximo de um obstáculo, o sensor ultrassônico irá detectar e impedir a possível colisão.
+Os alunos irão interagir com o robô através de um **aplicativo de celular** que controla a movimentação do agente robótico por meio do movimento do aparelho. Para isso, é utilizado o **acelerômetro**, um sensor interno que serve como fonte de dados da movimentação que está sendo realizada. Ao identificar a direção do deslocamento através da análise desses dados, é enviado um comando à BitDogLab via **Bluetooth**, que será interpretado e executado pela placa. Também utilizando o Bluetooth, é possível enviar **dados de temperatura e umidade** de um sensor conectado à BitDogLab para exibição no aplicativo. Ainda, o aplicativo apresenta, em tempo real, **imagens** que estão sendo enviadas por **wi-fi** para um servidor web por uma câmera disposta no agente robótico, sendo possível movimentar a câmera por meio de um **joystick** disposto no aplicativo de celular, que controla dois servo motores presentes no robô que servem como base para a câmera. Caso o robô esteja muito próximo de um obstáculo, um **sensor ultrassônico** irá detectar e impedir movimentos frontais, evitando a possível colisão.
 
 ### Autores
 
@@ -16,25 +16,26 @@ Patric Moreto, RA: 223083
 **On-board:**
 - Buzzer
 - Matriz de LEDs 5 x 5
-- Periférico para comunicação UART/I2C (canal 0)
+- Periférico para comunicação UART/I2C (canais 0 e 1)
 
 **Off-board:**
 - Celular
 - Módulo bluetooth HC-05
-- Robô móvel ([chassi](https://www.tinkercad.com/things/1lvaPDfdjkt-chassi-bitmovel/edit?sharecode=c4YGIVprehL-UuPeUL_7wFy6jiYbiTO2cclIelt4kQc) e [conexões + detalhes](https://docs.google.com/document/d/19eDUn6APOkDckY-d9zxlf_N0l-tGTjby_PLXqS_WKOg/edit?usp=sharing))
+- Robô móvel ([chassi](https://www.tinkercad.com/things/1lvaPDfdjkt-chassi-bitmovel/edit?sharecode=c4YGIVprehL-UuPeUL_7wFy6jiYbiTO2cclIelt4kQc), [aerofólio]() e [conexões + detalhes](https://docs.google.com/document/d/19eDUn6APOkDckY-d9zxlf_N0l-tGTjby_PLXqS_WKOg/edit?usp=sharing))
 - 2 motores DC
+- Bateria LiPo 2S
 - Driver para motor (ponte H TB6612FNG)
 - ESP32-CAM + OV2640
 - Módulo conversor USB / TTL
 - Sensor ultrassônico HC-SR04
 - Sensor de temperatura AHT10
 - Placa de circuito impresso
-- Servo motores
-- Placa expansora
+- 2 servo motores + suporte plástico/impresso em 3D
+- Placa expansora com expansão I2C e regulador 5 V
 
 ## Placa de circuito impresso
 
-Foi criada uma PCI que possibilita o carregamento de programas na ESP32-CAM sem a necessidade de remover o módulo do BitMóvel, sendo apenas necessário inserir um jumper e realimentar a placa. O projeto da placa foi feito no Kicad está disponível na pasta PCI, sendo possível visualizar sua prévia abaixo.
+Foi criada uma PCI que possibilita o carregamento de programas na ESP32-CAM sem a necessidade de remover o módulo do BitMóvel, sendo apenas necessário inserir um jumper e alimentar a placa. O projeto da placa foi feito no Kicad está disponível na pasta PCI, sendo possível visualizar sua prévia abaixo.
 
 ![Placa de circuito impresso](./Img/PCI.png)
 
@@ -81,12 +82,14 @@ Ao acessar a tela de medições climáticas, será requisitada nova conexão Blu
 
 - **Conexão Wi-Fi:** Ao ligar o robô, a placa ESP32-CAM será energizada e iniciar seu access point. Basta conectar o celular à rede wi-fi *BitMovel-WiFi* e as imagens da câmera estarão disponíveis no aplicativo.
 
+- **Gravação de código na ESP32-CAM:** Para gravar um novo código na ESP32-CAM, na PCI que acompanha o robô, há uma placa vermelha ao lado da câmera dedicada para isso. Coloque um cabo conectando os dois pinos macho separados do canto esquerdo inferior da placa, remova o cabo de alimentação da placa e coloque-o novamente. Isso fará a ESP32-CAM entrar em modo de gravação. Agora basta conectar o cabo mini USB à placa vermelha, abrir o Arduino IDE e carregar o novo programa desejado.
+
 - **Robô:** Confira se as rodas estão bem encaixadas e que não estão em contato com o parafuso, podendo causar travamento das rodas. Caso esteja tudo bem, basta apertar o botão *LIGA/DESLIGA* na placa BitDogLab, que está no canto esquerdo superior, olhando para o robô com as rodas voltadas para baixo. Para desligar o veículo, basta apertar duas vezes o mesmo botão.
 
 ## Projeto do aplicativo feito no MIT App Inventor
 
-O arquivo *bluetooth_explorador.aia* disponibilizado nesse repositório contém o projeto do aplicativo de celular desenvolvido. É possível fazer o download desse projeto e importar para o MIT App Inventor, sendo possível realizar edições.
+O arquivo *bluetooth_explorador.aia* disponibilizado nesse repositório contém o projeto do aplicativo de celular desenvolvido. É possível fazer o download desse projeto e importar para o MIT App Inventor, sendo possível realizar edições, ou baixar o arquivo .apk diretamente do repositório ou pelo QR Code acima.
 
 ## TODO
 
-Atualizar instruções sobre sensor de temperatura, fluxograma da BitDogLab e do aplicativo de celular, arquivos .aia, QR Code, revisar recursos off-board, adicionar arquivo .apk.
+Atualizar instruções sobre sensor de temperatura, fluxograma da BitDogLab e do aplicativo de celular, QR Code e arquivos .aia e .apk.
