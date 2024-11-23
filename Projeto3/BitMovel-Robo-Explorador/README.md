@@ -92,4 +92,4 @@ O arquivo *bluetooth_explorador.aia* disponibilizado nesse repositório contém 
 
 ## TODO
 
-Atualizar instruções sobre sensor de temperatura, fluxograma da BitDogLab e do aplicativo de celular, QR Code e arquivos .aia e .apk.
+Atualizar instruções sobre sensor de temperatura, QR Code e arquivos .aia e .apk.

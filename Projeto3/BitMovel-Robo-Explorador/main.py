@@ -321,9 +321,7 @@ def verifica_distancia():
     duracao_pulso = tempo_sinal_alto - tempo_sinal_baixo
     distancia_cm = (duracao_pulso * VELOCIDADE_SOM) / (2 * 10000)
     
-            
     return distancia_cm
-
 
 # Inicia com os motores parados
 leds_rodas("parar")
