@@ -7,6 +7,9 @@ def get_apps_configs(repos: list):
     for dir in repos:
         # Se não tiver um repo.json não é considerado um repositório
         # Portanto, é ignorado
+        if not os.path.isdir(dir):
+            continue
+            
         if not "repo.json" in os.listdir(dir):
             print("repo.json não encontrado")
             continue
