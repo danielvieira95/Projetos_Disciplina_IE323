@@ -106,6 +106,12 @@ def ls(device):
     file_manager = ampy.files.Files(board)
     return file_manager.ls(long_format=False,recursive=True)
 
+#Listar arquivos na placa
+def ls_dir(dir,device):
+    board = ampy.pyboard.Pyboard(device)
+    file_manager = ampy.files.Files(board)
+    return file_manager.ls(directory=f'/{dir}', long_format=False,recursive=True)
+    
 #Carregar um arquivos da placa
 def get(file, device):
     board = ampy.pyboard.Pyboard(device)

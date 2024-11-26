@@ -290,10 +290,6 @@ class BitDogStore(toga.App):
         new_version = await self.gen_version(install_object.config)
         cur_version = await self.get_cur_version(install_object.dev)
         files_remove = await self.get_cur_app_files(install_object.dev)
-        try:
-            await self.remove_files(files_remove, install_object.dev)
-        except:
-            pass
         # faz instalação dos arquivos python
         for file in install_object.config['micropython_config']['files']:
             # remover caminho do sistema para ter o caminho que será salvo no BitDogLab
@@ -302,6 +298,10 @@ class BitDogStore(toga.App):
 
             # se o arquivo faz parte do app não deve ser deletado
             if f'/{destine_name}' in files_remove:
+                if destine_name.count('/') > 0:
+                    dir = destine_name.split('/')[0]
+                    if f'/{dir}' in files_remove:
+                        files_remove.pop(files_remove.index(f'/{destine_name}'))
                 files_remove.pop(files_remove.index(f'/{destine_name}'))
 
             # verifica se o arquivo está na versão correta
@@ -318,7 +318,29 @@ class BitDogStore(toga.App):
             # sobe o arquivo python
             tools.push_py.push(file, destine_name, install_object.dev)
         await self.update_version(new_version, install_object.dev)
+        try:
+            await self.remove_files(files_remove, install_object.dev)
+            current_files = push_py.ls(install_object.dev)
+            for file in current_files:
+                if await self.is_dir(file,install_object.dev):
+                    dir_files = push_py.ls_dir(file,install_object.dev)
+                    if len(dir_files) == 1 and dir_files[0] == f'/{file}':
+                        try:
+                            push_py.rmdir(file, install_object.dev)
+                            print(f'pasta vazia {file} apagado')
+                        except:
+                            pass
+        except:
+            pass
 
+    async def is_dir(self,file,dev):
+        try:
+            push_py.get(file,dev)
+        except:
+            return True
+            
+        return False;
+    
     async def put_bootloader_update_firmware(self, install_object:Install, firmware):
         install_object.changing_device = True
         self.put_bitdog_in_bootloader_window(install_object)
