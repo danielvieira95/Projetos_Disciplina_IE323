@@ -22,7 +22,7 @@ O fluxograma abaixo ilustra o funcionamento do aplicativo de celular:
 
 1. Instale a IDE Arduino.
 2. Conecte a placa BitDogLab ao computador através de um cabo micro-USB.
-3. Para utilizar a Raspberry Pi Pico, é necessário instalar o gerenciador de porta Raspberry Pi Pico RP2040. Vá em `File > Preferências` e copie <sub>https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json<sub> em `Additional Boards manager URL's`. Em seguida, vá em `Tools > Board > Board manager`e instale `Raspberry Pi Pico/RP2040 by Earlephilhower`.
+3. Para utilizar a Raspberry Pi Pico, é necessário instalar o gerenciador de porta Raspberry Pi Pico RP2040. Vá em `File > Preferências` e copie `https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json` em `Additional Boards manager URL's`. Em seguida, vá em `Tools > Board > Board manager`e instale `Raspberry Pi Pico/RP2040 by Earlephilhower`.
 4. Baixe os códigos `Projeto_Seguidor_de_Linha.ino` neste repositório.
 5. Na IDE Arduino, acesse `Arquivo > Abrir` e localize o arquivo `Projeto_Seguidor_de_Linha.ino` (por exemplo, na pasta Downloads).
 6. Pressione o botão de verificar o código para certificar-se que não há erro, caso esteja tudo certo:
