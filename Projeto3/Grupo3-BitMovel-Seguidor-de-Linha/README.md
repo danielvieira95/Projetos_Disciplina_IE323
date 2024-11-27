@@ -19,11 +19,12 @@ Este projeto usa:
 - 2 motores DC 3-6V com Caixa de Redução e Eixo Duplo + Roda 68mm
 - 1 Driver ponte H modelo HW-166
 - 1 bateria 2s1p 7,6V 550mAh
-- 1 placa de sensores conforme arquivo (Projetado pela equipe e disponibilizado nesse material)
+- 1 placa de sensores conforme arquivo (Projeto3/Grupo3-BitMovel-Seguidor-de-Linha/Placas Eletrônicas/placa_de_sensores.kicad_pcb)
 - 1 módulo ADS1115
-- 1 placa de monitoramento de bateria conforme arquivo (Projetado pela equipe e disponibilizado nesse material)
+- 1 placa de monitoramento de bateria conforme arquivo (Projeto3/Grupo3-BitMovel-Seguidor-de-Linha/Placas Eletrônicas/monitoramento.kicad_pcb)
 - 1 módulo Bluetooth HC-05
 - 1 módulo INA-226
+- 1 placa expansor I2C conforme arquivo (Projeto3/Grupo3-BitMovel-Seguidor-de-Linha/Placas Eletrônicas/expansão_i2c.kicad_pcb)
 - Peças para impressão 3D conforme arquivo (desenhos_mecanicos_3d/suporte_sensores_avulsos.STL)
 - 3 parafusos M3 30mm
 - 6 porcas m3
