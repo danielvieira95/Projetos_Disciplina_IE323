@@ -12,19 +12,22 @@ BitMóvel Seguidor de Linha é um projeto educacional de robô seguidor de linha
 </details>
 O objetivo do Projeto 3 da disciplina é utilizar a placa BitDogLab conectada a dispositivos externos, com a proposta de preparar o projeto para uso em escolas. Isso inclui o desenvolvimento peças 3D e de placas eletrônicas, por exemplo, para eliminar fios soltos que podem causar mau contato.<br><br>
 
-O BitMóvel Seguidor de Linha é um robô diferencial com 2 rodas motrizes e uma esfera de apoio na frente, formando um tripé ou triciclo. O robô usa sensores reflexivos infravermelhos TCRT5000 para detectar uma linha escura no chão. O chassis e suporte dos sensores é fabricado por impressão 3D em PLA. Além da função seguidor de linha, os botões A e B são programados para comandar o robô para ativo ou desativado, respectivamente. O robô inicia no modo desativado, então quando o botão A é pressionado o robô está em modo de movimento ativo para frente seguindo a linha embaixo do chassis. Quando o botão B é pressionado o robô fica parado até que se pressione o botão A novamente.
+O BitMóvel Seguidor de Linha é um robô diferencial com 2 rodas motrizes e uma esfera de apoio na frente, formando um tripé ou triciclo. O robô usa sensores reflexivos infravermelhos QRD1114 para detectar uma linha escura no chão. O design do carrinho é fabricado por impressão 3D em PLA. Além da função seguidor de linha, os botões A e B são programados para comandar o robô para ativo ou desativado, respectivamente. O robô inicia no modo desativado, então quando o botão A é pressionado o robô está em modo de movimento ativo para frente seguindo a linha embaixo do chassis. Quando o botão B é pressionado o robô fica parado até que se pressione o botão A novamente. O BitMóvel conta com um aplicativo que permite o monitoramento da bateria. Por meio dele, o usuário pode acessar informações sobre o BitDogLab, controlar o acionamento e desligamento do carrinho, verificar o nível da bateria e obter suporte técnico. Além disso, o código implementado protege o carrinho contra níveis críticos de bateria e situações de sobrecorrente no circuito.
+
 Este projeto usa:
 - 1 Placa BitDogLab
 - 2 motores DC 3-6V com Caixa de Redução e Eixo Duplo + Roda 68mm
 - 1 Driver ponte H modelo HW-166
 - 1 bateria 2s1p 7,6V 550mAh
-- 4 sensores TCRT5000
-- 1 Chassis impresso conforme arquivo (desenhos_mecanicos_3d/chassis_com_detalhes.STL)
-- 1 Suporte de sensores conforme arquivo (desenhos_mecanicos_3d/suporte_sensores_avulsos.STL)
-- 1 esfera para apoio
-- 10 jumpers macho-fêmea
-- 4 jumpers fêmea-fêmea
-- fita isolante
+- 1 placa de sensores conforme arquivo (Projetado pela equipe e disponibilizado nesse material)
+- 1 módulo ADS1115
+- 1 placa de monitoramento de bateria conforme arquivo (Projetado pela equipe e disponibilizado nesse material)
+- 1 módulo Bluetooth HC-05
+- 1 módulo INA-226
+- Peças para impressão 3D conforme arquivo (desenhos_mecanicos_3d/suporte_sensores_avulsos.STL)
+- 3 parafusos M3 30mm
+- 6 porcas m3
+- Fita isolante
 - fita dupla-face
 <br><br>
 
