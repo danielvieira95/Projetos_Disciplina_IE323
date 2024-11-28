@@ -429,7 +429,9 @@ while True:
             print(f"{distancia:>6.2f} cm | Temp: {temperatura:>5.1f} C | Umidade: {umidade:>5.1f} %") 
             # Envia temperatura e umidade relativa pelo HC-05
             uart.write(f"{temperatura:>5.1f}")
+            uart.write(",")
             uart.write(f"{umidade:>5.1f}")
+            uart.write(",")
         else:
             print("Erro ao ler sensor AHT10")
             # Imprime distância
