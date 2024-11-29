@@ -86,6 +86,8 @@ Voltando para o aplicativo, ao pressionar o botão de Bluetooth será aberta uma
 
 - **Gravação de código na ESP32-CAM:** Para gravar um novo código na ESP32-CAM, na PCI que acompanha o robô, há uma placa vermelha ao lado da câmera dedicada para isso. Coloque o jumper utilizado na etapa de Conexão Bluetooth, de maneira a conectar os dois pinos macho separados no canto esquerdo inferior da placa, e conecte o cabo mini USB à placa vermelha. Isso fará a ESP32-CAM entrar em modo de gravação. Agora basta abrir o Arduino IDE e carregar o novo programa desejado.
 
+![Posição do jumper na PCI de gravação](./Img/jumper_pci.png)
+
 - **Robô:** Confira se as rodas estão bem encaixadas e que não estão em contato com o parafuso, podendo causar travamento das rodas. Caso esteja tudo bem e o jumper já esteja conectado conforme instruções da seção Conexão Bluetooth, basta apertar o botão *LIGA/DESLIGA* na placa BitDogLab, que está no canto esquerdo superior, olhando para o robô de cima e com as rodas para o lado de baixo. Para desligar o veículo, basta apertar duas vezes o mesmo botão.
 
 ![Posição do botão LIGA/DESLIGA na BitDogLab](./Img/liga&desliga.png)
