@@ -71,16 +71,16 @@ Na ligação BL pode ser GP10 ou GP8. é so ficar atento no código.
 	* ST7735.py auxilia no display LCD TFT 128*RGB160
 	* sysfont.py auxilia nas fontes de letras para display LCD TFT
 - `raiz`:Inicio.bmp arquivo de apresentação no principio e fase intermediaria do jogo
-- `raiz`:Resp_1.bmp arquivo quer mostra dicas como resolver nivel 1
-- `raiz`:Resp_2.bmp arquivo quer mostra dicas como resolver nivel 2
-- `raiz`:Resp_3.bmp arquivo quer mostra dicas como resolver nivel 3
-- `raiz`:Resp_4.bmp arquivo quer mostra dicas como resolver nivel 4
-- `raiz`:Resp_5.bmp arquivo quer mostra dicas como resolver nivel 5
-- `raiz`:Resp_6.bmp arquivo quer mostra dicas como resolver nivel 6
-- `raiz`:Resp_7.bmp arquivo quer mostra dicas como resolver nivel 7
-- `raiz`:Resp_8.bmp arquivo quer mostra dicas como resolver nivel 8
-- `raiz`:Resp_9.bmp arquivo quer mostra dicas como resolver nivel 9
-- `raiz`:Resp_10.bmp arquivo quer mostra dicas como resolver nivel 10
+- `raiz`:Resp_1.bmp arquivo que mostra o gabarito do nivel 1
+- `raiz`:Resp_2.bmp arquivo que mostra o gabarito do nivel 2
+- `raiz`:Resp_3.bmp arquivo que mostra o gabarito do nivel 3
+- `raiz`:Resp_4.bmp arquivo que mostra o gabarito do nivel 4
+- `raiz`:Resp_5.bmp arquivo que mostra o gabarito do nivel 5
+- `raiz`:Resp_6.bmp arquivo que mostra o gabarito do nivel 6
+- `raiz`:Resp_7.bmp arquivo que mostra o gabarito do nivel 7
+- `raiz`:Resp_8.bmp arquivo que mostra o gabarito do nivel 8
+- `raiz`:Resp_9.bmp arquivo que mostra o gabarito do nivel 9
+- `raiz`:Resp_10.bmp arquivo que mostra o gabarito do nivel 10
 - `docs/`: Documentação técnica.pdf, documentação do usuário.ppf
 - `README.md`: Este arquivo.
 Todos arquivos 
