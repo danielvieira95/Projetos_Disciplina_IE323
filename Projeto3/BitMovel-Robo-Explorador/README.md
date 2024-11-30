@@ -21,7 +21,7 @@ Patric Moreto, RA: 223083
 **Off-board:**
 - Celular
 - Módulo bluetooth HC-05
-- Robô móvel ([chassi](https://www.tinkercad.com/things/1lvaPDfdjkt-chassi-bitmovel/edit?sharecode=c4YGIVprehL-UuPeUL_7wFy6jiYbiTO2cclIelt4kQc), [aerofólio]() e [conexões + detalhes](https://docs.google.com/document/d/19eDUn6APOkDckY-d9zxlf_N0l-tGTjby_PLXqS_WKOg/edit?usp=sharing))
+- Robô móvel ([chassi](https://www.tinkercad.com/things/1lvaPDfdjkt-chassi-bitmovel/edit?sharecode=c4YGIVprehL-UuPeUL_7wFy6jiYbiTO2cclIelt4kQc), [aerofólio](https://www.tinkercad.com/things/buQTXUUQPVn-aerofolio/edit?returnTo=%2Fthings%2FbuQTXUUQPVn-aerofolio) e [conexões + detalhes](https://docs.google.com/document/d/19eDUn6APOkDckY-d9zxlf_N0l-tGTjby_PLXqS_WKOg/edit?usp=sharing))
 - 2 motores DC
 - Bateria LiPo 2S
 - Driver para motor (ponte H TB6612FNG)
