@@ -23,15 +23,40 @@ Patric Moreto, RA: 223083
 - Módulo bluetooth HC-05
 - Robô móvel ([chassi](https://www.tinkercad.com/things/1lvaPDfdjkt-chassi-bitmovel/edit?sharecode=c4YGIVprehL-UuPeUL_7wFy6jiYbiTO2cclIelt4kQc), [aerofólio](https://www.tinkercad.com/things/buQTXUUQPVn-aerofolio/edit?returnTo=%2Fthings%2FbuQTXUUQPVn-aerofolio) e [conexões + detalhes](https://docs.google.com/document/d/19eDUn6APOkDckY-d9zxlf_N0l-tGTjby_PLXqS_WKOg/edit?usp=sharing))
 - 2 motores DC
-- Bateria LiPo 2S
+- 2 rodas 68 mm
+- Bateria LiPo 2S 550 mAh
 - Driver para motor (ponte H TB6612FNG)
 - ESP32-CAM + OV2640
 - Módulo conversor USB / TTL
 - Sensor ultrassônico HC-SR04
 - Sensor de temperatura AHT10
 - Placa de circuito impresso
-- 2 servo motores + suporte plástico/impresso em 3D
+- 2 servo motores + suporte plástico/impresso em 3D para movimentação pan e tilt
 - Placa expansora com expansão I2C e regulador 5 V
+
+Os componentes que podem ser comprados facilmente estão tabelados a seguir.
+
+|             Item             | Quantidade |                        Descrição                        | Código de fabricante  | Links |
+|:----------------------------:|:----------:|:-------------------------------------------------------:|:---------------------:|:-----:|
+|             HC-05            |      1     |                     Módulo Bluetooth                    |         HC05          |  [Link](https://www.a2robotics.com.br/produto/modulo-bluetooth-hc-05.html?utm_source=Site&utm_medium=GoogleShopping&utm_campaign=IntegracaoGoogle&gad_source=1&gclid=Cj0KCQjw0Oq2BhCCARIsAA5hubX2GjhASd7V3xTfM1GVxpMPHIr0fWWGYT2esOJLsDMWn-IL-hZoXdQaArUfEALw_wcB) |
+|       JST fêmea 4 pinos      |      2     |           Conector JST fêmea 4 pinos com cabo           |         2CB96         |  [Link](https://www.makerhero.com/produto/conector-jst-4-pinos-femea/) |
+|           ESP32-CAM          |      1     |             Módulo ESP32-CAM + câmera OV2640            |         6WL90         |  [Link](https://www.makerhero.com/produto/modulo-esp32-cam-com-camera-ov2640-2mp/) |
+|     Módulo gravador CH340    |      1     | Módulo gravador conversor USB/Serial CH340 para ESP-CAM |         GC09          |  [Link](https://www.casadarobotica.com/placas-embarcadas/esp/shield/modulo-conversor-shield-usb-serial-ch340-para-esp32-cam-esp32) |
+| Conversor USB Serial FT232RL |      1     |           Módulo conversor USB/Serial FT232RL           |       N9EK77PXR       |  [Link](https://www.a2robotics.com.br/conversor-usb-serial-ft232rl-ft232?utm_source=Site&utm_medium=GoogleShopping&utm_campaign=IntegracaoGoogle&gad_source=1&gclid=CjwKCAiAjKu6BhAMEiwAx4UsAobkDi_B8SoBQAFprDd8rf7sh3_WokTIa423_h0s4shOevF-Tbq56hoCV2gQAvD_BwE) |
+|            HC-SR04           |      1     |         Sensor de distância ultrassônico HC-SR04        |         9SS01         |  [Link](https://www.makerhero.com/produto/sensor-de-distancia-ultrassonico-hc-sr04/) |
+|             AHT10            |      1     |          Sensor de temperatura e umidade AHT10          |         08807         |  [Link](https://www.usinainfo.com.br/sensor-de-temperatura/sensor-aht10-de-alta-precisao-para-medir-temperatura-e-umidade-5691.html) |
+|       Suporte pan/tilt       |      1     |      Suporte movimentação pan/tilt de servo motores     |        C15-001        |  [Link](https://www.eletrogate.com/suporte-pan-tilt-para-servo-motor) |
+|          Servo motor         |      2     |              Servo motor SG90 9g Tower Pro              |         7MS09         |  [Link](https://www.makerhero.com/produto/micro-servo-9g-sg90-towerpro/) |
+|          XT30 fêmea          |      2     |                   Conector XT30 fêmea                   |         UC02          |  [Link](https://www.casadarobotica.com/ver-mais/conector-xt-30-femea-conector-lipo?parceiro=3259&gad_source=1&gclid=CjwKCAiAjKu6BhAMEiwAx4UsAraRZJcCj56NbO9tpxZhVxdyxqlVdJuIaMfyusyq7Y3sOVDGIc3oGBoCwFMQAvD_BwE) |
+|          XT30 macho          |      1     |                   Conector XT30 macho                   |         UC01          |  [Link](https://www.casadarobotica.com/ver-mais/conector-xt-30-macho-conector-lipo?parceiro=3259&gad_source=1&gclid=CjwKCAiAjKu6BhAMEiwAx4UsArPk5ABlAASJx575vaAB5vW-nAvS3B6FmgVn1CDUrXsmXweUmmXCAhoC5yQQAvD_BwE) |
+|            LiPO 2S           |      1     |           Bateria Lipo 2S GNB HV 550 mAh 100c           |       3N9CS8V6D       |  [Link](https://www.mercadofpv.com.br/bateria-lipo-2s-gnb-550mah-xt30-100c-76v?srsltid=AfmBOoq2uLk96ERSVQooedK1l6WyxYJDRnEFS2iBRDe8iuiaUZJb9Uuk) |
+|       Driver TB6612FNG       |      1     |                 Driver TB6612FNG Ponte H                |         07766         |  [Link](https://www.usinainfo.com.br/driver-para-motor/driver-tb6612fng-duplo-ponte-h-de-motor-dc-ou-passo-4697.html) |
+|           Motor DC           |      2     |     Motor DC 3-6V com Caixa de Redução e Eixo Duplo     |       DG01D-A130      |  [Link](https://www.robocore.net/motor-motoredutor/motor-dc-3-6v-com-caixa-de-reducao-e-eixo-duplo?srsltid=AfmBOoqLHgizbn0gZF61xttOR3IJUD1AubocqiVNkSUDRpU2Qb-1_WqD) |
+|          Roda 68 mm          |      2     |                        Roda 68 mm                       |        B2-CP-001      |  [Link](https://www.eletrogate.com/roda-68mm-para-chassi-robo-robotica) |
+|         Expansor I2C         |      1     |                                                         |                       |  [Link]() |
+|         Regulador 5 V        |      1     |                                                         |                       |  [Link]() |
+|       Borne KRE 2 vias       |      1     |                Conector borne KRE 2 vias                |       CCHGW3DTS       |  [Link](https://www.a2robotics.com.br/conector-borne-kre-2-vias?utm_source=Site&utm_medium=GoogleShopping&utm_campaign=IntegracaoGoogle&gad_source=1&gclid=CjwKCAiAjKu6BhAMEiwAx4UsAmFMy1QJVd-eJWjm5CC3EwINnCmLZXtyfIS3I62MyXeWaU2be4_r1BoCVmMQAvD_BwE) |
+|             Cabos            |      1     |             Kit com 40 cabos (usos diversos)            |  3CKD45VR8-9APYHNRP1  |  [Link](https://www.a2robotics.com.br/9apyhnrp1-jumper-femea-x-femea-20-cm-c-40-cabos) |
 
 ## Placa de circuito impresso
 
@@ -98,4 +123,4 @@ O arquivo *bluetooth_explorador.aia* disponibilizado nesse repositório contém 
 
 ## TODO
 
-Atualizar hyperlink do aerofólio e apresentação, adicionar requisitos extras especificadas no Moodle para entrega formal.
+Atualizar apresentação e adicionar requisitos extras especificadas no Moodle para entrega formal.
