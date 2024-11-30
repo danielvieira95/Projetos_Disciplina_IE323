@@ -70,19 +70,20 @@ Na ligação BL pode ser GP10 ou GP8. é so ficar atento no código.
 	* ssd1306.py auxilia no display oled
 	* ST7735.py auxilia no display LCD TFT 128*RGB160
 	* sysfont.py auxilia nas fontes de letras para display LCD TFT
-- `raiz`:Inicio.bmp
-- `raiz`:Resp_1.bmp
-- `raiz`:Resp_2.bmp
-- `raiz`:Resp_3.bmp
-- `raiz`:Resp_4.bmp
-- `raiz`:Resp_5.bmp
-- `raiz`:Resp_6.bmp
-- `raiz`:Resp_7.bmp
-- `raiz`:Resp_8.bmp
-- `raiz`:Resp_9.bmp
-- `raiz`:Resp_10.bmp
+- `raiz`:Inicio.bmp arquivo de apresentação no principio e fase intermediaria do jogo
+- `raiz`:Resp_1.bmp arquivo quer mostra dicas como resolver nivel 1
+- `raiz`:Resp_2.bmp arquivo quer mostra dicas como resolver nivel 2
+- `raiz`:Resp_3.bmp arquivo quer mostra dicas como resolver nivel 3
+- `raiz`:Resp_4.bmp arquivo quer mostra dicas como resolver nivel 4
+- `raiz`:Resp_5.bmp arquivo quer mostra dicas como resolver nivel 5
+- `raiz`:Resp_6.bmp arquivo quer mostra dicas como resolver nivel 6
+- `raiz`:Resp_7.bmp arquivo quer mostra dicas como resolver nivel 7
+- `raiz`:Resp_8.bmp arquivo quer mostra dicas como resolver nivel 8
+- `raiz`:Resp_9.bmp arquivo quer mostra dicas como resolver nivel 9
+- `raiz`:Resp_10.bmp arquivo quer mostra dicas como resolver nivel 10
 - `docs/`: Documentação técnica.pdf, documentação do usuário.ppf
 - `README.md`: Este arquivo.
+Todos arquivos 
 
 
 Links de referência das bibliotecas:
@@ -94,7 +95,7 @@ Links de referência das bibliotecas:
 
 ## Como Executar
 
-1. Instale as dependências: Certifique-se de que todas as bibliotecas necessárias estão instaladas no Raspberry Pi Pico
+1. Instale as dependências: Certifique-se de que todas as bibliotecas necessárias estão instaladas no Raspberry Pi Pico e as Imagens usadas para exibir dicas no Display LCD TFT. 
 
 2. Usa a conexão apropriada dos componentes segundo diagrama de conexão hardware.
 
