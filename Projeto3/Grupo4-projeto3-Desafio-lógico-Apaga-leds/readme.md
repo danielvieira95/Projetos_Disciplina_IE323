@@ -70,6 +70,17 @@ Na ligação BL pode ser GP10 ou GP8. é so ficar atento no código.
 	* ssd1306.py auxilia no display oled
 	* ST7735.py auxilia no display LCD TFT 128*RGB160
 	* sysfont.py auxilia nas fontes de letras para display LCD TFT
+- `raiz`:Inicio.bmp
+- `raiz`:Resp_1.bmp
+- `raiz`:Resp_2.bmp
+- `raiz`:Resp_3.bmp
+- `raiz`:Resp_4.bmp
+- `raiz`:Resp_5.bmp
+- `raiz`:Resp_6.bmp
+- `raiz`:Resp_7.bmp
+- `raiz`:Resp_8.bmp
+- `raiz`:Resp_9.bmp
+- `raiz`:Resp_10.bmp
 - `docs/`: Documentação técnica.pdf, documentação do usuário.ppf
 - `README.md`: Este arquivo.
 
