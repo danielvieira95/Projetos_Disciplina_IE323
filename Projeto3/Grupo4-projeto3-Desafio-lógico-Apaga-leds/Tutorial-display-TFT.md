@@ -43,7 +43,7 @@ Neste caso é PCB da BitDogLab é da versão 5 que igual este conector
 3. **Instale a biblioteca machine** se ainda não estiver configurada.
 
 4. **Código Exemplo**:
-## Para texto 
+#### Para texto 
 ```python
 from machine import Pin, SPI # Comunicação SPI e manipulação de GPIOs
 from ST7735 import TFT # Biblioteca para displays TFT ST7735
@@ -69,7 +69,7 @@ tft.text((10, 10), "BitDogLab V5", TFT.WHITE, sysfont)
 tft.text((10, 30), "ST7735 Display", TFT.GREEN, sysfont)
 
 ```
-## Para imagem
+#### Para imagem
 
 ```python
 from machine import Pin, SPI
