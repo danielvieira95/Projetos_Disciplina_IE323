@@ -67,13 +67,15 @@ Fonte e texto: Para exibir texto, use a biblioteca sysfont.py ou fontes customiz
 Consulte o link de discussões para dúvidas comuns, como configurações de hardware ou software.
 Verifique os cabos e a alimentação do display se ele não inicializar corretamente.
 
-## Referências
-Repositório da Biblioteca ST7735.py
-Fonte para Texto: sysfont.py
-Esquema de Ligações do BitDogLab
+## Links de referência
+* [ST7735](https://github.com/boochow/MicroPython-ST7735/tree/master) biblioteca ST7735.py com alguns exemplos
+* [sysfont](https://github.com/GuyCarver/MicroPython/blob/master/lib/sysfont.py) biblioteca das sysfont
+* [ST7735](https://github.com/boochow/MicroPython-ST7735/issues/9) link que complementa uma duvida sobre usar este biblioteca ST7735.
+* [BitDogLab](https://github.com/BitDogLab/BitDogLab/commit/db2704d02596209923995fc20823b8b6147ad800) Este link da fonte da imagem dos esquema das ligações
 
 ## Créditos
 Código traduzido por Guy Carver e modificado por boochow.
+
 Integração com BitDogLab por Gelson de Barros Ferreira e Wallif Campos.
 
 # Com este guia, você poderá iniciar facilmente o uso do display TFT de 1.8" com sua plataforma BitDogLab.
