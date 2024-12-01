@@ -35,9 +35,9 @@ Este guia fornece um tutorial para configurar e usar um display TFT de 1.8" (ST7
 
 4. **Código Exemplo**:
 ```python
-from machine import Pin, SPI
-from ST7735 import TFT
-import sysfont
+from machine import Pin, SPI # Comunicação SPI e manipulação de GPIOs
+from ST7735 import TFT # Biblioteca para displays TFT ST7735
+from sysfont import sysfont # Fonte básica para textos no display TFT
 
 # Configuração da interface SPI para o display
 spi = SPI(0, baudrate=20000000, polarity=0, phase=0, sck=Pin(18), mosi=Pin(19))
