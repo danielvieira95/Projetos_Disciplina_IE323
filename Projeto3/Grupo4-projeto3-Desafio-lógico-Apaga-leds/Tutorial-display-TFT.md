@@ -56,7 +56,7 @@ backlight.value(1)  # Ativa o backlight
 tft.text((10, 10), "BitDogLab V5", TFT.WHITE, sysfont)
 tft.text((10, 30), "ST7735 Display", TFT.GREEN, sysfont)
 
-
+```
 
 
 ## Ajustes no Código
