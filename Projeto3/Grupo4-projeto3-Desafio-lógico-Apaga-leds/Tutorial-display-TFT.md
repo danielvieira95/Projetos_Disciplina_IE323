@@ -21,7 +21,8 @@ Este guia fornece um tutorial para configurar e usar um display TFT de 1.8" (ST7
 | RST (Reset)          | Reset do display| GPIO20                |
 | CS (Chip Select)     | Seleção do Chip | GPIO17                |
 | BL (Backlight)       | Controle do LED | GPIO10                |
-
+| VCC                  | Voltagem corrente continua|  3V3         |
+| GND                  | Ground(terra) |   GND                  |
 ## Configuração do Software
 
 1. **Baixe as bibliotecas necessárias**:
