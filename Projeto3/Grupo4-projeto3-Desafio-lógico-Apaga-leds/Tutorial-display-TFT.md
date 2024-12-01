@@ -69,6 +69,10 @@ tft.text((10, 10), "BitDogLab V5", TFT.WHITE, sysfont)
 tft.text((10, 30), "ST7735 Display", TFT.GREEN, sysfont)
 
 ```
+##### Ajustes no Código
+Resolução do display: Certifique-se de ajustar para 128x160 no arquivo ST7735.py se necessário.
+Fonte e texto: Para exibir texto, use a biblioteca sysfont.py ou fontes customizadas.
+
 #### Para imagem
 
 ```python
@@ -138,13 +142,6 @@ def imagem(nome):
 imagem("Inicio")  # Substitua "imagem" pelo nome do seu arquivo BMP (sem extensão)
 ```
 
-
-
-
-## Ajustes no Código
-Resolução do display: Certifique-se de ajustar para 128x160 no arquivo ST7735.py se necessário.
-Fonte e texto: Para exibir texto, use a biblioteca sysfont.py ou fontes customizadas.
-
 ## Soluções de Problemas
 Consulte o link de discussões para dúvidas comuns, como configurações de hardware ou software.
 Verifique os cabos e a alimentação do display se ele não inicializar corretamente.
@@ -152,7 +149,7 @@ Verifique os cabos e a alimentação do display se ele não inicializar corretam
 ## Links de referência
 * [ST7735](https://github.com/boochow/MicroPython-ST7735/tree/master) biblioteca ST7735.py com alguns exemplos
 * [sysfont](https://github.com/GuyCarver/MicroPython/blob/master/lib/sysfont.py) biblioteca das sysfont
-* [ST7735](https://github.com/boochow/MicroPython-ST7735/issues/9) link que complementa uma duvida sobre usar este biblioteca ST7735.
+* [ST7735](https://github.com/boochow/MicroPython-ST7735/issues/9) link que complementa discussões e dúvidas comuns, sobre como usar este biblioteca ST7735.
 * [BitDogLab](https://github.com/BitDogLab/BitDogLab/commit/db2704d02596209923995fc20823b8b6147ad800) Este link da fonte da imagem dos esquema das ligações
 
 ## Créditos
