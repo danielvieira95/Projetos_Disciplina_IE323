@@ -54,3 +54,25 @@ backlight.value(1)  # Ativa o backlight
 # Exemplo: Escrevendo texto na tela
 tft.text((10, 10), "BitDogLab V5", TFT.WHITE, sysfont)
 tft.text((10, 30), "ST7735 Display", TFT.GREEN, sysfont)
+
+
+
+
+## Ajustes no Código
+Resolução do display: Certifique-se de ajustar para 128x160 no arquivo ST7735.py se necessário.
+Fonte e texto: Para exibir texto, use a biblioteca sysfont.py ou fontes customizadas.
+
+## Soluções de Problemas
+Consulte o link de discussões para dúvidas comuns, como configurações de hardware ou software.
+Verifique os cabos e a alimentação do display se ele não inicializar corretamente.
+
+## Referências
+Repositório da Biblioteca ST7735.py
+Fonte para Texto: sysfont.py
+Esquema de Ligações do BitDogLab
+
+## Créditos
+Código traduzido por Guy Carver e modificado por boochow.
+Integração com BitDogLab por Gelson de Barros Ferreira e Wallif Campos.
+
+# Com este guia, você poderá iniciar facilmente o uso do display TFT de 1.8" com sua plataforma BitDogLab.
