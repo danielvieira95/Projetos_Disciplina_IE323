@@ -60,7 +60,7 @@ tft.text((10, 10), "BitDogLab V5", TFT.WHITE, sysfont)
 tft.text((10, 30), "ST7735 Display", TFT.GREEN, sysfont)
 
 ```
-   - ### Para imagem
+   - ## Para imagem
 
 ```python
 from machine import Pin, SPI
