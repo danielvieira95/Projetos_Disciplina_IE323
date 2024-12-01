@@ -40,7 +40,7 @@ Neste caso é PCB da BitDogLab é da versão 5 que igual este conector
 
 2. **Salve os arquivos** no sistema de arquivos do Raspberry Pi Pico utilizando um programa como `Thonny IDE`.
 
-3. **Instale a biblioteca SPI** se ainda não estiver configurada.
+3. **Instale a biblioteca machine** se ainda não estiver configurada.
 
 4. **Código Exemplo**:
    - ## Para texto 
