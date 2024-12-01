@@ -46,7 +46,10 @@ spi = SPI(0, baudrate=20000000, polarity=0, phase=0, sck=Pin(18), mosi=Pin(19))
 tft = TFT(spi, 16, 20, 17)  # pinos DC, RST, CS
 tft.initr()  # Inicializa em modo padrão
 tft.rgb(True)  # Define o modo de cores RGB
+tft.rotation(1)  # Define a rotação de 180 graus ou seja variar de 0 - 3. Começa na vertical com o topo voltado para os pinos e gira 90 graus
+no sentido horário a cada passo.
 tft.fill(TFT.BLACK)  # Preenche a tela com preto
+
 
 # Configuração do pino para controle do backlight
 backlight = Pin(10, Pin.OUT)
