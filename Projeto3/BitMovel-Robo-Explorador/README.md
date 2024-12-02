@@ -105,7 +105,7 @@ Caso deseja-se realizar as ligações da ESP32-CAM com o conversor USB / TTL sem
 Existem 5 movimentos padrões, que são avançar, virar para a esquerda, virar para a direita, retroceder e ficar parado, além das combinações avançar para esquerda, avançar para a direita, retroceder para a esquerda e retroceder para a direita.    
 No centro da tela, caso o celular esteja conectado no wi-fi do robô, são exibidas as imagens capturadas pela câmera da ESP32-CAM. É possível dar zoom na imagem fazendo o movimento de pinça com os dedos.
 
-- **Conexão Bluetooth:** No aerofólio do robô, conecte o jumper que vem com o robô entre o pino central e o pino da direita (olhando para o robô de frente) para habilitar a alimentação de 5V para todo o robô, incluindo o módulo bluetooth, que indicará que está energizado piscando rapidamente um LED vermelho.     
+- **Conexão Bluetooth:** No aerofólio do robô, conecte o jumper que vem com o robô entre o pino central e o pino da direita (olhando para o robô de frente) para habilitar a alimentação de 5V para todo o robô, incluindo o módulo bluetooth, que indicará que está energizado piscando rapidamente um LED vermelho. A figura a seguir apresenta a posição do jumper mencionado.    
 
 ![Posição do jumper para alimentação 5V](./Img/jumper5v.png)
 
@@ -114,11 +114,11 @@ Voltando para o aplicativo, ao pressionar o botão de Bluetooth será aberta uma
 
 - **Conexão Wi-Fi:** Ao ligar o robô, a placa ESP32-CAM será energizada e iniciar seu access point. Basta conectar o celular à rede wi-fi *BitMovel-WiFi* e as imagens da câmera estarão disponíveis no aplicativo.
 
-- **Gravação de código na ESP32-CAM:** Para gravar um novo código na ESP32-CAM, na PCI que acompanha o robô, há uma placa vermelha ao lado da câmera dedicada para isso. Coloque o jumper utilizado na etapa de Conexão Bluetooth, de maneira a conectar os dois pinos macho separados no canto esquerdo inferior da placa, e conecte o cabo mini USB à placa vermelha. Isso fará a ESP32-CAM entrar em modo de gravação. Agora basta abrir o Arduino IDE e carregar o novo programa desejado.
+- **Gravação de código na ESP32-CAM:** Para gravar um novo código na ESP32-CAM, na PCI que acompanha o robô, há uma placa vermelha ao lado da câmera dedicada para isso. Coloque o jumper utilizado na etapa de Conexão Bluetooth, de maneira a conectar os dois pinos macho separados no canto esquerdo inferior da placa, conforme indicado na imagem abaixo, e conecte o cabo mini USB à placa vermelha. Isso fará a ESP32-CAM entrar em modo de gravação. Agora basta abrir o Arduino IDE e carregar o novo programa desejado.
 
 ![Posição do jumper na PCI de gravação](./Img/jumper_pci.png)
 
-- **Robô:** Confira se as rodas estão bem encaixadas e que não estão em contato com o parafuso, podendo causar travamento das rodas. Caso esteja tudo bem e o jumper já esteja conectado conforme instruções da seção Conexão Bluetooth, basta apertar o botão *LIGA/DESLIGA* na placa BitDogLab, que está no canto esquerdo superior, olhando para o robô de cima e com as rodas para o lado de baixo. Para desligar o veículo, basta apertar duas vezes o mesmo botão.
+- **Robô:** Confira se as rodas estão bem encaixadas e que não estão em contato com o parafuso, podendo causar travamento das rodas. Caso esteja tudo bem e o jumper já esteja conectado conforme instruções da seção Conexão Bluetooth, basta apertar o botão *LIGA/DESLIGA* na placa BitDogLab, que está no canto esquerdo superior, olhando para o robô de cima e com as rodas para o lado de baixo, de acordo com o destacado na figura a seguir. Para desligar o veículo, basta apertar duas vezes o mesmo botão.
 
 ![Posição do botão LIGA/DESLIGA na BitDogLab](./Img/liga&desliga.png)
 
