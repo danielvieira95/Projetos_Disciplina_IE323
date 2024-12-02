@@ -77,6 +77,12 @@ Caso deseja-se realizar as ligações da ESP32-CAM com o conversor USB / TTL sem
 
 ## Fluxogramas
 
+### Diagrama de blocos de hardware
+
+![Diagrama de blocos de hardware](./Img/Fluxograma_hardware.png)
+
+
+
 ### Software na BitDogLab
 
 ![Fluxograma do software na BitDogLab](./Img/Fluxograma_BitDogLab.png)
