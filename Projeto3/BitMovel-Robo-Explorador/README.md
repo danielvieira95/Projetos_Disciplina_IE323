@@ -131,7 +131,7 @@ O arquivo *bluetooth_explorador.aia* disponibilizado nesse repositório contém 
 ### Robô explorador construído a partir da BitDogLab:
 ![Robô explorador](./Img/Robo_explorador.png)
 
-### Aplicativo para celular do projeto:
+### Aplicativo de celular do projeto:
 ![Aplicativo para celular](./Img/Aplicativo_para_celular.png)
 
 - Entre os pontos positivos, destaca-se a possibilidade de abordar diversos temas que envolvem a robótica com os alunos em sala de aula, seja sensores e seus funcionamentos (como o sensor ultrassônico), microcontroladores, lógica de programação, comunicação, aplicativos, processamento descentralizado e outros. Por ser um robô/carrinho, o visual pode ser um facilitador para atrair o interesse e curiosidade dos alunos.
