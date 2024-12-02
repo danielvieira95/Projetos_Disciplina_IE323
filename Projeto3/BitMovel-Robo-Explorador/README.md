@@ -53,8 +53,8 @@ Os componentes que podem ser comprados facilmente estão tabelados a seguir.
 |       Driver TB6612FNG       |      1     |                 Driver TB6612FNG Ponte H                |         07766         |  [Link](https://www.usinainfo.com.br/driver-para-motor/driver-tb6612fng-duplo-ponte-h-de-motor-dc-ou-passo-4697.html) |
 |           Motor DC           |      2     |     Motor DC 3-6V com Caixa de Redução e Eixo Duplo     |       DG01D-A130      |  [Link](https://www.robocore.net/motor-motoredutor/motor-dc-3-6v-com-caixa-de-reducao-e-eixo-duplo?srsltid=AfmBOoqLHgizbn0gZF61xttOR3IJUD1AubocqiVNkSUDRpU2Qb-1_WqD) |
 |          Roda 68 mm          |      2     |                        Roda 68 mm                       |        B2-CP-001      |  [Link](https://www.eletrogate.com/roda-68mm-para-chassi-robo-robotica) |
-|         Expansor I2C         |      1     |                                                         |                       |  [Link]() |
-|         Regulador 5 V        |      1     |                                                         |                       |  [Link]() |
+|         Expansor I2C         |      1     |      Placa de expansão I2C (entregue pelo professor)    |                       |  [Link]() |
+|         Regulador 5 V        |      1     |      Regulador De Tensão Ams1117 5V                                                   |                       |  [Link](https://produto.mercadolivre.com.br/MLB-3645845877-10x-regulador-de-tenso-ams1117-smd-12v-15v-18v-33v-_JM?attributes=Vm9sdGFnZW0=:NXY=) |
 |       Borne KRE 2 vias       |      1     |                Conector borne KRE 2 vias                |       CCHGW3DTS       |  [Link](https://www.a2robotics.com.br/conector-borne-kre-2-vias?utm_source=Site&utm_medium=GoogleShopping&utm_campaign=IntegracaoGoogle&gad_source=1&gclid=CjwKCAiAjKu6BhAMEiwAx4UsAmFMy1QJVd-eJWjm5CC3EwINnCmLZXtyfIS3I62MyXeWaU2be4_r1BoCVmMQAvD_BwE) |
 |             Cabos            |      1     |             Kit com 40 cabos (usos diversos)            |  3CKD45VR8-9APYHNRP1  |  [Link](https://www.a2robotics.com.br/9apyhnrp1-jumper-femea-x-femea-20-cm-c-40-cabos) |
 
