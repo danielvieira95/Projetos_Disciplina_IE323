@@ -126,13 +126,17 @@ Voltando para o aplicativo, ao pressionar o botão de Bluetooth será aberta uma
 
 O arquivo *bluetooth_explorador.aia* disponibilizado nesse repositório contém o projeto do aplicativo de celular desenvolvido. É possível fazer o download desse projeto e importar para o MIT App Inventor, sendo possível realizar edições, ou baixar o arquivo .apk diretamente do repositório ou pelo QR Code acima.
 
-
-
 ## Resultados
-	Entre os pontos positivos, destaca-se a possibilidade de abordar diversos temas que envolvem a robótica com os alunos em sala de aula, seja sensores e seus funcionamentos (como o sensor ultrassônico), microcontroladores, lógica de programação, comunicação, aplicativos, processamento descentralizado e outros. Por ser um robô/carrinho, o visual pode ser um facilitador para atrair o interesse e curiosidade dos alunos.
-Outro ponto a ser mencionado é a oportunidade de exercitar diferentes tecnologias, como microcontroladores e linguagens de programação, a criação de aplicativo, envolvendo programação em blocos e design, a criação de uma placa de circuito impresso, comunicação Wi-Fi e Bluetooth e a integração de toda essa diversidade, permitindo interação entre elas, como o aplicativo recebendo dados da ESP32 e da Raspberry Pi Pico e enviando dados para a Pico simultaneamente, sendo necessário tratar de possíveis concorrências. É uma solução completa e que possui áreas distintas para todos os interesses.
-	Uma dificuldade observada durante toda a disciplina é desenvolver atividades e projetos que sejam acessíveis e interessantes para alunos, com instruções e objetivos claros para os professores em sala de aula utilizarem como uma ferramenta facilitadora e engajante, ao mesmo tempo que seja possível abstrair todos os desafios técnicos dos desenvolvedores, criando uma solução robusta o suficiente para o ambiente de uma sala de aula. Como exemplo, manusear o robô, ligando e desligando em caso de problemas, pode apresentar dificuldade inicialmente, mesmo com os manuais simplificados contendo imagens.
-	Um ponto negativo observado ao fim da etapa de desenvolvimento foi o tempo de duração da bateria. Com a adição da ESP32-CAM e novos sensores, o robô possui um intervalo de funcionamento curto, que não permite muita flexibilidade em sala de aula. Faz-se necessária a ampliação da capacidade da bateria atual e é recomendado a integração com o sistema de monitoramento de carga do BitMóvel Seguidor de Linha por segurança, dado que a descarga total de uma bateria LiPo é perigosa.
+
+
+
+- Entre os pontos positivos, destaca-se a possibilidade de abordar diversos temas que envolvem a robótica com os alunos em sala de aula, seja sensores e seus funcionamentos (como o sensor ultrassônico), microcontroladores, lógica de programação, comunicação, aplicativos, processamento descentralizado e outros. Por ser um robô/carrinho, o visual pode ser um facilitador para atrair o interesse e curiosidade dos alunos.
+
+- Outro ponto a ser mencionado é a oportunidade de exercitar diferentes tecnologias, como microcontroladores e linguagens de programação, a criação de aplicativo, envolvendo programação em blocos e design, a criação de uma placa de circuito impresso, comunicação Wi-Fi e Bluetooth e a integração de toda essa diversidade, permitindo interação entre elas, como o aplicativo recebendo dados da ESP32 e da Raspberry Pi Pico e enviando dados para a Pico simultaneamente, sendo necessário tratar de possíveis concorrências. É uma solução completa e que possui áreas distintas para todos os interesses.
+
+- Uma dificuldade observada durante toda a disciplina é desenvolver atividades e projetos que sejam acessíveis e interessantes para alunos, com instruções e objetivos claros para os professores em sala de aula utilizarem como uma ferramenta facilitadora e engajante, ao mesmo tempo que seja possível abstrair todos os desafios técnicos dos desenvolvedores, criando uma solução robusta o suficiente para o ambiente de uma sala de aula. Como exemplo, manusear o robô, ligando e desligando em caso de problemas, pode apresentar dificuldade inicialmente, mesmo com os manuais simplificados contendo imagens.
+
+- Um ponto negativo observado ao fim da etapa de desenvolvimento foi o tempo de duração da bateria. Com a adição da ESP32-CAM e novos sensores, o robô possui um intervalo de funcionamento curto, que não permite muita flexibilidade em sala de aula. Faz-se necessária a ampliação da capacidade da bateria atual e é recomendado a integração com o sistema de monitoramento de carga do BitMóvel Seguidor de Linha por segurança, dado que a descarga total de uma bateria LiPo é perigosa.
 
 
 ## Possíveis mudanças para o futuro
