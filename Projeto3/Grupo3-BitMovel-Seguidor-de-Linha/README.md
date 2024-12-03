@@ -6,13 +6,13 @@ Vinicius Emanoel Ares, RA: 083028
 # BitMóvel Seguidor de Linha, versao com monitoramento de bateria
 
 <div align="center">
-  <img src="./imagens/seguidor_linha_na_bancada.jpeg" alt="Description of the image" width="45%" style="display: inline-block; margin-right: 10px;"/>
-  <img src="./imagens/seguidor_linha_montado.jpeg" alt="Description of the image" width="45%" style="display: inline-block;"/>
+  <img src="./imagens/seguidor_linha_na_bancada.png" alt="Description of the image" width="30%" style="display: inline-block; margin-right: 10px;"/>
+  <img src="./imagens/seguidor_linha_montado.png" alt="Description of the image" width="45%" style="display: inline-block;"/>
 </div>
 
 <div align="center">
-  <img src="./imagens/seguidor_linha_bitdoglab_removida.jpeg" alt="Description of the image" width="45%" style="display: inline-block; margin-right: 10px;"/>
-  <img src="./imagens/seguidor_linha_vista_inferior.jpeg" alt="Description of the image" width="45%" style="display: inline-block;"/>
+  <img src="./imagens/seguidor_linha_bitdoglab_removida.png" alt="Description of the image" width="45%" style="display: inline-block; margin-right: 10px;"/>
+  <img src="./imagens/seguidor_linha_vista_inferior.png" alt="Description of the image" width="45%" style="display: inline-block;"/>
 </div>
 
 BitMóvel Seguidor de Linha é um projeto educacional de robô seguidor de linha para a placa [BitDogLab](https://github.com/BitDogLab/BitDogLab). O projeto foi desenvolvido como projeto 3 da disciplina da FEEC/Unicamp IE323 - Sistemas Embarcados para ensino com abordagem STEM
