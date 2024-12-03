@@ -28,8 +28,7 @@ O objetivo do Projeto 3 da disciplina é utilizar a placa BitDogLab conectada a 
 
 O BitMóvel Seguidor de Linha é um robô diferencial com 2 rodas motrizes e uma esfera de apoio na frente, formando um tripé ou triciclo. O robô usa sensores reflexivos infravermelhos QRD1114 para detectar uma linha escura no chão. O design do carrinho é fabricado por impressão 3D em PLA. Além da função seguidor de linha, os botões A e B são programados para comandar o robô para ativo ou desativado, respectivamente. O robô inicia no modo desativado, então quando o botão A é pressionado o robô está em modo de movimento ativo para frente seguindo a linha embaixo do chassis. Quando o botão B é pressionado o robô fica parado até que se pressione o botão A novamente. O BitMóvel conta com um aplicativo que permite o monitoramento da bateria. Por meio dele, o usuário pode acessar informações sobre o BitDogLab, controlar o acionamento e desligamento do carrinho, verificar o nível da bateria e obter suporte técnico. Além disso, o código implementado protege o carrinho contra níveis críticos de bateria e situações de sobrecorrente no circuito.
 
-Este projeto usa:
-- 1 Placa BitDogLab
+### Lista de Componentes
 - 2 motores DC 3-6V com Caixa de Redução e Eixo Duplo + Roda 68mm
 - 1 Driver ponte H modelo HW-166
 - 1 bateria 2s1p 7,6V 550mAh
@@ -80,3 +79,9 @@ Para mais informações, é possível acessar o relatório do projeto disponibil
 4. Clique em Dispositivos.
 5. Procure na lista "HC-05" e clique. O status do carrinho exibirá "conectado".
 6. Caso ocorra algum erro de conexão, repita o processo a partir do 4.
+
+## Fabricação e montagem do projeto
+1. Para fabricação das placas de circuito impresso, devem ser encomentadas de um fabricantes como JLCPCB ou outro de sua preferência, projetos disponíveis na pasta Placas Eletrônicas.
+2. Usar uma impressora 3D para imprimir as partes disponíveis na pasta desenhos_3D.
+3. Adquirir os materiais descritos na Lista de Componetes.
+4. Seguir o Manual_de_Montagem_v4.pdf
