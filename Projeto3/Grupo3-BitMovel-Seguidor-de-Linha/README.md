@@ -12,6 +12,11 @@ BitMóvel Seguidor de Linha é um projeto educacional de robô seguidor de linha
 </details>
 O objetivo do Projeto 3 da disciplina é utilizar a placa BitDogLab conectada a dispositivos externos, com a proposta de preparar o projeto para uso em escolas. Isso inclui o desenvolvimento peças 3D e de placas eletrônicas, por exemplo, para eliminar fios soltos que podem causar mau contato.<br><br>
 
+<div align="center">
+  <img src="./Placas Eletrônicas/versao_sem_pci.jpeg" alt="Description of the image" width="45%" style="display: inline-block; margin-right: 10px;"/>
+  <img src="./Placas Eletrônicas/versao_com_pci.jpeg" alt="Description of the image" width="45%" style="display: inline-block;"/>
+</div>
+
 O BitMóvel Seguidor de Linha é um robô diferencial com 2 rodas motrizes e uma esfera de apoio na frente, formando um tripé ou triciclo. O robô usa sensores reflexivos infravermelhos QRD1114 para detectar uma linha escura no chão. O design do carrinho é fabricado por impressão 3D em PLA. Além da função seguidor de linha, os botões A e B são programados para comandar o robô para ativo ou desativado, respectivamente. O robô inicia no modo desativado, então quando o botão A é pressionado o robô está em modo de movimento ativo para frente seguindo a linha embaixo do chassis. Quando o botão B é pressionado o robô fica parado até que se pressione o botão A novamente. O BitMóvel conta com um aplicativo que permite o monitoramento da bateria. Por meio dele, o usuário pode acessar informações sobre o BitDogLab, controlar o acionamento e desligamento do carrinho, verificar o nível da bateria e obter suporte técnico. Além disso, o código implementado protege o carrinho contra níveis críticos de bateria e situações de sobrecorrente no circuito.
 
 Este projeto usa:
