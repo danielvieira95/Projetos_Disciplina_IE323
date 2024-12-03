@@ -15,12 +15,13 @@ Vinicius Emanoel Ares, RA: 083028
   <img src="./imagens/seguidor_linha_vista_inferior.png" alt="Description of the image" width="47%" style="display: inline-block;"/>
 </div>
 
+<br><br>
 BitMóvel Seguidor de Linha é um projeto educacional de robô seguidor de linha para a placa [BitDogLab](https://github.com/BitDogLab/BitDogLab). O projeto foi desenvolvido como projeto 3 da disciplina da FEEC/Unicamp IE323 - Sistemas Embarcados para ensino com abordagem STEM
 <details>
   <summary>Clique para saber mais sobre a disciplina.</summary>
   Sistemas Embarcados para ensino com abordagem STEM é uma disciplina da pós-graduação da FEEC-UNICAMP ofertada pelo professor Fabiano Fruett com auxílio do professor Daniel Vieira. O objetivo da matéria é desenvolver projetos que envolva IoT, eletrônica e IA com o intuito de levar ferramentas para os alunos do ensino fundamental e médio utilizando a abordagem STEM (Science, Technology, Engineering and Mathematics). [BitDogLab](https://cpg.fee.unicamp.br/lista/caderno_horario_show.php?id=1932).
 </details>
-O objetivo do Projeto 3 da disciplina é utilizar a placa BitDogLab conectada a dispositivos externos, com a proposta de preparar o projeto para uso em escolas. Isso inclui o desenvolvimento peças 3D e de placas eletrônicas, por exemplo, para eliminar fios soltos que podem causar mau contato.<br><br>
+O objetivo do Projeto 3 da disciplina é utilizar a placa BitDogLab conectada a dispositivos externos, com a proposta de preparar o projeto para uso em escolas. Isso inclui o desenvolvimento peças 3D e de placas eletrônicas para reduzir a necessidade de fios (jumpers), e a inclusão de mecanismo de ajuste da altura dos sensores com 3 parafusos.<br><br>
 
 <div align="center">
   <img src="./imagens/versao_sem_pci.jpeg" alt="Description of the image" width="45%" style="display: inline-block; margin-right: 10px;"/>
