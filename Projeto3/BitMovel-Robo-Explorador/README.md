@@ -147,7 +147,3 @@ O arquivo *bluetooth_explorador.aia* disponibilizado nesse repositório contém 
 
 - Substituição de bateria LiPo por uma de maior capacidade (maior que 550 mAh). É possível que seja necessário mudar os conectores XT30 e a localização da bateria por causa do maior tamanho.
 - Por questões de segurança ao utilizar uma bateria LiPo, recomenda-se uma forma de monitorar sua carga. Exitem [módulos tradicionalmente utilizados](https://www.robocore.net/sensor-corrente-tensao/monitor-de-tensao-para-baterias-1s-8s?gad_source=1&gclid=CjwKCAiAjKu6BhAMEiwAx4UsArDSI4isRYA_fTmwPpj56Cw4_OTkpDHh7RrQrH3L0IJNwP9G7HvslRoC8WsQAvD_BwE) que dispõe de alarme embutido, mas recomenda-se a solução open-source feita para o [BitMóvel Seguidor de Linha](https://github.com/danielvieira95/Projetos_Disciplina_IE323/tree/main/Projeto3/Grupo3-BitMovel-Seguidor-de-Linha), que permite acompanhar o estado da bateria por aplicativo de celular.
-
-## TODO
-
-Atualizar apresentação e adicionar requisitos extras especificadas no Moodle para entrega formal.
