@@ -1,7 +1,7 @@
 # Autores
 
-Vinicius Emanoel Ares, RA: 083028  
 Edson Costa Oliveira, RA: 188405 
+Vinicius Emanoel Ares, RA: 083028  
 
 # BitMóvel Seguidor de Linha, versao com monitoramento de bateria
 
