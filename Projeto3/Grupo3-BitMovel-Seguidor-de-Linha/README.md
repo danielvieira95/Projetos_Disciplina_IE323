@@ -45,7 +45,7 @@ O fluxograma abaixo ilustra o funcionamento do aplicativo de celular:
 <img src="./Fluxograma_app_celular.png" alt="Description of the image" width="500"/>
 </div>
 
-Para mais informações, é possível acessar o relatório do projeto disponibilizado no [link]([https://docs.google.com/document/d/1Ikr_fQ6nfiymL5znAn5tAetg0D3t27z1])
+Para mais informações, é possível acessar o relatório do projeto disponibilizado no [link](https://docs.google.com/document/d/1KMj3I93LfhJuYwX31ApxWePKK1TJ1PmV/edit?usp=sharing&ouid=113991507111012118869&rtpof=true&sd=true).
 
 ## Como instalar e operar o robô físico?
 
